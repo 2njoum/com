@@ -233,15 +233,20 @@ Supprimer
 
 document.getElementById("cartTotal").textContent=total+" DH";
 }
-function removeItem(index){
-function changeQuantity(index,change){
-cart[index].quantity+=change;
+function changeQuantity(index, change){
+    cart[index].quantity += change;
 
-if(cart[index].quantity<=0){
-cart.splice(index,1);
+    if(cart[index].quantity <= 0){
+        cart.splice(index, 1);
+    }
+
+    updateCart();
 }
 
-updateCart();
+function removeItem(index){
+    cart.splice(index, 1);
+    updateCart();
+}
 }
 }
 function removeItem(index){cart.splice(index,1);updateCart();}
