@@ -441,31 +441,45 @@ const query=document.getElementById("searchInput").value.toLowerCase().trim();
 const filtered=products.filter(product=>product.name.toLowerCase().includes(query)||product.brand.toLowerCase().includes(query)||product.notes.toLowerCase().includes(query));
 displayProducts(filtered);
 }
-function showAll(){document.getElementById("searchInput").value="";displayProducts();}
-function focusSearch(){document.getElementById("shop").scrollIntoView();setTimeout(()=>document.getElementById("searchInput").focus(),400);}
-function orderWhatsApp(){
-if(cart.length===0){alert("Votre panier est vide.");return;}
-let message="Bonjour GHIMED FRAGRANCES 👋\n\nJe souhaite commander :\n\n";let total=0;
-cart.forEach(item=>{const product=products.find(p=>p.id===item.id);const price=product.prices[item.size];total+=price*item.quantity;message+="• "+product.name+" — "+item.size+" × "+item.quantity+" — "+(price*item.quantity)+" DH\n";});
-message+="\n💰 Total : "+total+" DH\n\n📍 Ville :\n📞 Téléphone :";
-window.open("https://wa.me/212708773218?text="+encodeURIComponent(message),"_blank");
-}
-displayProducts();updateCart();
-  function searchProducts(){
-    const query = document.getElementById("searchInput").value.toLowerCase().trim();
-
-    const filtered = products.filter(product =>
-        product.name.toLowerCase().includes(query) ||
-        product.brand.toLowerCase().includes(query) ||
-        product.notes.toLowerCase().includes(query)
-    );
-
-    displayProducts(filtered);
-}
-
 function showAll(){
-    document.getElementById("searchInput").value = "";
-    displayProducts(products);
+    document.getElementById("searchInput").value="";
+    displayProducts();
+}
+
+function focusSearch(){
+    document.getElementById("shop").scrollIntoView();
+    setTimeout(()=>document.getElementById("searchInput").focus(),400);
+}
+
+function orderWhatsApp(){
+    if(cart.length===0){
+        alert("Votre panier est vide.");
+        return;
+    }
+
+    let message="Bonjour GHIMED FRAGRANCES 👋\n\nJe souhaite commander :\n\n";
+    let total=0;
+
+    cart.forEach(item=>{
+        const product=products.find(p=>p.id===item.id);
+        const price=product.prices[item.size];
+
+        total+=price*item.quantity;
+
+        message+="• "+product.name+" — "+item.size+" × "+item.quantity+" — "+(price*item.quantity)+" DH\n";
+    });
+
+    message+="\n💰 Total : "+total+" DH\n\n📍 Ville :\n📞 Téléphone :";
+
+    window.open(
+        "https://wa.me/212708773218?text="+encodeURIComponent(message),
+        "_blank"
+    );
+}
+
+displayProducts();
+updateCart();
+</script>
   }
 </script>
 
