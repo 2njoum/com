@@ -219,3 +219,80 @@ function showAll(){
 
 </body>
 </html>
+function updateCart(){
+    const count = cart.reduce((sum,item) => sum + item.quantity, 0);
+    document.getElementById("cartCount").textContent = count;
+
+    const container = document.getElementById("cartItems");
+
+    if(cart.length === 0){
+        container.innerHTML = '<div class="empty">Votre panier est vide.</div>';
+        document.getElementById("cartTotal").textContent = "0 DH";
+        return;
+    }
+
+    let total = 0;
+
+    container.innerHTML = cart.map((item,index) => {
+        const product = products.find(p => p.id === item.id);
+        const price = product.prices[item.size];
+        const itemTotal = price * item.quantity;
+
+        total += itemTotal;
+
+        return `
+        <div class="cart-item">
+            <img src="${product.image}" alt="${product.name}">
+
+            <div class="cart-item-info">
+                <div class="cart-item-name">${product.name}</div>
+
+                <div class="cart-item-size">
+                    ${item.size} · ${price} DH
+                </div>
+
+                <div class="cart-item-price">
+                    ${itemTotal} DH
+                </div>
+
+                <div style="display:flex;align-items:center;gap:10px;margin-top:10px;">
+
+                    <button onclick="changeQuantity(${index},-1)"
+                    style="width:28px;height:28px;border:1px solid #ddd;background:#fff;">
+                    −
+                    </button>
+
+                    <span>${item.quantity}</span>
+
+                    <button onclick="changeQuantity(${index},1)"
+                    style="width:28px;height:28px;border:1px solid #111;background:#111;color:#fff;">
+                    +
+                    </button>
+
+                    <button class="remove" onclick="removeFromCart(${index})">
+                    Supprimer
+                    </button>
+
+                </div>
+            </div>
+        </div>
+        `;
+    }).join("");
+
+    document.getElementById("cartTotal").textContent = total + " DH";
+}
+
+function changeQuantity(index,change){
+    cart[index].quantity += change;
+
+    if(cart[index].quantity <= 0){
+        cart.splice(index,1);
+    }
+
+    updateCart();
+}
+
+function removeFromCart(index){
+    cart.splice(index,1);
+    updateCart();
+}
