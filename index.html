@@ -199,6 +199,22 @@ message+="\n💰 Total : "+total+" DH\n\n📍 Ville :\n📞 Téléphone :";
 window.open("https://wa.me/212708773218?text="+encodeURIComponent(message),"_blank");
 }
 displayProducts();updateCart();
+  function searchProducts(){
+    const query = document.getElementById("searchInput").value.toLowerCase().trim();
+
+    const filtered = products.filter(product =>
+        product.name.toLowerCase().includes(query) ||
+        product.brand.toLowerCase().includes(query) ||
+        product.notes.toLowerCase().includes(query)
+    );
+
+    displayProducts(filtered);
+}
+
+function showAll(){
+    document.getElementById("searchInput").value = "";
+    displayProducts(products);
+  }
 </script>
 
 </body>
