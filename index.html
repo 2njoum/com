@@ -39,8 +39,7 @@ background:#fff;
 color:var(--black);
 }
 
-button,
-input{
+button,input{
 font-family:inherit;
 }
 
@@ -53,8 +52,7 @@ text-decoration:none;
 color:inherit;
 }
 
-
-/* ================= TOP BAR ================= */
+/* TOP BAR */
 
 .topbar{
 background:#111;
@@ -65,8 +63,7 @@ font-size:11px;
 letter-spacing:.6px;
 }
 
-
-/* ================= HEADER ================= */
+/* HEADER */
 
 header{
 position:sticky;
@@ -157,8 +154,7 @@ color:#fff;
 font-size:9px;
 }
 
-
-/* ================= HERO ================= */
+/* HERO */
 
 .hero{
 background:#f4f4f1;
@@ -243,8 +239,7 @@ height:100%;
 object-fit:cover;
 }
 
-
-/* ================= TRUST ================= */
+/* TRUST */
 
 .trust{
 border-top:1px solid var(--border);
@@ -284,8 +279,7 @@ color:#888;
 font-size:10px;
 }
 
-
-/* ================= SECTIONS ================= */
+/* SECTIONS */
 
 .section{
 max-width:1250px;
@@ -320,8 +314,7 @@ border-bottom:1px solid #111;
 font-size:12px;
 }
 
-
-/* ================= CATEGORIES ================= */
+/* CATEGORIES */
 
 .categories{
 display:grid;
@@ -362,8 +355,7 @@ font-family:"Playfair Display",serif;
 font-size:25px;
 }
 
-
-/* ================= SHOP ================= */
+/* SHOP */
 
 .shop-tools{
 display:flex;
@@ -390,6 +382,8 @@ border:1px solid var(--border);
 background:#fff;
 font-size:12px;
 }
+
+/* PRODUCTS */
 
 .products{
 display:grid;
@@ -507,8 +501,7 @@ font-size:10px;
 background:#333;
 }
 
-
-/* ================= DISCOVERY ================= */
+/* DISCOVERY */
 
 .discovery{
 background:#f5f4f0;
@@ -559,8 +552,7 @@ background:#fff;
 font-size:11px;
 }
 
-
-/* ================= ABOUT ================= */
+/* ABOUT */
 
 .about{
 max-width:850px;
@@ -579,8 +571,7 @@ color:#666;
 line-height:1.9;
 }
 
-
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
 padding:65px 25px 25px;
@@ -640,8 +631,7 @@ color:#777;
 font-size:10px;
 }
 
-
-/* ================= CART ================= */
+/* CART */
 
 .cart-overlay{
 position:fixed;
@@ -659,7 +649,7 @@ opacity:1;
 }
 
 .cart{
-width:min(430px,100%);
+width:min(460px,100%);
 height:100%;
 position:absolute;
 right:0;
@@ -708,6 +698,8 @@ color:#888;
 font-size:13px;
 }
 
+/* CART ITEM */
+
 .cart-item{
 display:flex;
 gap:12px;
@@ -742,20 +734,6 @@ font-size:12px;
 font-weight:700;
 }
 
-.cart-quantity{
-display:flex;
-align-items:center;
-gap:7px;
-margin-top:8px;
-}
-
-.cart-quantity button{
-width:25px;
-height:25px;
-border:1px solid #ddd;
-background:#fff;
-}
-
 .remove{
 border:0;
 background:none;
@@ -763,16 +741,122 @@ color:#999;
 font-size:10px;
 }
 
+/* QUANTITY */
+
+.quantity-box{
+display:flex;
+align-items:center;
+gap:8px;
+margin-top:9px;
+}
+
+.quantity-box button{
+width:25px;
+height:25px;
+border:1px solid #ddd;
+background:#fff;
+font-size:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.quantity-number{
+min-width:18px;
+text-align:center;
+font-size:12px;
+}
+
+/* CHECKOUT */
+
 .cart-footer{
 padding-top:20px;
 border-top:1px solid var(--border);
 }
 
-.total{
+.order-form{
+display:none;
+}
+
+.order-form.active{
+display:block;
+}
+
+.form-title{
+font-family:"Playfair Display",serif;
+font-size:24px;
+margin-bottom:18px;
+}
+
+.form-group{
+margin-bottom:12px;
+}
+
+.form-group label{
+display:block;
+margin-bottom:6px;
+font-size:10px;
+font-weight:600;
+}
+
+.form-group input{
+width:100%;
+padding:12px 13px;
+border:1px solid #ddd;
+outline:none;
+font-size:12px;
+background:#fafafa;
+}
+
+.form-group input:focus{
+border-color:#111;
+background:#fff;
+}
+
+.order-summary{
+margin-top:15px;
+padding-top:15px;
+border-top:1px solid #eee;
+}
+
+.summary-line{
 display:flex;
 justify-content:space-between;
-margin-bottom:15px;
+margin-bottom:8px;
+font-size:12px;
+}
+
+.summary-line.total-line{
+padding-top:10px;
+border-top:1px solid #ddd;
+font-size:15px;
 font-weight:700;
+}
+
+.delivery-price{
+font-weight:600;
+}
+
+.discount-row{
+display:flex;
+gap:7px;
+}
+
+.discount-row input{
+flex:1;
+}
+
+.discount-row button{
+padding:0 12px;
+border:1px solid #111;
+background:#111;
+color:#fff;
+font-size:10px;
+}
+
+.discount-message{
+margin-top:5px;
+font-size:10px;
 }
 
 .checkout{
@@ -788,228 +872,16 @@ font-size:12px;
 background:#333;
 }
 
-
-/* ================= CHECKOUT ================= */
-
-.checkout-overlay{
-position:fixed;
-inset:0;
-z-index:5000;
-display:none;
-align-items:center;
-justify-content:center;
-background:rgba(0,0,0,.58);
-backdrop-filter:blur(7px);
-padding:15px;
-}
-
-.checkout-overlay.open{
-display:flex;
-}
-
-.checkout-box{
+.back-cart{
 width:100%;
-max-width:510px;
-max-height:94vh;
-overflow-y:auto;
-background:#fff;
-padding:28px;
-border-radius:16px;
-position:relative;
-box-shadow:0 25px 70px rgba(0,0,0,.25);
-}
-
-.checkout-box h2{
-font-family:"Playfair Display",serif;
-font-size:30px;
-font-weight:500;
-margin-bottom:24px;
-}
-
-.checkout-close{
-position:absolute;
-right:18px;
-top:15px;
-border:0;
-background:none;
-font-size:28px;
-color:#777;
-}
-
-.checkout-product{
-display:flex;
-align-items:center;
-gap:12px;
-padding:13px 0;
-border-bottom:1px solid #eee;
-}
-
-.checkout-product img{
-width:60px;
-height:65px;
-object-fit:cover;
-background:#f5f5f3;
-}
-
-.checkout-product-info{
-flex:1;
-}
-
-.checkout-product-name{
-font-family:"Playfair Display",serif;
-font-size:16px;
-}
-
-.checkout-product-size{
-color:#888;
-font-size:11px;
-margin-top:4px;
-}
-
-.checkout-product-price{
-font-size:12px;
-font-weight:700;
-margin-top:5px;
-}
-
-.checkout-quantity{
-display:flex;
-align-items:center;
-gap:7px;
-}
-
-.checkout-quantity button{
-width:28px;
-height:28px;
+margin-top:8px;
+padding:12px;
 border:1px solid #ddd;
 background:#fff;
-font-size:16px;
-}
-
-.checkout-box label{
-display:block;
-margin-top:17px;
-margin-bottom:7px;
-font-size:11px;
-font-weight:700;
-}
-
-.checkout-box input{
-width:100%;
-padding:13px;
-border:1px solid #ddd;
-outline:none;
-font-size:13px;
-background:#fff;
-}
-
-.checkout-box input:focus{
-border-color:#111;
-}
-
-.checkout-summary{
-border-top:1px solid #eee;
-margin-top:22px;
-padding-top:15px;
-}
-
-.checkout-summary>div{
-display:flex;
-justify-content:space-between;
-font-size:13px;
-margin:10px 0;
-}
-
-.checkout-total{
-border-top:1px solid #eee;
-padding-top:14px;
-margin-top:14px!important;
-font-size:17px!important;
-}
-
-.discount-box{
-display:flex;
-gap:8px;
-margin-top:20px;
-}
-
-.discount-box input{
-flex:1;
-}
-
-.discount-box button{
-padding:0 16px;
-border:1px solid #111;
-background:#111;
-color:#fff;
 font-size:11px;
 }
 
-#discountMessage{
-font-size:11px;
-margin-top:7px;
-color:#555;
-}
-
-.checkout-submit{
-width:100%;
-margin-top:20px;
-padding:16px;
-border:0;
-background:#111;
-color:#fff;
-font-size:12px;
-font-weight:700;
-cursor:pointer;
-}
-
-.checkout-submit:hover{
-background:#333;
-}
-
-
-/* ================= SUCCESS ================= */
-
-.order-success{
-text-align:center;
-padding:25px 5px;
-}
-
-.order-success-icon{
-width:60px;
-height:60px;
-margin:0 auto 20px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-background:#111;
-color:#fff;
-font-size:28px;
-}
-
-.order-success h2{
-font-family:"Playfair Display",serif;
-font-size:30px;
-margin-bottom:15px;
-}
-
-.order-success p{
-color:#777;
-font-size:13px;
-line-height:1.8;
-margin:8px 0;
-}
-
-.order-number{
-margin:20px 0;
-padding:15px;
-background:#f7f7f5;
-font-size:12px;
-}
-
-
-/* ================= WHATSAPP ================= */
+/* WHATSAPP */
 
 .whatsapp{
 position:fixed;
@@ -1033,8 +905,7 @@ transition:.25s;
 transform:scale(1.08);
 }
 
-
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media(max-width:900px){
 
@@ -1079,7 +950,6 @@ grid-template-columns:1fr 1fr;
 }
 
 }
-
 
 @media(max-width:600px){
 
@@ -1199,13 +1069,8 @@ flex-direction:column;
 gap:8px;
 }
 
-.checkout-box{
-padding:22px;
-border-radius:12px;
-}
-
-.checkout-box h2{
-font-size:26px;
+.cart{
+padding:20px 16px;
 }
 
 }
@@ -1213,18 +1078,11 @@ font-size:26px;
 </style>
 </head>
 
-
 <body>
-
-
-<!-- ================= TOP BAR ================= -->
 
 <div class="topbar">
 ✦ Livraison partout au Maroc · Paiement à la livraison
 </div>
-
-
-<!-- ================= HEADER ================= -->
 
 <header>
 
@@ -1236,33 +1094,21 @@ GHIMED
 </a>
 
 <nav class="nav-links">
-
 <a href="#shop">Shop</a>
 <a href="#collections">Collections</a>
 <a href="#discovery">Discovery</a>
 <a href="#about">À propos</a>
-
 </nav>
 
 <div class="nav-icons">
 
-<button
-class="icon-btn"
-onclick="focusSearch()">
+<button class="icon-btn" onclick="focusSearch()" aria-label="Search">
 ⌕
 </button>
 
-<button
-class="icon-btn"
-onclick="openCart()">
-
+<button class="icon-btn" onclick="openCart()" aria-label="Cart">
 ♡
-<span
-class="cart-count"
-id="cartCount">
-0
-</span>
-
+<span class="cart-count" id="cartCount">0</span>
 </button>
 
 </div>
@@ -1270,9 +1116,6 @@ id="cartCount">
 </div>
 
 </header>
-
-
-<!-- ================= HERO ================= -->
 
 <section class="hero">
 
@@ -1290,23 +1133,17 @@ Find your<br>
 </h1>
 
 <p class="hero-text">
-
 Découvrez vos parfums préférés en formats pratiques de 5ml et 10ml.
 Testez, portez et trouvez votre parfum signature avant de passer au flacon complet.
-
 </p>
 
 <div class="hero-buttons">
 
-<a
-href="#shop"
-class="btn btn-dark">
+<a href="#shop" class="btn btn-dark">
 Découvrir les parfums
 </a>
 
-<a
-href="#discovery"
-class="btn btn-light">
+<a href="#discovery" class="btn btn-light">
 Discovery Sets
 </a>
 
@@ -1314,95 +1151,49 @@ Discovery Sets
 
 </div>
 
-
 <div class="hero-image">
 
-<img
-src="1786650245102.png"
-alt="GHIMED Fragrances">
+<img src="1786650245102.png" alt="GHIMED Fragrances">
 
 </div>
 
 </div>
 
 </section>
-
-
-<!-- ================= TRUST ================= -->
 
 <section class="trust">
 
 <div class="trust-inner">
 
 <div class="trust-item">
-
 <div class="trust-icon">✦</div>
-
-<div class="trust-title">
-Parfums originaux
+<div class="trust-title">Parfums originaux</div>
+<div class="trust-text">Sélection soigneusement choisie</div>
 </div>
-
-<div class="trust-text">
-Sélection soigneusement choisie
-</div>
-
-</div>
-
 
 <div class="trust-item">
-
 <div class="trust-icon">◌</div>
-
-<div class="trust-title">
-5ml / 10ml
+<div class="trust-title">5ml / 10ml</div>
+<div class="trust-text">Choisissez votre format</div>
 </div>
-
-<div class="trust-text">
-Choisissez votre format
-</div>
-
-</div>
-
 
 <div class="trust-item">
-
 <div class="trust-icon">⌁</div>
-
-<div class="trust-title">
-Livraison Maroc
+<div class="trust-title">Livraison Maroc</div>
+<div class="trust-text">Toutes les villes</div>
 </div>
-
-<div class="trust-text">
-Toutes les villes
-</div>
-
-</div>
-
 
 <div class="trust-item">
-
 <div class="trust-icon">✓</div>
-
-<div class="trust-title">
-Paiement à la livraison
-</div>
-
-<div class="trust-text">
-Simple & sécurisé
-</div>
-
+<div class="trust-title">Paiement à la livraison</div>
+<div class="trust-text">Simple & sécurisé</div>
 </div>
 
 </div>
 
 </section>
 
-
-<!-- ================= COLLECTIONS ================= -->
-
-<section
-class="section"
-id="collections">
+<section class="section" id="collections">
 
 <div class="section-head">
 
@@ -1418,95 +1209,58 @@ Shop by mood
 
 </div>
 
-<a
-href="#shop"
-class="view-all"
-onclick="filterGender('all');return false;">
-
+<a href="#shop" class="view-all" onclick="filterGender('all');return false;">
 Voir tout →
-
 </a>
 
 </div>
-
 
 <div class="categories">
 
+<a href="#shop" class="category" onclick="filterGender('him');return false;">
 
-<a
-href="#shop"
-class="category"
-onclick="filterGender('him');return false;">
-
-<img
-src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=85"
-alt="For Him">
+<img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=85" alt="For Him">
 
 <div class="category-overlay">
-
 <div class="category-name">
 For Him
 </div>
-
 </div>
 
 </a>
 
+<a href="#shop" class="category" onclick="filterGender('her');return false;">
 
-<a
-href="#shop"
-class="category"
-onclick="filterGender('her');return false;">
-
-<img
-src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=85"
-alt="For Her">
+<img src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=85" alt="For Her">
 
 <div class="category-overlay">
-
 <div class="category-name">
 For Her
 </div>
-
 </div>
 
 </a>
 
+<a href="#shop" class="category" onclick="filterGender('unisex');return false;">
 
-<a
-href="#shop"
-class="category"
-onclick="filterGender('unisex');return false;">
-
-<img
-src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=800&q=85"
-alt="Unisex">
+<img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=800&q=85" alt="Unisex">
 
 <div class="category-overlay">
-
 <div class="category-name">
 Unisex
 </div>
-
 </div>
 
 </a>
 
+<a href="#shop" class="category">
 
-<a
-href="#shop"
-class="category">
-
-<img
-src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=85"
-alt="Luxury">
+<img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=85" alt="Luxury">
 
 <div class="category-overlay">
-
 <div class="category-name">
 Luxury
 </div>
-
 </div>
 
 </a>
@@ -1515,12 +1269,7 @@ Luxury
 
 </section>
 
-
-<!-- ================= SHOP ================= -->
-
-<section
-class="section"
-id="shop">
+<section class="section" id="shop">
 
 <div class="section-head">
 
@@ -1530,16 +1279,13 @@ id="shop">
 Our collection
 </div>
 
-<h2
-class="section-title"
-id="shopTitle">
+<h2 class="section-title" id="shopTitle">
 Best Sellers
 </h2>
 
 </div>
 
 </div>
-
 
 <div class="shop-tools">
 
@@ -1550,41 +1296,25 @@ type="text"
 placeholder="Rechercher un parfum ou une marque..."
 oninput="searchProducts()">
 
-<button
-class="filter-btn"
-onclick="showAll()">
-
+<button class="filter-btn" onclick="showAll()">
 Tous les parfums
-
 </button>
 
 </div>
 
-
-<div
-class="products"
-id="products">
-</div>
+<div class="products" id="products"></div>
 
 </section>
 
-
-<!-- ================= DISCOVERY ================= -->
-
-<section
-class="discovery"
-id="discovery">
+<section class="discovery" id="discovery">
 
 <div class="discovery-inner">
 
 <div class="discovery-img">
 
-<img
-src="https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=1000&q=85"
-alt="Discovery">
+<img src="https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=1000&q=85" alt="Discovery">
 
 </div>
-
 
 <div class="discovery-content">
 
@@ -1593,19 +1323,13 @@ Find your fragrance
 </div>
 
 <h2 class="section-title">
-
 Discover more.<br>
 Spend less.
-
 </h2>
 
 <p>
-
-Découvrez plusieurs fragrances en formats 5ml et 10ml
-avant de choisir votre prochain parfum.
-
+Découvrez plusieurs fragrances en formats 5ml et 10ml avant de choisir votre prochain parfum.
 </p>
-
 
 <div class="format-list">
 
@@ -1619,14 +1343,8 @@ avant de choisir votre prochain parfum.
 
 </div>
 
-
-<a
-href="#shop"
-class="btn btn-dark"
-onclick="filterGender('all');return false;">
-
+<a href="#shop" class="btn btn-dark" onclick="filterGender('all');return false;">
 Explorer les parfums
-
 </a>
 
 </div>
@@ -1635,41 +1353,28 @@ Explorer les parfums
 
 </section>
 
-
-<!-- ================= ABOUT ================= -->
-
-<section
-class="about"
-id="about">
+<section class="about" id="about">
 
 <div class="section-label">
 GHIMED FRAGRANCES
 </div>
 
 <h2 class="section-title">
-
 The fragrance,<br>
 your way.
-
 </h2>
 
 <p>
-
 Chez GHIMED FRAGRANCES, nous croyons qu'un parfum doit être découvert avant d'être adopté.
 Nos decants vous permettent de découvrir différentes fragrances en formats 5ml et 10ml,
 simplement et à votre rythme.
-
 </p>
 
 </section>
 
-
-<!-- ================= FOOTER ================= -->
-
 <footer>
 
 <div class="footer-inner">
-
 
 <div>
 
@@ -1678,14 +1383,10 @@ GHIMED
 </div>
 
 <p class="footer-desc">
-
-Authentic fragrance decants.
-Découvrez votre prochaine signature olfactive.
-
+Authentic fragrance decants. Découvrez votre prochaine signature olfactive.
 </p>
 
 </div>
-
 
 <div>
 
@@ -1695,34 +1396,25 @@ Shop
 
 <div class="footer-links">
 
-<a
-href="#shop"
-onclick="filterGender('all');return false;">
+<a href="#shop" onclick="filterGender('all');return false;">
 Best Sellers
 </a>
 
-<a
-href="#shop"
-onclick="filterGender('him');return false;">
+<a href="#shop" onclick="filterGender('him');return false;">
 For Him
 </a>
 
-<a
-href="#shop"
-onclick="filterGender('her');return false;">
+<a href="#shop" onclick="filterGender('her');return false;">
 For Her
 </a>
 
-<a
-href="#shop"
-onclick="filterGender('unisex');return false;">
+<a href="#shop" onclick="filterGender('unisex');return false;">
 Unisex
 </a>
 
 </div>
 
 </div>
-
 
 <div>
 
@@ -1752,7 +1444,6 @@ FAQ
 
 </div>
 
-
 <div>
 
 <div class="footer-title">
@@ -1761,12 +1452,8 @@ Contact
 
 <div class="footer-links">
 
-<a
-href="https://wa.me/212708773218"
-target="_blank">
-
+<a href="https://wa.me/212708773218" target="_blank">
 WhatsApp
-
 </a>
 
 <a href="#">
@@ -1783,7 +1470,6 @@ TikTok
 
 </div>
 
-
 <div class="footer-bottom">
 
 <span>
@@ -1799,36 +1485,25 @@ Authentic fragrance decants
 </footer>
 
 
-<!-- ================= CART ================= -->
+<!-- CART -->
 
-<div
-class="cart-overlay"
-id="cartOverlay"
-onclick="closeCartOutside(event)">
+<div class="cart-overlay" id="cartOverlay" onclick="closeCartOutside(event)">
 
 <div class="cart">
 
-
 <div class="cart-head">
 
-<h2>
-Votre panier
+<h2 id="cartTitle">
+Your Bag
 </h2>
 
-<button
-class="close-cart"
-onclick="closeCart()">
-
+<button class="close-cart" onclick="closeCart()">
 ×
-
 </button>
 
 </div>
 
-
-<div
-class="cart-items"
-id="cartItems">
+<div class="cart-items" id="cartItems">
 
 <div class="empty">
 Votre panier est vide.
@@ -1836,70 +1511,64 @@ Votre panier est vide.
 
 </div>
 
-
 <div class="cart-footer">
 
-<div class="total">
+<!-- CART SUMMARY -->
+
+<div id="cartSummary">
+
+<div class="summary-line">
 
 <span>
 Sous-total
 </span>
 
-<span id="cartTotal">
+<span id="cartSubtotal">
 0 DH
 </span>
 
 </div>
 
+<div class="summary-line">
 
-<button
-class="checkout"
-onclick="openCheckout()">
+<span>
+Livraison
+</span>
 
-Procéder au paiement
+<span class="delivery-price">
+35 DH
+</span>
 
+</div>
+
+<div class="summary-line total-line">
+
+<span>
+Total
+</span>
+
+<span id="cartTotal">
+35 DH
+</span>
+
+</div>
+
+<button class="checkout" onclick="showOrderForm()">
+Passer la commande
 </button>
 
 </div>
 
+
+<!-- ORDER FORM -->
+
+<div class="order-form" id="orderForm">
+
+<div class="form-title">
+Vos informations
 </div>
 
-</div>
-
-
-<!-- ================= CHECKOUT ================= -->
-
-<div
-class="checkout-overlay"
-id="checkoutOverlay">
-
-<div
-class="checkout-box"
-id="checkoutBox">
-
-<button
-class="checkout-close"
-onclick="closeCheckout()">
-
-×
-
-</button>
-
-
-<h2>
-Terminez votre achat
-</h2>
-
-
-<div
-id="checkoutProducts">
-</div>
-
-
-<form
-id="checkoutForm"
-onsubmit="confirmOrder(event)">
-
+<div class="form-group">
 
 <label>
 Nom Complet *
@@ -1908,9 +1577,12 @@ Nom Complet *
 <input
 type="text"
 id="customerName"
-placeholder="Votre nom complet"
-required>
+placeholder="Nom complet"
+autocomplete="name">
 
+</div>
+
+<div class="form-group">
 
 <label>
 Téléphone *
@@ -1920,8 +1592,11 @@ Téléphone *
 type="tel"
 id="customerPhone"
 placeholder="06XXXXXXXX"
-required>
+autocomplete="tel">
 
+</div>
+
+<div class="form-group">
 
 <label>
 VOTRE ADRESSE COMPLETE *
@@ -1931,8 +1606,11 @@ VOTRE ADRESSE COMPLETE *
 type="text"
 id="customerAddress"
 placeholder="Adresse complète"
-required>
+autocomplete="street-address">
 
+</div>
+
+<div class="form-group">
 
 <label>
 Ville *
@@ -1942,113 +1620,108 @@ Ville *
 type="text"
 id="customerCity"
 placeholder="Ville"
-required>
-
-
-<div class="checkout-summary">
-
-
-<div>
-
-<span>
-Sous-total
-</span>
-
-<strong id="checkoutSubtotal">
-0 DH
-</strong>
+autocomplete="address-level2">
 
 </div>
 
+<div class="form-group">
 
-<div>
+<label>
+Code de réduction
+</label>
 
-<span>
-Livraison
-</span>
-
-<strong>
-35 DH
-</strong>
-
-</div>
-
-
-<div class="checkout-total">
-
-<span>
-Total
-</span>
-
-<strong id="checkoutTotal">
-0 DH
-</strong>
-
-</div>
-
-</div>
-
-
-<div class="discount-box">
+<div class="discount-row">
 
 <input
 type="text"
 id="discountCode"
 placeholder="Code de réduction">
 
-<button
-type="button"
-onclick="applyDiscount()">
-
+<button onclick="applyDiscount()">
 Appliquer
-
 </button>
 
 </div>
 
-
-<p
+<div
+class="discount-message"
 id="discountMessage">
-</p>
+</div>
+
+</div>
 
 
-<button
-type="submit"
-class="checkout-submit">
+<div class="order-summary">
 
-Terminez votre achat —
-<span id="checkoutButtonTotal">
-0
+<div class="summary-line">
+
+<span>
+Sous-total
 </span>
-DH
 
+<span id="formSubtotal">
+0 DH
+</span>
+
+</div>
+
+<div class="summary-line">
+
+<span>
+Livraison
+</span>
+
+<span>
+35 DH
+</span>
+
+</div>
+
+<div class="summary-line total-line">
+
+<span>
+Total
+</span>
+
+<span id="formTotal">
+0 DH
+</span>
+
+</div>
+
+</div>
+
+<button class="checkout" onclick="finishOrder()">
+Terminez votre achat
 </button>
 
-
-</form>
+<button class="back-cart" onclick="backToCart()">
+← Retour au panier
+</button>
 
 </div>
 
 </div>
 
+</div>
 
-<!-- ================= WHATSAPP CONTACT ================= -->
+</div>
+
 
 <a
 class="whatsapp"
 href="https://wa.me/212708773218"
 target="_blank"
 aria-label="WhatsApp">
-
 ☎
-
 </a>
 
 
 <script>
 
-
-/* ================= PRODUCTS ================= */
+/* =========================
+   PRODUCTS
+========================= */
 
 const products=[
 
@@ -2286,7 +1959,9 @@ prices:{"5ml":70,"10ml":130}
 ];
 
 
-/* ================= VARIABLES ================= */
+/* =========================
+   VARIABLES
+========================= */
 
 let cart=[];
 
@@ -2296,10 +1971,10 @@ let currentGender="all";
 
 let discountAmount=0;
 
-const DELIVERY_PRICE=35;
 
-
-/* ================= DISPLAY PRODUCTS ================= */
+/* =========================
+   DISPLAY PRODUCTS
+========================= */
 
 function displayProducts(list=products){
 
@@ -2309,31 +1984,16 @@ container.innerHTML="";
 
 if(list.length===0){
 
-container.innerHTML=`
-
-<p style="
-grid-column:1/-1;
-text-align:center;
-color:#888;
-padding:50px;
-">
-
-Aucun parfum trouvé.
-
-</p>
-
-`;
+container.innerHTML=
+'<p style="grid-column:1/-1;text-align:center;color:#888;padding:50px;">Aucun parfum trouvé.</p>';
 
 return;
 
 }
 
-
 list.forEach(product=>{
 
-const selected=
-selectedSizes[product.id]||"5ml";
-
+const selected=selectedSizes[product.id]||"5ml";
 
 container.innerHTML+=`
 
@@ -2341,15 +2001,13 @@ container.innerHTML+=`
 
 <div class="product-image">
 
-${product.badge?
-`<div class="badge">${product.badge}</div>`:""}
+${product.badge?`<div class="badge">${product.badge}</div>`:""}
 
 <img
 src="${product.image}"
 alt="${product.brand} ${product.name}">
 
 </div>
-
 
 <div class="product-info">
 
@@ -2365,23 +2023,19 @@ ${product.name}
 ${product.notes}
 </div>
 
-
 <div class="sizes">
 
-${Object.keys(product.prices).map(size=>`
+${Object.keys(product.prices).map(size=>
 
-<button
+`<button
 class="size ${selected===size?"active":""}"
 onclick="selectSize(${product.id},'${size}')">
-
 ${size}
+</button>`
 
-</button>
-
-`).join("")}
+).join("")}
 
 </div>
-
 
 <div class="product-bottom">
 
@@ -2392,9 +2046,7 @@ ${product.prices[selected]} DH
 <button
 class="add-btn"
 onclick="addToCart(${product.id})">
-
 Ajouter
-
 </button>
 
 </div>
@@ -2410,7 +2062,9 @@ Ajouter
 }
 
 
-/* ================= FILTER ================= */
+/* =========================
+   FILTER
+========================= */
 
 function filterGender(gender){
 
@@ -2421,55 +2075,37 @@ document.getElementById("searchInput").value="";
 let filtered=products;
 
 if(gender!=="all"){
-
-filtered=
-products.filter(
-product=>product.gender===gender
-);
-
+filtered=products.filter(product=>product.gender===gender);
 }
 
-
 if(gender==="him"){
-
-document.getElementById("shopTitle")
-.textContent="For Him";
-
+document.getElementById("shopTitle").textContent="For Him";
 }
 
 else if(gender==="her"){
-
-document.getElementById("shopTitle")
-.textContent="For Her";
-
+document.getElementById("shopTitle").textContent="For Her";
 }
 
 else if(gender==="unisex"){
-
-document.getElementById("shopTitle")
-.textContent="Unisex";
-
+document.getElementById("shopTitle").textContent="Unisex";
 }
 
 else{
-
-document.getElementById("shopTitle")
-.textContent="Best Sellers";
-
+document.getElementById("shopTitle").textContent="Best Sellers";
 }
-
 
 displayProducts(filtered);
 
-document.getElementById("shop")
-.scrollIntoView({
+document.getElementById("shop").scrollIntoView({
 behavior:"smooth"
 });
 
 }
 
 
-/* ================= SELECT SIZE ================= */
+/* =========================
+   SELECT SIZE
+========================= */
 
 function selectSize(id,size){
 
@@ -2478,12 +2114,7 @@ selectedSizes[id]=size;
 let list=products;
 
 if(currentGender!=="all"){
-
-list=
-products.filter(
-product=>product.gender===currentGender
-);
-
+list=products.filter(product=>product.gender===currentGender);
 }
 
 displayProducts(list);
@@ -2491,31 +2122,25 @@ displayProducts(list);
 }
 
 
-/* ================= ADD TO CART ================= */
+/* =========================
+   ADD TO CART
+========================= */
 
 function addToCart(id){
 
-const product=
-products.find(p=>p.id===id);
+const product=products.find(p=>p.id===id);
 
-const size=
-selectedSizes[id]||"5ml";
+const size=selectedSizes[id]||"5ml";
 
-const existing=
-cart.find(
-item=>
-item.id===id &&
-item.size===size
+const existing=cart.find(
+item=>item.id===id && item.size===size
 );
-
 
 if(existing){
 
 existing.quantity++;
 
-}
-
-else{
+}else{
 
 cart.push({
 id:id,
@@ -2525,7 +2150,6 @@ quantity:1
 
 }
 
-
 updateCart();
 
 openCart();
@@ -2533,57 +2157,49 @@ openCart();
 }
 
 
-/* ================= UPDATE CART ================= */
+/* =========================
+   UPDATE CART
+========================= */
 
 function updateCart(){
 
-const count=
-cart.reduce(
+const count=cart.reduce(
 (sum,item)=>sum+item.quantity,
 0
 );
 
-document.getElementById("cartCount")
-.textContent=count;
+document.getElementById("cartCount").textContent=count;
 
-
-const container=
-document.getElementById("cartItems");
-
+const container=document.getElementById("cartItems");
 
 if(cart.length===0){
 
-container.innerHTML=`
-<div class="empty">
-Votre panier est vide.
-</div>
-`;
+container.innerHTML=
+'<div class="empty">Votre panier est vide.</div>';
 
-document.getElementById("cartTotal")
-.textContent="0 DH";
+document.getElementById("cartSubtotal").textContent="0 DH";
+
+document.getElementById("cartTotal").textContent="0 DH";
+
+document.getElementById("formSubtotal").textContent="0 DH";
+
+document.getElementById("formTotal").textContent="0 DH";
 
 return;
 
 }
 
-
 let total=0;
 
+container.innerHTML=cart.map((item,index)=>{
 
-container.innerHTML=
-cart.map((item,index)=>{
-
-const product=
-products.find(
+const product=products.find(
 p=>p.id===item.id
 );
 
-const price=
-product.prices[item.size];
+const price=product.prices[item.size];
 
-total+=
-price*item.quantity;
-
+total+=price*item.quantity;
 
 return `
 
@@ -2592,7 +2208,6 @@ return `
 <img
 src="${product.image}"
 alt="${product.name}">
-
 
 <div class="cart-item-info">
 
@@ -2608,20 +2223,17 @@ ${item.size}
 ${price*item.quantity} DH
 </div>
 
+<div class="quantity-box">
 
-<div class="cart-quantity">
-
-<button
-onclick="changeCartQuantity(${index},-1)">
+<button onclick="changeQuantity(${index},-1)">
 −
 </button>
 
-<span>
+<span class="quantity-number">
 ${item.quantity}
 </span>
 
-<button
-onclick="changeCartQuantity(${index},1)">
+<button onclick="changeQuantity(${index},1)">
 +
 </button>
 
@@ -2629,13 +2241,10 @@ onclick="changeCartQuantity(${index},1)">
 
 </div>
 
-
 <button
 class="remove"
 onclick="removeItem(${index})">
-
 Supprimer
-
 </button>
 
 </div>
@@ -2644,18 +2253,38 @@ Supprimer
 
 }).join("");
 
+document.getElementById("cartSubtotal").textContent=
+total+" DH";
 
-document.getElementById("cartTotal")
-.textContent=total+" DH";
+let finalTotal=total+35-discountAmount;
+
+if(finalTotal<35){
+finalTotal=35;
+}
+
+document.getElementById("cartTotal").textContent=
+finalTotal+" DH";
+
+document.getElementById("formSubtotal").textContent=
+total+" DH";
+
+document.getElementById("formTotal").textContent=
+finalTotal+" DH";
 
 }
 
 
-/* ================= CART QUANTITY ================= */
+/* =========================
+   CHANGE QUANTITY
+========================= */
 
-function changeCartQuantity(index,amount){
+function changeQuantity(index,change){
 
-cart[index].quantity+=amount;
+if(!cart[index]){
+return;
+}
+
+cart[index].quantity+=change;
 
 if(cart[index].quantity<=0){
 
@@ -2668,7 +2297,9 @@ updateCart();
 }
 
 
-/* ================= REMOVE ================= */
+/* =========================
+   REMOVE
+========================= */
 
 function removeItem(index){
 
@@ -2679,7 +2310,9 @@ updateCart();
 }
 
 
-/* ================= OPEN CART ================= */
+/* =========================
+   OPEN CART
+========================= */
 
 function openCart(){
 
@@ -2691,7 +2324,9 @@ document.body.style.overflow="hidden";
 }
 
 
-/* ================= CLOSE CART ================= */
+/* =========================
+   CLOSE CART
+========================= */
 
 function closeCart(){
 
@@ -2703,7 +2338,9 @@ document.body.style.overflow="";
 }
 
 
-/* ================= CLOSE OUTSIDE ================= */
+/* =========================
+   CLOSE OUTSIDE
+========================= */
 
 function closeCartOutside(event){
 
@@ -2716,7 +2353,9 @@ closeCart();
 }
 
 
-/* ================= SEARCH ================= */
+/* =========================
+   SEARCH
+========================= */
 
 function searchProducts(){
 
@@ -2726,85 +2365,71 @@ document.getElementById("searchInput")
 .toLowerCase()
 .trim();
 
-
 let baseProducts=products;
-
 
 if(currentGender!=="all"){
 
-baseProducts=
-products.filter(
+baseProducts=products.filter(
 product=>product.gender===currentGender
 );
 
 }
 
+const filtered=baseProducts.filter(product=>
 
-const filtered=
-baseProducts.filter(product=>
+product.name.toLowerCase().includes(query) ||
 
-product.name
-.toLowerCase()
-.includes(query)
+product.brand.toLowerCase().includes(query) ||
 
-||
-
-product.brand
-.toLowerCase()
-.includes(query)
-
-||
-
-product.notes
-.toLowerCase()
-.includes(query)
+product.notes.toLowerCase().includes(query)
 
 );
-
 
 displayProducts(filtered);
 
 }
 
 
-/* ================= SHOW ALL ================= */
+/* =========================
+   SHOW ALL
+========================= */
 
 function showAll(){
 
 currentGender="all";
 
-document.getElementById("searchInput")
-.value="";
+document.getElementById("searchInput").value="";
 
-document.getElementById("shopTitle")
-.textContent="Best Sellers";
+document.getElementById("shopTitle").textContent=
+"Best Sellers";
 
 displayProducts(products);
 
 }
 
 
-/* ================= SEARCH BUTTON ================= */
+/* =========================
+   SEARCH FOCUS
+========================= */
 
 function focusSearch(){
 
-document.getElementById("shop")
-.scrollIntoView();
+document.getElementById("shop").scrollIntoView();
 
 setTimeout(()=>{
 
-document
-.getElementById("searchInput")
-.focus();
+document.getElementById("searchInput").focus();
 
 },400);
 
 }
 
 
-/* ================= OPEN CHECKOUT ================= */
+/* =========================
+   SHOW ORDER FORM
+========================= */
 
-function openCheckout(){
+function showOrderForm(){
 
 if(cart.length===0){
 
@@ -2814,336 +2439,39 @@ return;
 
 }
 
+document.getElementById("cartItems").style.display="none";
 
-closeCart();
+document.getElementById("cartSummary").style.display="none";
 
-discountAmount=0;
+document.getElementById("orderForm").classList.add("active");
 
-document.getElementById("discountCode")
-.value="";
-
-document.getElementById("discountMessage")
-.textContent="";
-
-
-document.getElementById("checkoutBox")
-.innerHTML=`
-
-<button
-class="checkout-close"
-onclick="closeCheckout()">
-
-×
-
-</button>
-
-
-<h2>
-Terminez votre achat
-</h2>
-
-
-<div id="checkoutProducts">
-</div>
-
-
-<form
-id="checkoutForm"
-onsubmit="confirmOrder(event)">
-
-
-<label>
-Nom Complet *
-</label>
-
-<input
-type="text"
-id="customerName"
-placeholder="Votre nom complet"
-required>
-
-
-<label>
-Téléphone *
-</label>
-
-<input
-type="tel"
-id="customerPhone"
-placeholder="06XXXXXXXX"
-required>
-
-
-<label>
-VOTRE ADRESSE COMPLETE *
-</label>
-
-<input
-type="text"
-id="customerAddress"
-placeholder="Adresse complète"
-required>
-
-
-<label>
-Ville *
-</label>
-
-<input
-type="text"
-id="customerCity"
-placeholder="Ville"
-required>
-
-
-<div class="checkout-summary">
-
-<div>
-
-<span>
-Sous-total
-</span>
-
-<strong id="checkoutSubtotal">
-0 DH
-</strong>
-
-</div>
-
-
-<div>
-
-<span>
-Livraison
-</span>
-
-<strong>
-35 DH
-</strong>
-
-</div>
-
-
-<div class="checkout-total">
-
-<span>
-Total
-</span>
-
-<strong id="checkoutTotal">
-0 DH
-</strong>
-
-</div>
-
-</div>
-
-
-<div class="discount-box">
-
-<input
-type="text"
-id="discountCode"
-placeholder="Code de réduction">
-
-<button
-type="button"
-onclick="applyDiscount()">
-
-Appliquer
-
-</button>
-
-</div>
-
-
-<p id="discountMessage">
-</p>
-
-
-<button
-type="submit"
-class="checkout-submit">
-
-Terminez votre achat —
-<span id="checkoutButtonTotal">
-0
-</span>
-DH
-
-</button>
-
-
-</form>
-
-`;
-
-
-renderCheckout();
-
-
-document.getElementById("checkoutOverlay")
-.classList.add("open");
-
-document.body.style.overflow="hidden";
+document.getElementById("cartTitle").textContent=
+"Terminez votre achat";
 
 }
 
 
-/* ================= CLOSE CHECKOUT ================= */
+/* =========================
+   BACK TO CART
+========================= */
 
-function closeCheckout(){
+function backToCart(){
 
-document.getElementById("checkoutOverlay")
-.classList.remove("open");
+document.getElementById("cartItems").style.display="block";
 
-document.body.style.overflow="";
+document.getElementById("cartSummary").style.display="block";
 
-}
+document.getElementById("orderForm").classList.remove("active");
 
-
-/* ================= RENDER CHECKOUT ================= */
-
-function renderCheckout(){
-
-const container=
-document.getElementById("checkoutProducts");
-
-if(!container)return;
-
-
-let subtotal=0;
-
-
-container.innerHTML=
-cart.map((item,index)=>{
-
-const product=
-products.find(
-p=>p.id===item.id
-);
-
-const price=
-product.prices[item.size];
-
-subtotal+=
-price*item.quantity;
-
-
-return `
-
-<div class="checkout-product">
-
-<img
-src="${product.image}"
-alt="${product.name}">
-
-
-<div class="checkout-product-info">
-
-<div class="checkout-product-name">
-${product.name}
-</div>
-
-<div class="checkout-product-size">
-${item.size}
-</div>
-
-<div class="checkout-product-price">
-${price*item.quantity} DH
-</div>
-
-</div>
-
-
-<div class="checkout-quantity">
-
-<button
-type="button"
-onclick="changeCheckoutQuantity(${index},-1)">
-−
-</button>
-
-<span>
-${item.quantity}
-</span>
-
-<button
-type="button"
-onclick="changeCheckoutQuantity(${index},1)">
-+
-</button>
-
-</div>
-
-</div>
-
-`;
-
-}).join("");
-
-
-let finalSubtotal=
-Math.max(
-0,
-subtotal-discountAmount
-);
-
-
-let total=
-finalSubtotal+DELIVERY_PRICE;
-
-
-document.getElementById("checkoutSubtotal")
-.textContent=
-finalSubtotal.toFixed(2)+" DH";
-
-
-document.getElementById("checkoutTotal")
-.textContent=
-total.toFixed(2)+" DH";
-
-
-document.getElementById("checkoutButtonTotal")
-.textContent=
-total.toFixed(2);
+document.getElementById("cartTitle").textContent=
+"Your Bag";
 
 }
 
 
-/* ================= CHECKOUT QUANTITY ================= */
-
-function changeCheckoutQuantity(index,amount){
-
-cart[index].quantity+=amount;
-
-
-if(cart[index].quantity<=0){
-
-cart.splice(index,1);
-
-}
-
-
-if(cart.length===0){
-
-closeCheckout();
-
-updateCart();
-
-return;
-
-}
-
-
-updateCart();
-
-renderCheckout();
-
-}
-
-
-/* ================= DISCOUNT ================= */
+/* =========================
+   DISCOUNT
+========================= */
 
 function applyDiscount(){
 
@@ -3153,282 +2481,201 @@ document.getElementById("discountCode")
 .trim()
 .toUpperCase();
 
-
 const message=
 document.getElementById("discountMessage");
 
+if(code==="GHIMED10"){
 
-let subtotal=0;
+let subtotal=cart.reduce(
+(sum,item)=>{
 
-
-cart.forEach(item=>{
-
-const product=
-products.find(
+const product=products.find(
 p=>p.id===item.id
 );
 
-subtotal+=
-product.prices[item.size]*
-item.quantity;
+return sum+
+(product.prices[item.size]*item.quantity);
 
-});
+},
+0
+);
 
-
-/*
-CODE PROMOTION:
-GHIMED10 = -10%
-*/
-
-
-if(code==="GHIMED10"){
-
-discountAmount=
-subtotal*0.10;
+discountAmount=Math.round(subtotal*0.10);
 
 message.textContent=
 "✓ Code appliqué : -10%";
 
-}
+message.style.color="#16803c";
 
-else{
+}else{
 
 discountAmount=0;
 
-if(code===""){
-
-message.textContent="";
-
-}
-
-else{
-
 message.textContent=
-"Code de réduction invalide.";
+"Code invalide.";
+
+message.style.color="#c00";
 
 }
 
-}
-
-
-renderCheckout();
+updateCart();
 
 }
 
 
-/* ================= CONFIRM ORDER ================= */
+/* =========================
+   FINISH ORDER
+========================= */
 
-function confirmOrder(event){
+function finishOrder(){
 
-event.preventDefault();
+const name=
+document.getElementById("customerName")
+.value.trim();
 
+const phone=
+document.getElementById("customerPhone")
+.value.trim();
 
-if(cart.length===0){
+const address=
+document.getElementById("customerAddress")
+.value.trim();
 
-alert("Votre panier est vide.");
+const city=
+document.getElementById("customerCity")
+.value.trim();
+
+const code=
+document.getElementById("discountCode")
+.value.trim();
+
+if(!name){
+
+alert("Veuillez entrer votre nom complet.");
+
+return;
+
+}
+
+if(!phone){
+
+alert("Veuillez entrer votre numéro de téléphone.");
+
+return;
+
+}
+
+if(!address){
+
+alert("Veuillez entrer votre adresse complète.");
+
+return;
+
+}
+
+if(!city){
+
+alert("Veuillez entrer votre ville.");
 
 return;
 
 }
 
 
-const name=
-document.getElementById("customerName")
-.value.trim();
-
-
-const phone=
-document.getElementById("customerPhone")
-.value.trim();
-
-
-const address=
-document.getElementById("customerAddress")
-.value.trim();
-
-
-const city=
-document.getElementById("customerCity")
-.value.trim();
-
+/* CALCUL */
 
 let subtotal=0;
 
+let productsMessage="";
 
 cart.forEach(item=>{
 
 const product=
-products.find(
-p=>p.id===item.id
-);
+products.find(p=>p.id===item.id);
 
-subtotal+=
-product.prices[item.size]*
-item.quantity;
+const price=
+product.prices[item.size];
+
+const lineTotal=
+price*item.quantity;
+
+subtotal+=lineTotal;
+
+productsMessage+=
+"• "+product.brand+
+" "+product.name+
+" — "+item.size+
+" × "+item.quantity+
+" = "+lineTotal+" DH\n";
 
 });
 
 
-const finalSubtotal=
-Math.max(
-0,
-subtotal-discountAmount
+let discount=discountAmount;
+
+let delivery=35;
+
+let total=subtotal+delivery-discount;
+
+if(total<0){
+total=0;
+}
+
+
+/* WHATSAPP MESSAGE */
+
+let message=
+"Bonjour GHIMED FRAGRANCES 👋\n\n"+
+"🛍️ NOUVELLE COMMANDE\n\n"+
+"📦 PRODUITS :\n"+
+productsMessage+
+"\n"+
+"💰 Sous-total : "+subtotal+" DH\n"+
+"🚚 Livraison : "+delivery+" DH\n";
+
+if(discount>0){
+
+message+=
+"🏷️ Réduction : -"+discount+" DH\n";
+
+}
+
+message+=
+"💵 TOTAL : "+total+" DH\n\n"+
+"👤 INFORMATIONS CLIENT :\n"+
+"Nom complet : "+name+"\n"+
+"Téléphone : "+phone+"\n"+
+"Adresse : "+address+"\n"+
+"Ville : "+city+"\n";
+
+if(code){
+
+message+=
+"Code de réduction : "+code+"\n";
+
+}
+
+message+=
+"\nMerci pour votre commande ❤️";
+
+
+/* OPEN WHATSAPP */
+
+const whatsappURL=
+"https://wa.me/212708773218?text="+
+encodeURIComponent(message);
+
+window.open(
+whatsappURL,
+"_blank"
 );
-
-
-const total=
-finalSubtotal+DELIVERY_PRICE;
-
-
-/* GENERATE ORDER NUMBER */
-
-const orderNumber=
-"GH-"+Date.now().toString().slice(-7);
-
-
-/* SAVE ORDER LOCALLY */
-
-const order={
-
-number:orderNumber,
-
-date:new Date().toLocaleString("fr-FR"),
-
-customer:{
-
-name:name,
-
-phone:phone,
-
-address:address,
-
-city:city
-
-},
-
-products:cart.map(item=>{
-
-const product=
-products.find(
-p=>p.id===item.id
-);
-
-return{
-
-name:product.name,
-
-brand:product.brand,
-
-size:item.size,
-
-quantity:item.quantity,
-
-price:product.prices[item.size]
-
-};
-
-}),
-
-subtotal:finalSubtotal,
-
-delivery:DELIVERY_PRICE,
-
-total:total
-
-};
-
-
-localStorage.setItem(
-"ghimed_last_order",
-JSON.stringify(order)
-);
-
-
-/* SHOW SUCCESS */
-
-document.getElementById("checkoutBox")
-.innerHTML=`
-
-<div class="order-success">
-
-<div class="order-success-icon">
-✓
-</div>
-
-
-<h2>
-Commande confirmée
-</h2>
-
-
-<p>
-Merci <strong>${name}</strong> !
-</p>
-
-
-<p>
-Votre commande a bien été enregistrée.
-</p>
-
-
-<div class="order-number">
-
-<strong>
-Commande #${orderNumber}
-</strong>
-
-<br><br>
-
-Total :
-<strong>
-${total.toFixed(2)} DH
-</strong>
-
-</div>
-
-
-<p>
-
-📍 ${city}<br>
-
-📞 ${phone}<br>
-
-💳 Paiement à la livraison
-
-</p>
-
-
-<button
-class="checkout-submit"
-onclick="finishOrder()">
-
-Continuer mes achats
-
-</button>
-
-</div>
-
-`;
 
 }
 
 
-/* ================= FINISH ORDER ================= */
-
-function finishOrder(){
-
-cart=[];
-
-discountAmount=0;
-
-updateCart();
-
-closeCheckout();
-
-}
-
-
-/* ================= INITIALIZE ================= */
+/* =========================
+   START
+========================= */
 
 displayProducts();
 
@@ -3437,4 +2684,4 @@ updateCart();
 </script>
 
 </body>
-</html>
+</html>z
