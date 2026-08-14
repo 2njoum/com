@@ -333,18 +333,121 @@ font-size:10px
 ========================= */
 
 .hero{
-background:#f4f4f1
+    position:relative;
+    min-height:650px;
+    background:#111;
+    overflow:hidden;
 }
 
 .hero-inner{
-max-width:1250px;
-min-height:590px;
-margin:auto;
-padding:70px 25px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center
+    max-width:1400px;
+    min-height:650px;
+    margin:auto;
+    padding:0 25px;
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+}
+
+.hero-image{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:1;
+}
+
+.hero-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero-image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.05) 0%,
+        rgba(0,0,0,.15) 35%,
+        rgba(0,0,0,.78) 100%
+    );
+}
+
+.hero-inner > div:first-child{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:800px;
+    padding:80px 20px 65px;
+    text-align:center;
+    color:#fff;
+}
+
+.hero-small{
+    margin-bottom:18px;
+    color:rgba(255,255,255,.8);
+    font-size:10px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.hero h1{
+    margin-bottom:25px;
+    font-family:"Playfair Display",serif;
+    font-size:clamp(48px,6vw,78px);
+    line-height:1;
+    font-weight:500;
+}
+
+.hero h1 em{
+    font-style:italic;
+}
+
+.hero-text{
+    max-width:600px;
+    margin:auto;
+    color:rgba(255,255,255,.85);
+    font-size:15px;
+    line-height:1.8;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-top:32px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 26px;
+    border:1px solid #fff;
+    font-size:12px;
+    transition:.25s;
+}
+
+.btn-dark{
+    background:#fff;
+    color:#111;
+    border-color:#fff;
+}
+
+.btn-dark:hover{
+    background:#eee;
+}
+
+.btn-light{
+    background:transparent;
+    color:#fff;
+    border-color:#fff;
+}
+
+.btn-light:hover{
+    background:#fff;
+    color:#111;
 }
 
 .hero-small{
