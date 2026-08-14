@@ -2110,9 +2110,9 @@ outOfStock:false
    VARIABLES
 ========================= */
 
-let cart=[];
-let selectedSizes={};
-let currentGender="all";
+let cart = JSON.parse(localStorage.getItem("ghimedCart")) || [];
+let selectedSizes = {};
+let currentGender = "all";
 
 /* =========================
    DISPLAY PRODUCTS
@@ -2377,6 +2377,8 @@ openCart();
 
 function updateCart(){
 
+localStorage.setItem("ghimedCart", JSON.stringify(cart));
+     
 const count=
 cart.reduce(
 (sum,item)=>sum+item.quantity,
