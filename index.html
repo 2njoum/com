@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 
 <meta charset="UTF-8">
@@ -495,45 +496,62 @@ font-size:12px
 
 /* =========================
    CATEGORIES
+   NEW DESIGN
 ========================= */
 
 .categories{
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:12px
+grid-template-columns:1fr 1fr;
+gap:14px
 }
 
 .category{
-height:230px;
+height:380px;
 position:relative;
 overflow:hidden;
-background:#eee
+background:#eee;
+display:block
 }
 
 .category img{
 width:100%;
 height:100%;
 object-fit:cover;
-transition:.5s
+transition:.6s
 }
 
 .category:hover img{
-transform:scale(1.06)
+transform:scale(1.05)
 }
 
 .category-overlay{
 position:absolute;
 inset:0;
 display:flex;
-align-items:end;
-padding:22px;
+align-items:flex-end;
+justify-content:center;
+padding:35px 20px;
 color:#fff;
-background:linear-gradient(transparent,rgba(0,0,0,.7))
+background:linear-gradient(
+transparent 35%,
+rgba(0,0,0,.75)
+)
 }
 
 .category-name{
 font-family:"Playfair Display",serif;
-font-size:25px
+font-size:32px;
+text-align:center;
+text-shadow:0 2px 10px rgba(0,0,0,.25)
+}
+
+.category-subtitle{
+margin-top:7px;
+font-size:10px;
+letter-spacing:2px;
+text-transform:uppercase;
+text-align:center;
+opacity:.9
 }
 
 /* =========================
@@ -637,8 +655,6 @@ font-size:8px;
 letter-spacing:1px;
 text-transform:uppercase
 }
-
-/* OUT OF STOCK */
 
 .out-of-stock{
 position:absolute;
@@ -1189,8 +1205,19 @@ border-right:0
 border-bottom:1px solid var(--border)
 }
 
+/* CATEGORIES MOBILE */
+
 .categories{
-grid-template-columns:repeat(2,1fr)
+grid-template-columns:1fr 1fr;
+gap:10px
+}
+
+.category{
+height:300px
+}
+
+.category-name{
+font-size:25px
 }
 
 .products{
@@ -1254,16 +1281,24 @@ padding:65px 16px
 font-size:32px
 }
 
+/* CATEGORY MOBILE */
+
 .categories{
+grid-template-columns:1fr 1fr;
 gap:8px
 }
 
 .category{
-height:175px
+height:230px
 }
 
 .category-name{
 font-size:20px
+}
+
+.category-subtitle{
+font-size:8px
+letter-spacing:1.3px
 }
 
 .products{
@@ -1560,7 +1595,7 @@ Testez, portez et trouvez votre parfum signature avant de passer au flacon compl
 <div class="hero-buttons">
 
 <a
-href="#shop"
+href="#collections"
 class="btn btn-dark">
 
 Découvrir les parfums
@@ -1675,6 +1710,7 @@ Simple & sécurisé
 
 <!-- =========================
      COLLECTIONS
+     NEW TWO CATEGORIES
 ========================= -->
 
 <section
@@ -1690,7 +1726,7 @@ Explore
 </div>
 
 <h2 class="section-title">
-Shop by mood
+Shop by category
 </h2>
 
 </div>
@@ -1710,25 +1746,37 @@ Voir tout →
 <div class="categories">
 
 
+<!-- MEN -->
+
 <a
 href="#shop"
 class="category"
 onclick="filterGender('him');return false;">
 
 <img
-src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=85"
-alt="For Him">
+src="men-decants.jpg"
+alt="Decants pour les hommes">
 
 <div class="category-overlay">
 
+<div>
+
 <div class="category-name">
-For Him
+Decants pour les hommes
+</div>
+
+<div class="category-subtitle">
+Découvrez notre sélection masculine
+</div>
+
 </div>
 
 </div>
 
 </a>
 
+
+<!-- WOMEN -->
 
 <a
 href="#shop"
@@ -1736,58 +1784,27 @@ class="category"
 onclick="filterGender('her');return false;">
 
 <img
-src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=85"
-alt="For Her">
+src="women-decants.jpg"
+alt="Decants pour les femmes">
 
 <div class="category-overlay">
 
+<div>
+
 <div class="category-name">
-For Her
+Decants pour les femmes
+</div>
+
+<div class="category-subtitle">
+Découvrez notre sélection féminine
+</div>
+
 </div>
 
 </div>
 
 </a>
 
-
-<a
-href="#shop"
-class="category"
-onclick="filterGender('unisex');return false;">
-
-<img
-src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=800&q=85"
-alt="Unisex">
-
-<div class="category-overlay">
-
-<div class="category-name">
-Unisex
-</div>
-
-</div>
-
-</a>
-
-
-<a
-href="#shop"
-class="category"
-onclick="filterGender('all');return false;">
-
-<img
-src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=85"
-alt="Luxury">
-
-<div class="category-overlay">
-
-<div class="category-name">
-Luxury
-</div>
-
-</div>
-
-</a>
 
 </div>
 
@@ -1983,7 +2000,7 @@ Best Sellers
 href="#shop"
 onclick="filterGender('him');return false;">
 
-For Him
+Decants pour les hommes
 
 </a>
 
@@ -1991,15 +2008,7 @@ For Him
 href="#shop"
 onclick="filterGender('her');return false;">
 
-For Her
-
-</a>
-
-<a
-href="#shop"
-onclick="filterGender('unisex');return false;">
-
-Unisex
+Decants pour les femmes
 
 </a>
 
@@ -2893,8 +2902,6 @@ document.getElementById("searchResults");
 let results=products;
 
 
-/* إذا كان المستخدم كتب شيء */
-
 if(query){
 
 results=products.filter(product=>{
@@ -2919,8 +2926,6 @@ notes.includes(query)
 }
 
 
-/* لا توجد نتائج */
-
 if(results.length===0){
 
 container.innerHTML=`
@@ -2938,8 +2943,6 @@ return;
 
 }
 
-
-/* إظهار النتائج */
 
 container.innerHTML=results.map(product=>{
 
@@ -3003,12 +3006,8 @@ return;
 }
 
 
-/* إغلاق البحث */
-
 closeSearch();
 
-
-/* إظهار كل المنتجات */
 
 currentGender="all";
 
@@ -3016,8 +3015,6 @@ document.getElementById("shopTitle").textContent="Best Sellers";
 
 displayProducts(products);
 
-
-/* الانتقال للعطر */
 
 setTimeout(()=>{
 
@@ -3031,8 +3028,6 @@ behavior:"smooth",
 block:"center"
 });
 
-
-/* Highlight */
 
 setTimeout(()=>{
 
@@ -3105,25 +3100,22 @@ product=>product.gender===gender
 
 if(gender==="him"){
 
-document.getElementById("shopTitle").textContent="For Him";
+document.getElementById("shopTitle").textContent=
+"Decants pour les hommes";
 
 }
 
 else if(gender==="her"){
 
-document.getElementById("shopTitle").textContent="For Her";
-
-}
-
-else if(gender==="unisex"){
-
-document.getElementById("shopTitle").textContent="Unisex";
+document.getElementById("shopTitle").textContent=
+"Decants pour les femmes";
 
 }
 
 else{
 
-document.getElementById("shopTitle").textContent="Best Sellers";
+document.getElementById("shopTitle").textContent=
+"Best Sellers";
 
 }
 
@@ -3227,8 +3219,6 @@ openCart();
 ===================================================== */
 
 function updateCart(){
-
-/* حفظ السلة */
 
 localStorage.setItem(
 "ghimedCart",
