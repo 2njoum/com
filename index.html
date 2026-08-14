@@ -2,12 +2,16 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 <title>GHIMED FRAGRANCES — Authentic Decants</title>
-<meta name="description" content="GHIMED FRAGRANCES — Découvrez vos parfums préférés en 5ml et 10ml.">
+
+<meta name="description"
+content="GHIMED FRAGRANCES — Découvrez vos parfums préférés en 5ml et 10ml.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -423,12 +427,29 @@ transform:scale(1.04)
 position:absolute;
 left:12px;
 top:12px;
-z-index:2;
+z-index:3;
 padding:6px 9px;
 background:#111;
 color:#fff;
 font-size:8px;
 letter-spacing:1px;
+text-transform:uppercase
+}
+
+/* OUT OF STOCK */
+
+.out-of-stock{
+position:absolute;
+inset:0;
+z-index:5;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(0,0,0,.58);
+color:#fff;
+font-size:13px;
+font-weight:700;
+letter-spacing:2px;
 text-transform:uppercase
 }
 
@@ -478,7 +499,8 @@ color:#fff
 .product-bottom{
 display:flex;
 align-items:center;
-justify-content:space-between
+justify-content:space-between;
+gap:8px
 }
 
 .price{
@@ -496,6 +518,20 @@ font-size:10px
 
 .add-btn:hover{
 background:#333
+}
+
+.out-of-stock-btn{
+padding:10px 12px;
+border:1px solid #111;
+background:#fff;
+color:#111;
+font-size:9px;
+white-space:nowrap
+}
+
+.out-of-stock-btn:hover{
+background:#111;
+color:#fff
 }
 
 /* DISCOVERY */
@@ -867,10 +903,6 @@ height:80px;
 resize:none
 }
 
-.required{
-color:#111
-}
-
 .send-order{
 width:100%;
 padding:16px;
@@ -1039,8 +1071,10 @@ gap:4px
 padding:6px 8px
 }
 
-.add-btn{
-padding:8px 9px
+.add-btn,
+.out-of-stock-btn{
+padding:8px 7px;
+font-size:8px
 }
 
 .shop-tools{
@@ -1098,21 +1132,29 @@ GHIMED
 </a>
 
 <nav class="nav-links">
+
 <a href="#shop">Shop</a>
 <a href="#collections">Collections</a>
 <a href="#discovery">Discovery</a>
 <a href="#about">À propos</a>
+
 </nav>
 
 <div class="nav-icons">
 
-<button class="icon-btn" onclick="focusSearch()" aria-label="Search">
+<button class="icon-btn"
+onclick="focusSearch()"
+aria-label="Search">
 ⌕
 </button>
 
-<button class="icon-btn" onclick="openCart()" aria-label="Cart">
+<button class="icon-btn"
+onclick="openCart()"
+aria-label="Cart">
+
 ♡
 <span class="cart-count" id="cartCount">0</span>
+
 </button>
 
 </div>
@@ -1161,8 +1203,7 @@ Discovery Sets
 
 <img
 src="1786650245102.png"
-alt="GHIMED Fragrances"
->
+alt="GHIMED Fragrances">
 
 </div>
 
@@ -1225,8 +1266,7 @@ Shop by mood
 <a
 href="#shop"
 class="view-all"
-onclick="filterGender('all');return false;"
->
+onclick="filterGender('all');return false;">
 Voir tout →
 </a>
 
@@ -1237,13 +1277,11 @@ Voir tout →
 <a
 href="#shop"
 class="category"
-onclick="filterGender('him');return false;"
->
+onclick="filterGender('him');return false;">
 
 <img
 src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=85"
-alt="For Him"
->
+alt="For Him">
 
 <div class="category-overlay">
 <div class="category-name">
@@ -1256,13 +1294,11 @@ For Him
 <a
 href="#shop"
 class="category"
-onclick="filterGender('her');return false;"
->
+onclick="filterGender('her');return false;">
 
 <img
 src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=85"
-alt="For Her"
->
+alt="For Her">
 
 <div class="category-overlay">
 <div class="category-name">
@@ -1275,13 +1311,11 @@ For Her
 <a
 href="#shop"
 class="category"
-onclick="filterGender('unisex');return false;"
->
+onclick="filterGender('unisex');return false;">
 
 <img
 src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=800&q=85"
-alt="Unisex"
->
+alt="Unisex">
 
 <div class="category-overlay">
 <div class="category-name">
@@ -1294,12 +1328,11 @@ Unisex
 <a
 href="#shop"
 class="category"
->
+onclick="filterGender('all');return false;">
 
 <img
 src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=85"
-alt="Luxury"
->
+alt="Luxury">
 
 <div class="category-overlay">
 <div class="category-name">
@@ -1340,13 +1373,11 @@ id="searchInput"
 class="search-box"
 type="text"
 placeholder="Rechercher un parfum ou une marque..."
-oninput="searchProducts()"
->
+oninput="searchProducts()">
 
 <button
 class="filter-btn"
-onclick="showAll()"
->
+onclick="showAll()">
 Tous les parfums
 </button>
 
@@ -1354,8 +1385,8 @@ Tous les parfums
 
 <div
 class="products"
-id="products"
-></div>
+id="products">
+</div>
 
 </section>
 
@@ -1369,8 +1400,7 @@ id="products"
 
 <img
 src="https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=1000&q=85"
-alt="Discovery"
->
+alt="Discovery">
 
 </div>
 
@@ -1391,21 +1421,15 @@ Découvrez plusieurs fragrances en formats 5ml et 10ml avant de choisir votre pr
 
 <div class="format-list">
 
-<div class="format">
-5ml
-</div>
-
-<div class="format">
-10ml
-</div>
+<div class="format">5ml</div>
+<div class="format">10ml</div>
 
 </div>
 
 <a
 href="#shop"
 class="btn btn-dark"
-onclick="filterGender('all');return false;"
->
+onclick="filterGender('all');return false;">
 Explorer les parfums
 </a>
 
@@ -1462,31 +1486,23 @@ Shop
 
 <div class="footer-links">
 
-<a
-href="#shop"
-onclick="filterGender('all');return false;"
->
+<a href="#shop"
+onclick="filterGender('all');return false;">
 Best Sellers
 </a>
 
-<a
-href="#shop"
-onclick="filterGender('him');return false;"
->
+<a href="#shop"
+onclick="filterGender('him');return false;">
 For Him
 </a>
 
-<a
-href="#shop"
-onclick="filterGender('her');return false;"
->
+<a href="#shop"
+onclick="filterGender('her');return false;">
 For Her
 </a>
 
-<a
-href="#shop"
-onclick="filterGender('unisex');return false;"
->
+<a href="#shop"
+onclick="filterGender('unisex');return false;">
 Unisex
 </a>
 
@@ -1502,21 +1518,10 @@ Information
 
 <div class="footer-links">
 
-<a href="#">
-Livraison
-</a>
-
-<a href="#">
-Paiement
-</a>
-
-<a href="#">
-FAQ
-</a>
-
-<a href="#about">
-À propos
-</a>
+<a href="#">Livraison</a>
+<a href="#">Paiement</a>
+<a href="#">FAQ</a>
+<a href="#about">À propos</a>
 
 </div>
 
@@ -1532,18 +1537,12 @@ Contact
 
 <a
 href="https://wa.me/212708773218"
-target="_blank"
->
+target="_blank">
 WhatsApp
 </a>
 
-<a href="#">
-Instagram
-</a>
-
-<a href="#">
-TikTok
-</a>
+<a href="#">Instagram</a>
+<a href="#">TikTok</a>
 
 </div>
 
@@ -1570,21 +1569,17 @@ Authentic fragrance decants
 <div
 class="cart-overlay"
 id="cartOverlay"
-onclick="closeCartOutside(event)"
->
+onclick="closeCartOutside(event)">
 
 <div class="cart">
 
 <div class="cart-head">
 
-<h2>
-Your Bag
-</h2>
+<h2>Your Bag</h2>
 
 <button
 class="close-cart"
-onclick="closeCart()"
->
+onclick="closeCart()">
 ×
 </button>
 
@@ -1592,8 +1587,7 @@ onclick="closeCart()"
 
 <div
 class="cart-items"
-id="cartItems"
->
+id="cartItems">
 
 <div class="empty">
 Votre panier est vide.
@@ -1605,9 +1599,7 @@ Votre panier est vide.
 
 <div class="total">
 
-<span>
-Total
-</span>
+<span>Total</span>
 
 <span id="cartTotal">
 0 DH
@@ -1617,8 +1609,7 @@ Total
 
 <button
 class="checkout"
-onclick="openOrderForm()"
->
+onclick="openOrderForm()">
 Commander via WhatsApp
 </button>
 
@@ -1632,15 +1623,13 @@ Commander via WhatsApp
 
 <div
 class="order-form"
-id="orderForm"
->
+id="orderForm">
 
 <div class="order-box">
 
 <button
 class="form-close"
-onclick="closeOrderForm()"
->
+onclick="closeOrderForm()">
 ×
 </button>
 
@@ -1656,67 +1645,54 @@ Veuillez remplir vos informations pour recevoir votre commande.
 
 <div class="form-group">
 
-<label>
-Nom complet *
-</label>
+<label>Nom complet *</label>
 
 <input
 id="customerName"
 type="text"
 placeholder="Votre nom complet"
-required
->
+required>
 
 </div>
 
 <div class="form-group">
 
-<label>
-Téléphone *
-</label>
+<label>Téléphone *</label>
 
 <input
 id="customerPhone"
 type="tel"
 placeholder="Votre numéro de téléphone"
-required
->
+required>
 
 </div>
 
 <div class="form-group">
 
-<label>
-VOTRE ADRESSE COMPLETE *
-</label>
+<label>VOTRE ADRESSE COMPLETE *</label>
 
 <textarea
 id="customerAddress"
 placeholder="Votre adresse complète"
-required
-></textarea>
+required></textarea>
 
 </div>
 
 <div class="form-group">
 
-<label>
-Ville *
-</label>
+<label>Ville *</label>
 
 <input
 id="customerCity"
 type="text"
 placeholder="Votre ville"
-required
->
+required>
 
 </div>
 
 <button
 type="submit"
-class="send-order"
->
+class="send-order">
 📲 Confirmer la commande sur WhatsApp
 </button>
 
@@ -1726,14 +1702,13 @@ class="send-order"
 
 </div>
 
-<!-- WHATSAPP FLOATING BUTTON -->
+<!-- WHATSAPP -->
 
 <a
 class="whatsapp"
 href="https://wa.me/212708773218"
 target="_blank"
-aria-label="WhatsApp"
->
+aria-label="WhatsApp">
 ☎
 </a>
 
@@ -1841,7 +1816,10 @@ name:"Pour Homme",
 notes:"Fresh · Citrus · Aromatic",
 image:"799fdcc6df2072315e8e79d94ac9c880.jpg",
 badge:"Summer",
-prices:{"5ml":65,"10ml":120}
+prices:{"5ml":65,"10ml":120},
+
+/* OUT OF STOCK */
+outOfStock:true
 },
 
 {
@@ -1864,6 +1842,9 @@ notes:"Fresh · Aquatic · Citrus",
 image:"a5cb7292823909385e9462ab087057bf.jpg",
 badge:"Fresh",
 prices:{"5ml":70,"10ml":130}
+   
+/* OUT OF STOCK */
+outOfStock:true
 },
 
 {
@@ -2051,8 +2032,8 @@ notes:"Sweet · Milky · Vanilla · Caramel",
 image:"234369d65ffb685e19941b7bc4b0914e.jpg",
 badge:"Popular",
 prices:{"10ml":100}
-},
-   
+}
+
 ];
 
 /* =========================
@@ -2084,7 +2065,9 @@ return;
 
 list.forEach(product=>{
 
-const selected=selectedSizes[product.id]||"5ml";
+const selected=
+selectedSizes[product.id]||
+Object.keys(product.prices)[0];
 
 container.innerHTML+=`
 
@@ -2092,7 +2075,13 @@ container.innerHTML+=`
 
 <div class="product-image">
 
-${product.badge ? `<div class="badge">${product.badge}</div>` : ""}
+${product.badge?
+`<div class="badge">${product.badge}</div>`:""}
+
+${product.outOfStock?
+`<div class="out-of-stock">
+OUT OF STOCK
+</div>`:""}
 
 <img
 src="${product.image}"
@@ -2136,12 +2125,27 @@ ${size}
 ${product.prices[selected]} DH
 </div>
 
-<button
+${
+product.outOfStock
+
+?
+
+`<button
+class="out-of-stock-btn"
+onclick="requestPerfume(${product.id})"
+>
+Demander ce parfum
+</button>`
+
+:
+
+`<button
 class="add-btn"
 onclick="addToCart(${product.id})"
 >
 Ajouter
-</button>
+</button>`
+}
 
 </div>
 
@@ -2152,6 +2156,33 @@ Ajouter
 `;
 
 });
+
+}
+
+/* =========================
+   OUT OF STOCK REQUEST
+========================= */
+
+function requestPerfume(id){
+
+const product=
+products.find(p=>p.id===id);
+
+const message=
+"👋 Bonjour GHIMED FRAGRANCES\n\n"+
+"Je suis intéressé(e) par ce parfum :\n"+
+"• "+product.brand+" "+product.name+"\n\n"+
+"Il est actuellement OUT OF STOCK.\n"+
+"Est-il possible de le commander / le ramener ?";
+
+const whatsappURL=
+"https://wa.me/212708773218?text="+
+encodeURIComponent(message);
+
+window.open(
+whatsappURL,
+"_blank"
+);
 
 }
 
@@ -2168,7 +2199,8 @@ document.getElementById("searchInput").value="";
 let filtered=products;
 
 if(gender!=="all"){
-filtered=products.filter(product=>product.gender===gender);
+filtered=
+products.filter(product=>product.gender===gender);
 }
 
 if(gender==="him"){
@@ -2206,7 +2238,12 @@ selectedSizes[id]=size;
 let list=products;
 
 if(currentGender!=="all"){
-list=products.filter(product=>product.gender===currentGender);
+
+list=
+products.filter(
+product=>product.gender===currentGender
+);
+
 }
 
 displayProducts(list);
@@ -2219,16 +2256,33 @@ displayProducts(list);
 
 function addToCart(id){
 
-const product=products.find(p=>p.id===id);
+const product=
+products.find(p=>p.id===id);
 
-const size=selectedSizes[id]||"5ml";
+/* حماية إضافية */
 
-const existing=cart.find(
-item=>item.id===id && item.size===size
+if(product.outOfStock){
+
+requestPerfume(id);
+
+return;
+
+}
+
+const size=
+selectedSizes[id]||
+Object.keys(product.prices)[0];
+
+const existing=
+cart.find(
+item=>item.id===id &&
+item.size===size
 );
 
 if(existing){
+
 existing.quantity++;
+
 }
 
 else{
@@ -2242,6 +2296,7 @@ quantity:1
 }
 
 updateCart();
+
 openCart();
 
 }
@@ -2252,21 +2307,24 @@ openCart();
 
 function updateCart(){
 
-const count=cart.reduce(
+const count=
+cart.reduce(
 (sum,item)=>sum+item.quantity,
 0
 );
 
 document.getElementById("cartCount").textContent=count;
 
-const container=document.getElementById("cartItems");
+const container=
+document.getElementById("cartItems");
 
 if(cart.length===0){
 
 container.innerHTML=
 '<div class="empty">Votre panier est vide.</div>';
 
-document.getElementById("cartTotal").textContent="0 DH";
+document.getElementById("cartTotal").textContent=
+"0 DH";
 
 return;
 
@@ -2274,15 +2332,17 @@ return;
 
 let total=0;
 
-container.innerHTML=cart.map((item,index)=>{
+container.innerHTML=
+cart.map((item,index)=>{
 
-const product=products.find(
-p=>p.id===item.id
-);
+const product=
+products.find(p=>p.id===item.id);
 
-const price=product.prices[item.size];
+const price=
+product.prices[item.size];
 
-total+=price*item.quantity;
+total+=
+price*item.quantity;
 
 return `
 
@@ -2310,8 +2370,7 @@ ${price*item.quantity} DH
 <div class="quantity">
 
 <button
-onclick="decreaseQuantity(${index})"
->
+onclick="decreaseQuantity(${index})">
 −
 </button>
 
@@ -2320,8 +2379,7 @@ ${item.quantity}
 </span>
 
 <button
-onclick="increaseQuantity(${index})"
->
+onclick="increaseQuantity(${index})">
 +
 </button>
 
@@ -2331,8 +2389,7 @@ onclick="increaseQuantity(${index})"
 
 <button
 class="remove"
-onclick="removeItem(${index})"
->
+onclick="removeItem(${index})">
 Supprimer
 </button>
 
@@ -2399,7 +2456,9 @@ updateCart();
 
 function openCart(){
 
-document.getElementById("cartOverlay").classList.add("open");
+document
+.getElementById("cartOverlay")
+.classList.add("open");
 
 document.body.style.overflow="hidden";
 
@@ -2411,7 +2470,9 @@ document.body.style.overflow="hidden";
 
 function closeCart(){
 
-document.getElementById("cartOverlay").classList.remove("open");
+document
+.getElementById("cartOverlay")
+.classList.remove("open");
 
 document.body.style.overflow="";
 
@@ -2438,7 +2499,8 @@ closeCart();
 function searchProducts(){
 
 const query=
-document.getElementById("searchInput").value
+document.getElementById("searchInput")
+.value
 .toLowerCase()
 .trim();
 
@@ -2446,19 +2508,31 @@ let baseProducts=products;
 
 if(currentGender!=="all"){
 
-baseProducts=products.filter(
+baseProducts=
+products.filter(
 product=>product.gender===currentGender
 );
 
 }
 
-const filtered=baseProducts.filter(product=>
+const filtered=
+baseProducts.filter(product=>
 
-product.name.toLowerCase().includes(query) ||
+product.name
+.toLowerCase()
+.includes(query)
 
-product.brand.toLowerCase().includes(query) ||
+||
 
-product.notes.toLowerCase().includes(query)
+product.brand
+.toLowerCase()
+.includes(query)
+
+||
+
+product.notes
+.toLowerCase()
+.includes(query)
 
 );
 
@@ -2489,11 +2563,15 @@ displayProducts(products);
 
 function focusSearch(){
 
-document.getElementById("shop").scrollIntoView();
+document
+.getElementById("shop")
+.scrollIntoView();
 
 setTimeout(()=>{
 
-document.getElementById("searchInput").focus();
+document
+.getElementById("searchInput")
+.focus();
 
 },400);
 
@@ -2513,7 +2591,9 @@ return;
 
 }
 
-document.getElementById("orderForm").classList.add("open");
+document
+.getElementById("orderForm")
+.classList.add("open");
 
 }
 
@@ -2523,7 +2603,9 @@ document.getElementById("orderForm").classList.add("open");
 
 function closeOrderForm(){
 
-document.getElementById("orderForm").classList.remove("open");
+document
+.getElementById("orderForm")
+.classList.remove("open");
 
 }
 
@@ -2544,37 +2626,38 @@ return;
 }
 
 const name=
-document.getElementById("customerName").value.trim();
+document
+.getElementById("customerName")
+.value
+.trim();
 
 const phone=
-document.getElementById("customerPhone").value.trim();
+document
+.getElementById("customerPhone")
+.value
+.trim();
 
 const address=
-document.getElementById("customerAddress").value.trim();
+document
+.getElementById("customerAddress")
+.value
+.trim();
 
 const city=
-document.getElementById("customerCity").value.trim();
+document
+.getElementById("customerCity")
+.value
+.trim();
 
 if(!name || !phone || !address || !city){
 
-alert("Veuillez remplir toutes les informations.");
+alert(
+"Veuillez remplir toutes les informations."
+);
 
 return;
 
 }
-
-/*
-IMPORTANT:
-The message intentionally contains:
-- Products
-- Customer information
-
-It does NOT contain:
-- Prices
-- Delivery price
-- Total
-- Thank you message
-*/
 
 let message=
 "👋 NOUVELLE COMMANDE\n\n";
@@ -2584,9 +2667,12 @@ message+="📦 PRODUITS :\n";
 cart.forEach(item=>{
 
 const product=
-products.find(p=>p.id===item.id);
+products.find(
+p=>p.id===item.id
+);
 
-message+="• "+
+message+=
+"• "+
 product.brand+
 " "+
 product.name+
@@ -2598,22 +2684,27 @@ item.quantity+
 
 });
 
-message+="\n👤 INFORMATIONS CLIENT :\n";
+message+=
+"\n👤 INFORMATIONS CLIENT :\n";
 
-message+="Nom complet : "+name+"\n";
+message+=
+"Nom complet : "+
+name+
+"\n";
 
-message+="Téléphone : "+phone+"\n";
+message+=
+"Téléphone : "+
+phone+
+"\n";
 
-message+="Adresse : "+address+"\n";
+message+=
+"Adresse : "+
+address+
+"\n";
 
-message+="Ville : "+city;
-
-/*
-Your WhatsApp number:
-0708773218
-International format:
-212708773218
-*/
+message+=
+"Ville : "+
+city;
 
 const whatsappURL=
 "https://wa.me/212708773218?text="+
