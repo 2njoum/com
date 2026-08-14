@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 
 <meta charset="UTF-8">
@@ -17,9 +18,9 @@ content="GHIMED FRAGRANCES — Découvrez vos parfums préférés en 5ml et 10ml
 
 <style>
 
-/* =========================================================
+/* =========================
    ROOT
-========================================================= */
+========================= */
 
 :root{
 --black:#111;
@@ -29,9 +30,9 @@ content="GHIMED FRAGRANCES — Découvrez vos parfums préférés en 5ml et 10ml
 --white:#fff
 }
 
-/* =========================================================
+/* =========================
    RESET
-========================================================= */
+========================= */
 
 *{
 margin:0;
@@ -64,9 +65,9 @@ text-decoration:none;
 color:inherit
 }
 
-/* =========================================================
+/* =========================
    TOP BAR
-========================================================= */
+========================= */
 
 .topbar{
 background:#111;
@@ -77,9 +78,9 @@ font-size:11px;
 letter-spacing:.6px
 }
 
-/* =========================================================
+/* =========================
    HEADER
-========================================================= */
+========================= */
 
 header{
 position:sticky;
@@ -173,9 +174,9 @@ color:#fff;
 font-size:9px
 }
 
-/* =========================================================
+/* =========================
    SEARCH OVERLAY
-========================================================= */
+========================= */
 
 .search-overlay{
 position:fixed;
@@ -327,142 +328,96 @@ color:#999;
 font-size:10px
 }
 
-/* =========================================================
-   NEW HERO / FIRST SCREEN
-========================================================= */
+/* =========================
+   HERO
+========================= */
 
 .hero{
-position:relative;
-height:calc(100vh - 38px);
-min-height:650px;
-background:#eee;
-overflow:hidden
+background:#f4f4f1
+}
+
+.hero-inner{
+max-width:1250px;
+min-height:590px;
+margin:auto;
+padding:70px 25px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center
+}
+
+.hero-small{
+margin-bottom:18px;
+color:#777;
+font-size:10px;
+letter-spacing:3px;
+text-transform:uppercase
+}
+
+.hero h1{
+margin-bottom:25px;
+font-family:"Playfair Display",serif;
+font-size:clamp(48px,6vw,78px);
+line-height:1;
+font-weight:500
+}
+
+.hero h1 em{
+font-style:italic
+}
+
+.hero-text{
+max-width:500px;
+color:#666;
+font-size:15px;
+line-height:1.8
+}
+
+.hero-buttons{
+display:flex;
+gap:12px;
+margin-top:32px
+}
+
+.btn{
+display:inline-block;
+padding:15px 26px;
+border:1px solid #111;
+font-size:12px;
+transition:.25s
+}
+
+.btn-dark{
+background:#111;
+color:#fff
+}
+
+.btn-dark:hover{
+background:#333
+}
+
+.btn-light{
+background:#fff
+}
+
+.btn-light:hover{
+background:#eee
 }
 
 .hero-image{
-position:absolute;
-inset:0;
-height:100%;
-width:100%
-}
-
-.hero-image::after{
-content:"";
-position:absolute;
-inset:0;
-background:
-linear-gradient(
-to bottom,
-rgba(0,0,0,.25),
-rgba(0,0,0,.05) 35%,
-rgba(0,0,0,.45)
-)
+height:450px
 }
 
 .hero-image img{
 width:100%;
 height:100%;
-object-fit:cover;
-object-position:center
+object-fit:cover
 }
 
-.hero-content{
-position:relative;
-z-index:2;
-height:100%;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:30px;
-color:#fff
-}
-
-.hero-brand{
-font-family:"Playfair Display",serif;
-font-size:clamp(40px,7vw,82px);
-font-weight:500;
-letter-spacing:6px;
-text-transform:uppercase;
-text-shadow:0 3px 20px rgba(0,0,0,.35)
-}
-
-.hero-subtitle{
-margin-top:12px;
-font-size:11px;
-letter-spacing:5px;
-text-transform:uppercase;
-text-shadow:0 2px 10px rgba(0,0,0,.4)
-}
-
-.hero-content p{
-max-width:500px;
-margin-top:22px;
-font-size:14px;
-line-height:1.7;
-text-shadow:0 2px 10px rgba(0,0,0,.45)
-}
-
-.hero-buttons{
-display:flex;
-gap:10px;
-margin-top:30px
-}
-
-.hero-btn{
-padding:15px 28px;
-border:1px solid #fff;
-background:#fff;
-color:#111;
-font-size:11px;
-letter-spacing:.5px;
-transition:.25s
-}
-
-.hero-btn:hover{
-background:#111;
-color:#fff;
-border-color:#111
-}
-
-.hero-btn-outline{
-background:transparent;
-color:#fff
-}
-
-.hero-btn-outline:hover{
-background:#fff;
-color:#111;
-border-color:#fff
-}
-
-.hero-scroll{
-position:absolute;
-bottom:25px;
-left:50%;
-transform:translateX(-50%);
-z-index:3;
-color:#fff;
-font-size:9px;
-letter-spacing:3px;
-text-transform:uppercase;
-display:flex;
-flex-direction:column;
-align-items:center;
-gap:8px
-}
-
-.hero-scroll::after{
-content:"";
-width:1px;
-height:30px;
-background:#fff
-}
-
-/* =========================================================
+/* =========================
    TRUST
-========================================================= */
+========================= */
 
 .trust{
 border-top:1px solid var(--border);
@@ -502,9 +457,9 @@ color:#888;
 font-size:10px
 }
 
-/* =========================================================
+/* =========================
    SECTIONS
-========================================================= */
+========================= */
 
 .section{
 max-width:1250px;
@@ -539,52 +494,69 @@ border-bottom:1px solid #111;
 font-size:12px
 }
 
-/* =========================================================
+/* =========================
    CATEGORIES
-========================================================= */
+   NEW DESIGN
+========================= */
 
 .categories{
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:12px
+grid-template-columns:1fr 1fr;
+gap:14px
 }
 
 .category{
-height:230px;
+height:380px;
 position:relative;
 overflow:hidden;
-background:#eee
+background:#eee;
+display:block
 }
 
 .category img{
 width:100%;
 height:100%;
 object-fit:cover;
-transition:.5s
+transition:.6s
 }
 
 .category:hover img{
-transform:scale(1.06)
+transform:scale(1.05)
 }
 
 .category-overlay{
 position:absolute;
 inset:0;
 display:flex;
-align-items:end;
-padding:22px;
+align-items:flex-end;
+justify-content:center;
+padding:35px 20px;
 color:#fff;
-background:linear-gradient(transparent,rgba(0,0,0,.7))
+background:linear-gradient(
+transparent 35%,
+rgba(0,0,0,.75)
+)
 }
 
 .category-name{
 font-family:"Playfair Display",serif;
-font-size:25px
+font-size:32px;
+text-align:center;
+text-shadow:0 2px 10px rgba(0,0,0,.25)
 }
 
-/* =========================================================
+.category-subtitle{
+margin-top:7px;
+font-size:10px;
+letter-spacing:2px;
+text-transform:uppercase;
+text-align:center;
+opacity:.9
+}
+
+/* =========================
    SHOP
-========================================================= */
+========================= */
 
 .shop-tools{
 display:flex;
@@ -609,9 +581,9 @@ color:#fff;
 border-color:#111
 }
 
-/* =========================================================
+/* =========================
    PRODUCTS
-========================================================= */
+========================= */
 
 .products{
 display:grid;
@@ -780,9 +752,9 @@ background:#111;
 color:#fff
 }
 
-/* =========================================================
+/* =========================
    DISCOVERY
-========================================================= */
+========================= */
 
 .discovery{
 background:#f5f4f0
@@ -833,9 +805,9 @@ background:#fff;
 font-size:11px
 }
 
-/* =========================================================
+/* =========================
    ABOUT
-========================================================= */
+========================= */
 
 .about{
 max-width:850px;
@@ -854,9 +826,9 @@ color:#666;
 line-height:1.9
 }
 
-/* =========================================================
+/* =========================
    FOOTER
-========================================================= */
+========================= */
 
 footer{
 padding:65px 25px 25px;
@@ -916,9 +888,9 @@ color:#777;
 font-size:10px
 }
 
-/* =========================================================
+/* =========================
    CART
-========================================================= */
+========================= */
 
 .cart-overlay{
 position:fixed;
@@ -1026,9 +998,9 @@ color:#999;
 font-size:10px
 }
 
-/* =========================================================
+/* =========================
    QUANTITY
-========================================================= */
+========================= */
 
 .quantity{
 display:flex;
@@ -1053,9 +1025,9 @@ font-size:12px;
 font-weight:600
 }
 
-/* =========================================================
+/* =========================
    CART FOOTER
-========================================================= */
+========================= */
 
 .cart-footer{
 padding-top:20px;
@@ -1082,9 +1054,9 @@ font-size:12px
 background:#333
 }
 
-/* =========================================================
+/* =========================
    ORDER FORM
-========================================================= */
+========================= */
 
 .order-form{
 display:none;
@@ -1177,9 +1149,9 @@ margin-top:5px
 background:#333
 }
 
-/* =========================================================
+/* =========================
    WHATSAPP
-========================================================= */
+========================= */
 
 .whatsapp{
 position:fixed;
@@ -1203,9 +1175,9 @@ transition:.25s
 transform:scale(1.08)
 }
 
-/* =========================================================
+/* =========================
    MOBILE
-========================================================= */
+========================= */
 
 @media(max-width:900px){
 
@@ -1213,19 +1185,12 @@ transform:scale(1.08)
 display:none
 }
 
-.hero{
-height:calc(100vh - 38px);
-min-height:600px
+.hero-inner{
+grid-template-columns:1fr
 }
 
-.hero-brand{
-font-size:clamp(34px,10vw,58px);
-letter-spacing:3px
-}
-
-.hero-subtitle{
-font-size:9px;
-letter-spacing:3px
+.hero-image{
+height:350px
 }
 
 .trust-inner{
@@ -1240,8 +1205,19 @@ border-right:0
 border-bottom:1px solid var(--border)
 }
 
+/* CATEGORIES MOBILE */
+
 .categories{
-grid-template-columns:repeat(2,1fr)
+grid-template-columns:1fr 1fr;
+gap:10px
+}
+
+.category{
+height:300px
+}
+
+.category-name{
+font-size:25px
 }
 
 .products{
@@ -1277,37 +1253,23 @@ font-size:19px
 gap:15px
 }
 
-.hero{
-min-height:590px
+.hero-inner{
+padding:55px 18px
 }
 
-.hero-content{
-padding:20px
+.hero h1{
+font-size:48px
 }
 
-.hero-brand{
-font-size:42px;
-letter-spacing:2px
-}
-
-.hero-subtitle{
-font-size:8px;
-letter-spacing:2.5px
-}
-
-.hero-content p{
-font-size:12px;
-max-width:330px
+.hero-image{
+height:300px
 }
 
 .hero-buttons{
-flex-direction:column;
-width:100%;
-max-width:280px
+flex-direction:column
 }
 
-.hero-btn{
-width:100%;
+.btn{
 text-align:center
 }
 
@@ -1319,16 +1281,24 @@ padding:65px 16px
 font-size:32px
 }
 
+/* CATEGORY MOBILE */
+
 .categories{
+grid-template-columns:1fr 1fr;
 gap:8px
 }
 
 .category{
-height:175px
+height:230px
 }
 
 .category-name{
 font-size:20px
+}
+
+.category-subtitle{
+font-size:8px
+letter-spacing:1.3px
 }
 
 .products{
@@ -1400,6 +1370,8 @@ gap:8px
 padding:23px
 }
 
+/* SEARCH MOBILE */
+
 .search-panel{
 padding:20px 15px 25px
 }
@@ -1428,9 +1400,9 @@ font-size:16px
 
 }
 
-/* =========================================================
+/* =========================
    SEARCH ICON
-========================================================= */
+========================= */
 
 .search-svg{
 width:21px;
@@ -1443,18 +1415,18 @@ height:21px
 
 <body>
 
-<!-- =========================================================
+<!-- =========================
      TOP BAR
-========================================================= -->
+========================= -->
 
 <div class="topbar">
 ✦ Livraison partout au Maroc · Paiement à la livraison
 </div>
 
 
-<!-- =========================================================
+<!-- =========================
      HEADER
-========================================================= -->
+========================= -->
 
 <header>
 
@@ -1476,6 +1448,8 @@ GHIMED
 
 <div class="nav-icons">
 
+<!-- SEARCH -->
+
 <button
 class="icon-btn"
 onclick="openSearch()"
@@ -1495,6 +1469,9 @@ stroke-linecap="round">
 </svg>
 
 </button>
+
+
+<!-- CART -->
 
 <button
 class="icon-btn"
@@ -1531,9 +1508,9 @@ id="cartCount">
 </header>
 
 
-<!-- =========================================================
+<!-- =========================
      SEARCH OVERLAY
-========================================================= -->
+========================= -->
 
 <div
 class="search-overlay"
@@ -1581,7 +1558,6 @@ Exemple : La Belle, Dior, Chanel, JPG, Stronger With You...
 <div
 class="search-results"
 id="searchResults">
-</div>
 
 </div>
 
@@ -1589,64 +1565,72 @@ id="searchResults">
 
 </div>
 
+</div>
 
-<!-- =========================================================
-     HERO — FIRST SCREEN
-========================================================= -->
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
-<div class="hero-image">
+<div class="hero-inner">
 
-<img
-src="1786650245102.png"
-alt="GHIMED FRAGRANCES">
+<div>
 
+<div class="hero-small">
+Authentic Fragrance · Decants
 </div>
 
-<div class="hero-content">
+<h1>
+Find your<br>
+<em>signature scent.</em>
+</h1>
 
-<div class="hero-brand">
-GHIMED FRAGRANCES
-</div>
-
-<div class="hero-subtitle">
-AUTHENTIC FRAGRANCE · DECANTS
-</div>
-
-<p>
-Découvrez vos parfums préférés en formats 5ml et 10ml.
-Testez votre prochaine signature olfactive avant de choisir le flacon complet.
+<p class="hero-text">
+Découvrez vos parfums préférés en formats pratiques de 5ml et 10ml.
+Testez, portez et trouvez votre parfum signature avant de passer au flacon complet.
 </p>
 
 <div class="hero-buttons">
 
 <a
-href="#shop"
-class="hero-btn">
+href="#collections"
+class="btn btn-dark">
+
 Découvrir les parfums
+
 </a>
 
 <a
-href="#collections"
-class="hero-btn hero-btn-outline">
-Nos collections
+href="#discovery"
+class="btn btn-light">
+
+Discovery Sets
+
 </a>
 
 </div>
 
 </div>
 
-<div class="hero-scroll">
-SCROLL
+
+<div class="hero-image">
+
+<img
+src="1786650245102.png"
+alt="GHIMED Fragrances">
+
+</div>
+
 </div>
 
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      TRUST
-========================================================= -->
+========================= -->
 
 <section class="trust">
 
@@ -1724,9 +1708,10 @@ Simple & sécurisé
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      COLLECTIONS
-========================================================= -->
+     NEW TWO CATEGORIES
+========================= -->
 
 <section
 class="section"
@@ -1741,7 +1726,7 @@ Explore
 </div>
 
 <h2 class="section-title">
-Shop by mood
+Shop by category
 </h2>
 
 </div>
@@ -1761,25 +1746,37 @@ Voir tout →
 <div class="categories">
 
 
+<!-- MEN -->
+
 <a
 href="#shop"
 class="category"
 onclick="filterGender('him');return false;">
 
 <img
-src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=85"
-alt="For Him">
+src="men-decants.jpg"
+alt="Decants pour les hommes">
 
 <div class="category-overlay">
 
+<div>
+
 <div class="category-name">
-For Him
+Decants pour les hommes
+</div>
+
+<div class="category-subtitle">
+Découvrez notre sélection masculine
+</div>
+
 </div>
 
 </div>
 
 </a>
 
+
+<!-- WOMEN -->
 
 <a
 href="#shop"
@@ -1787,67 +1784,36 @@ class="category"
 onclick="filterGender('her');return false;">
 
 <img
-src="https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=85"
-alt="For Her">
+src="women-decants.jpg"
+alt="Decants pour les femmes">
 
 <div class="category-overlay">
 
+<div>
+
 <div class="category-name">
-For Her
+Decants pour les femmes
+</div>
+
+<div class="category-subtitle">
+Découvrez notre sélection féminine
+</div>
+
 </div>
 
 </div>
 
 </a>
 
-
-<a
-href="#shop"
-class="category"
-onclick="filterGender('unisex');return false;">
-
-<img
-src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?auto=format&fit=crop&w=800&q=85"
-alt="Unisex">
-
-<div class="category-overlay">
-
-<div class="category-name">
-Unisex
-</div>
-
-</div>
-
-</a>
-
-
-<a
-href="#shop"
-class="category"
-onclick="filterGender('all');return false;">
-
-<img
-src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=85"
-alt="Luxury">
-
-<div class="category-overlay">
-
-<div class="category-name">
-Luxury
-</div>
-
-</div>
-
-</a>
 
 </div>
 
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      SHOP
-========================================================= -->
+========================= -->
 
 <section
 class="section"
@@ -1895,9 +1861,9 @@ id="products">
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      DISCOVERY
-========================================================= -->
+========================= -->
 
 <section
 class="discovery"
@@ -1959,9 +1925,9 @@ Explorer les parfums
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      ABOUT
-========================================================= -->
+========================= -->
 
 <section
 class="about"
@@ -1989,9 +1955,9 @@ simplement et à votre rythme.
 </section>
 
 
-<!-- =========================================================
+<!-- =========================
      FOOTER
-========================================================= -->
+========================= -->
 
 <footer>
 
@@ -2034,7 +2000,7 @@ Best Sellers
 href="#shop"
 onclick="filterGender('him');return false;">
 
-For Him
+Decants pour les hommes
 
 </a>
 
@@ -2042,15 +2008,7 @@ For Him
 href="#shop"
 onclick="filterGender('her');return false;">
 
-For Her
-
-</a>
-
-<a
-href="#shop"
-onclick="filterGender('unisex');return false;">
-
-Unisex
+Decants pour les femmes
 
 </a>
 
@@ -2134,9 +2092,9 @@ Authentic fragrance decants
 </footer>
 
 
-<!-- =========================================================
+<!-- =========================
      CART
-========================================================= -->
+========================= -->
 
 <div
 class="cart-overlay"
@@ -2203,9 +2161,9 @@ Commander via WhatsApp
 </div>
 
 
-<!-- =========================================================
+<!-- =========================
      ORDER FORM
-========================================================= -->
+========================= -->
 
 <div
 class="order-form"
@@ -2309,9 +2267,9 @@ class="send-order">
 </div>
 
 
-<!-- =========================================================
+<!-- =========================
      WHATSAPP
-========================================================= -->
+========================= -->
 
 <a
 class="whatsapp"
@@ -2863,7 +2821,7 @@ Ajouter
 
 
 /* =====================================================
-   SEARCH
+   SEARCH OVERLAY
 ===================================================== */
 
 function openSearch(){
@@ -2913,6 +2871,10 @@ closeSearch();
 }
 
 
+/* =====================================================
+   TOP SEARCH
+===================================================== */
+
 function searchFromTop(){
 
 const query=
@@ -2927,12 +2889,18 @@ showSearchSuggestions(query);
 }
 
 
+/* =====================================================
+   SEARCH SUGGESTIONS
+===================================================== */
+
 function showSearchSuggestions(query){
 
 const container=
 document.getElementById("searchResults");
 
+
 let results=products;
+
 
 if(query){
 
@@ -3011,7 +2979,9 @@ ${product.prices[firstSize]} DH
 </div>
 
 <div>
+
 →
+
 </div>
 
 </div>
@@ -3023,6 +2993,10 @@ ${product.prices[firstSize]} DH
 }
 
 
+/* =====================================================
+   GO DIRECTLY TO PRODUCT
+===================================================== */
+
 function goToProduct(id){
 
 const product=products.find(p=>p.id===id);
@@ -3031,13 +3005,16 @@ if(!product){
 return;
 }
 
+
 closeSearch();
+
 
 currentGender="all";
 
 document.getElementById("shopTitle").textContent="Best Sellers";
 
 displayProducts(products);
+
 
 setTimeout(()=>{
 
@@ -3050,6 +3027,7 @@ element.scrollIntoView({
 behavior:"smooth",
 block:"center"
 });
+
 
 setTimeout(()=>{
 
@@ -3071,7 +3049,7 @@ element.classList.remove("highlight");
 
 
 /* =====================================================
-   OUT OF STOCK
+   OUT OF STOCK REQUEST
 ===================================================== */
 
 function requestPerfume(id){
@@ -3109,6 +3087,7 @@ currentGender=gender;
 
 let filtered=products;
 
+
 if(gender!=="all"){
 
 filtered=
@@ -3118,27 +3097,25 @@ product=>product.gender===gender
 
 }
 
+
 if(gender==="him"){
 
-document.getElementById("shopTitle").textContent="For Him";
+document.getElementById("shopTitle").textContent=
+"Decants pour les hommes";
 
 }
 
 else if(gender==="her"){
 
-document.getElementById("shopTitle").textContent="For Her";
-
-}
-
-else if(gender==="unisex"){
-
-document.getElementById("shopTitle").textContent="Unisex";
+document.getElementById("shopTitle").textContent=
+"Decants pour les femmes";
 
 }
 
 else{
 
-document.getElementById("shopTitle").textContent="Best Sellers";
+document.getElementById("shopTitle").textContent=
+"Best Sellers";
 
 }
 
@@ -3163,6 +3140,7 @@ selectedSizes[id]=size;
 
 let list=products;
 
+
 if(currentGender!=="all"){
 
 list=
@@ -3172,19 +3150,21 @@ product=>product.gender===currentGender
 
 }
 
+
 displayProducts(list);
 
 }
 
 
 /* =====================================================
-   CART
+   ADD TO CART
 ===================================================== */
 
 function addToCart(id){
 
 const product=
 products.find(p=>p.id===id);
+
 
 if(product.outOfStock){
 
@@ -3194,9 +3174,11 @@ return;
 
 }
 
+
 const size=
 selectedSizes[id]||
 Object.keys(product.prices)[0];
+
 
 const existing=
 cart.find(
@@ -3204,6 +3186,7 @@ item=>
 item.id===id &&
 item.size===size
 );
+
 
 if(existing){
 
@@ -3223,12 +3206,17 @@ quantity:1
 
 }
 
+
 updateCart();
 
 openCart();
 
 }
 
+
+/* =====================================================
+   UPDATE CART
+===================================================== */
 
 function updateCart(){
 
@@ -3237,11 +3225,13 @@ localStorage.setItem(
 JSON.stringify(cart)
 );
 
+
 const count=
 cart.reduce(
 (sum,item)=>sum+item.quantity,
 0
 );
+
 
 document.getElementById("cartCount").textContent=count;
 
@@ -3278,8 +3268,10 @@ products.find(
 p=>p.id===item.id
 );
 
+
 const price=
 product.prices[item.size];
+
 
 total+=
 price*item.quantity;
@@ -3357,6 +3349,10 @@ total+" DH";
 }
 
 
+/* =====================================================
+   INCREASE
+===================================================== */
+
 function increaseQuantity(index){
 
 cart[index].quantity++;
@@ -3365,6 +3361,10 @@ updateCart();
 
 }
 
+
+/* =====================================================
+   DECREASE
+===================================================== */
 
 function decreaseQuantity(index){
 
@@ -3385,6 +3385,10 @@ updateCart();
 }
 
 
+/* =====================================================
+   REMOVE
+===================================================== */
+
 function removeItem(index){
 
 cart.splice(index,1);
@@ -3393,6 +3397,10 @@ updateCart();
 
 }
 
+
+/* =====================================================
+   OPEN CART
+===================================================== */
 
 function openCart(){
 
@@ -3405,6 +3413,10 @@ document.body.style.overflow="hidden";
 }
 
 
+/* =====================================================
+   CLOSE CART
+===================================================== */
+
 function closeCart(){
 
 document
@@ -3416,6 +3428,10 @@ document.body.style.overflow="";
 }
 
 
+/* =====================================================
+   CLICK OUTSIDE CART
+===================================================== */
+
 function closeCartOutside(event){
 
 if(event.target.id==="cartOverlay"){
@@ -3426,6 +3442,10 @@ closeCart();
 
 }
 
+
+/* =====================================================
+   SHOW ALL
+===================================================== */
 
 function showAll(){
 
@@ -3439,12 +3459,20 @@ displayProducts(products);
 }
 
 
+/* =====================================================
+   OLD SEARCH COMPATIBILITY
+===================================================== */
+
 function searchProducts(){
 
 openSearch();
 
 }
 
+
+/* =====================================================
+   OLD FOCUS SEARCH COMPATIBILITY
+===================================================== */
 
 function focusSearch(){
 
@@ -3454,7 +3482,7 @@ openSearch();
 
 
 /* =====================================================
-   ORDER FORM
+   OPEN ORDER FORM
 ===================================================== */
 
 function openOrderForm(){
@@ -3467,12 +3495,17 @@ return;
 
 }
 
+
 document
 .getElementById("orderForm")
 .classList.add("open");
 
 }
 
+
+/* =====================================================
+   CLOSE ORDER FORM
+===================================================== */
 
 function closeOrderForm(){
 
@@ -3555,6 +3588,7 @@ products.find(
 p=>p.id===item.id
 );
 
+
 message+=
 "• "+
 product.brand+
@@ -3629,8 +3663,6 @@ if(event.key==="Escape"){
 closeSearch();
 
 closeCart();
-
-closeOrderForm();
 
 }
 
