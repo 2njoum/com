@@ -170,7 +170,7 @@ font-size:9px
 
 
 /* =========================
-   SEARCH OVERLAY
+   SEARCH
 ========================= */
 
 .search-overlay{
@@ -326,19 +326,40 @@ font-size:10px
 
 /* =========================
    HERO
+   الخلفية أصبحت صورة
 ========================= */
 
 .hero{
 position:relative;
 min-height:700px;
-background:#111;
+
+background-image:url("hero.jpg");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
 overflow:hidden;
 display:flex;
 align-items:center;
 justify-content:center;
 }
 
+
+/* طبقة خفيفة جداً فوق الصورة */
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.15);
+z-index:1;
+}
+
+
 .hero-inner{
+position:relative;
+z-index:2;
+
 width:100%;
 max-width:1400px;
 min-height:700px;
@@ -362,7 +383,7 @@ z-index:2;
 
 
 /* =========================
-   LOGO / HERO IMAGE
+   HERO LOGO IMAGE
 ========================= */
 
 .hero-image{
@@ -385,7 +406,7 @@ width:auto;
 max-width:90%;
 height:auto;
 max-height:260px;
-object-fit:contain;
+object-fit:contain
 }
 
 
@@ -1493,18 +1514,10 @@ height:21px
 <body>
 
 
-<!-- =========================
-     TOP BAR
-========================= -->
-
 <div class="topbar">
 ✦ Livraison partout au Maroc · Paiement à la livraison
 </div>
 
-
-<!-- =========================
-     HEADER
-========================= -->
 
 <header>
 
@@ -1544,9 +1557,6 @@ Discovery
 
 <div class="nav-icons">
 
-
-<!-- SEARCH -->
-
 <button
 class="icon-btn"
 onclick="openSearch()"
@@ -1574,8 +1584,6 @@ d="m20 20-4-4">
 
 </button>
 
-
-<!-- CART -->
 
 <button
 class="icon-btn"
@@ -1615,10 +1623,6 @@ id="cartCount">
 </header>
 
 
-<!-- =========================
-     SEARCH OVERLAY
-========================= -->
-
 <div
 class="search-overlay"
 id="searchOverlay"
@@ -1655,7 +1659,7 @@ class="main-search-input"
 type="text"
 autocomplete="off"
 placeholder="Nom du parfum ou marque..."
-oninput="searchFromTop">
+oninput="searchFromTop()">
 
 </div>
 
@@ -1688,7 +1692,6 @@ id="searchResults">
 <div class="hero-content">
 
 
-<!-- LOGO IMAGE -->
 <div class="hero-image">
 
 <img
@@ -1697,8 +1700,6 @@ alt="GHIMED FRAGRANCES Logo">
 
 </div>
 
-
-<!-- TEXT UNDER LOGO -->
 
 <div class="hero-small">
 Authentic Fragrance · Decants
@@ -1719,6 +1720,7 @@ signature scent.
 <p class="hero-text">
 
 Découvrez vos parfums préférés en formats pratiques de 5ml et 10ml.
+
 </p>
 
 
@@ -1751,14 +1753,9 @@ Discovery Sets
 </section>
 
 
-<!-- =========================
-     TRUST
-========================= -->
-
 <section class="trust">
 
 <div class="trust-inner">
-
 
 <div class="trust-item">
 
@@ -1827,20 +1824,14 @@ Simple & sécurisé
 
 </div>
 
-
 </div>
 
 </section>
 
 
-<!-- =========================
-     COLLECTIONS
-========================= -->
-
 <section
 class="section"
 id="collections">
-
 
 <div class="section-head">
 
@@ -1872,8 +1863,6 @@ Voir tout →
 <div class="categories">
 
 
-<!-- MEN -->
-
 <a
 href="#shop"
 class="category"
@@ -1901,8 +1890,6 @@ Découvrez notre sélection masculine
 
 </a>
 
-
-<!-- WOMEN -->
 
 <a
 href="#shop"
@@ -1937,14 +1924,9 @@ Découvrez notre sélection féminine
 </section>
 
 
-<!-- =========================
-     SHOP
-========================= -->
-
 <section
 class="section"
 id="shop">
-
 
 <div class="section-head">
 
@@ -1988,16 +1970,11 @@ id="products">
 </section>
 
 
-<!-- =========================
-     DISCOVERY
-========================= -->
-
 <section
 class="discovery"
 id="discovery">
 
 <div class="discovery-inner">
-
 
 <div class="discovery-img">
 
@@ -2057,19 +2034,13 @@ Explorer les parfums
 </section>
 
 
-<!-- =========================
-     ABOUT
-========================= -->
-
 <section
 class="about"
 id="about">
 
-
 <div class="section-label">
 GHIMED FRAGRANCES
 </div>
-
 
 <h2 class="section-title">
 
@@ -2077,7 +2048,6 @@ The fragrance,<br>
 your way.
 
 </h2>
-
 
 <p>
 
@@ -2090,14 +2060,9 @@ simplement et à votre rythme.
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
 <div class="footer-inner">
-
 
 <div>
 
@@ -2209,7 +2174,6 @@ TikTok
 
 </div>
 
-
 </div>
 
 
@@ -2228,17 +2192,12 @@ Authentic fragrance decants
 </footer>
 
 
-<!-- =========================
-     CART
-========================= -->
-
 <div
 class="cart-overlay"
 id="cartOverlay"
 onclick="closeCartOutside(event)">
 
 <div class="cart">
-
 
 <div class="cart-head">
 
@@ -2298,16 +2257,11 @@ Commander via WhatsApp
 </div>
 
 
-<!-- =========================
-     ORDER FORM
-========================= -->
-
 <div
 class="order-form"
 id="orderForm">
 
 <div class="order-box">
-
 
 <button
 class="form-close"
@@ -2331,7 +2285,6 @@ Veuillez remplir vos informations pour recevoir votre commande.
 
 
 <form onsubmit="sendOrder(event)">
-
 
 <div class="form-group">
 
@@ -2407,10 +2360,6 @@ class="send-order">
 </div>
 
 
-<!-- =========================
-     WHATSAPP
-========================= -->
-
 <a
 class="whatsapp"
 href="https://wa.me/212708773218"
@@ -2424,9 +2373,9 @@ aria-label="WhatsApp">
 
 <script>
 
-/* =====================================================
+/* =========================
    PRODUCTS
-===================================================== */
+========================= */
 
 const products=[
 
@@ -2799,20 +2748,12 @@ outOfStock:false
 ];
 
 
-/* =====================================================
-   VARIABLES
-===================================================== */
-
 let cart=JSON.parse(localStorage.getItem("ghimedCart"))||[];
 
 let selectedSizes={};
 
 let currentGender="all";
 
-
-/* =====================================================
-   DISPLAY PRODUCTS
-===================================================== */
 
 function displayProducts(list=products){
 
@@ -2959,10 +2900,6 @@ Ajouter
 
 }
 
-
-/* =====================================================
-   SEARCH
-===================================================== */
 
 function openSearch(){
 
@@ -3123,10 +3060,6 @@ ${product.prices[firstSize]} DH
 }
 
 
-/* =====================================================
-   GO TO PRODUCT
-===================================================== */
-
 function goToProduct(id){
 
 const product=products.find(p=>p.id===id);
@@ -3174,10 +3107,6 @@ element.classList.remove("highlight");
 }
 
 
-/* =====================================================
-   OUT OF STOCK
-===================================================== */
-
 function requestPerfume(id){
 
 const product=
@@ -3202,10 +3131,6 @@ whatsappURL,
 
 }
 
-
-/* =====================================================
-   FILTER GENDER
-===================================================== */
 
 function filterGender(gender){
 
@@ -3256,10 +3181,6 @@ behavior:"smooth"
 }
 
 
-/* =====================================================
-   SELECT SIZE
-===================================================== */
-
 function selectSize(id,size){
 
 selectedSizes[id]=size;
@@ -3281,10 +3202,6 @@ displayProducts(list);
 
 }
 
-
-/* =====================================================
-   ADD TO CART
-===================================================== */
 
 function addToCart(id){
 
@@ -3339,10 +3256,6 @@ openCart();
 
 }
 
-
-/* =====================================================
-   UPDATE CART
-===================================================== */
 
 function updateCart(){
 
@@ -3475,10 +3388,6 @@ total+" DH";
 }
 
 
-/* =====================================================
-   QUANTITY
-===================================================== */
-
 function increaseQuantity(index){
 
 cart[index].quantity++;
@@ -3516,10 +3425,6 @@ updateCart();
 }
 
 
-/* =====================================================
-   CART
-===================================================== */
-
 function openCart(){
 
 document
@@ -3553,10 +3458,6 @@ closeCart();
 }
 
 
-/* =====================================================
-   SHOW ALL
-===================================================== */
-
 function showAll(){
 
 currentGender="all";
@@ -3568,10 +3469,6 @@ displayProducts(products);
 
 }
 
-
-/* =====================================================
-   OLD SEARCH COMPATIBILITY
-===================================================== */
 
 function searchProducts(){
 
@@ -3586,10 +3483,6 @@ openSearch();
 
 }
 
-
-/* =====================================================
-   ORDER FORM
-===================================================== */
 
 function openOrderForm(){
 
@@ -3617,10 +3510,6 @@ document
 
 }
 
-
-/* =====================================================
-   SEND ORDER TO WHATSAPP
-===================================================== */
 
 function sendOrder(event){
 
@@ -3745,18 +3634,10 @@ whatsappURL,
 }
 
 
-/* =====================================================
-   START
-===================================================== */
-
 displayProducts();
 
 updateCart();
 
-
-/* =====================================================
-   ESC KEY
-===================================================== */
 
 document.addEventListener("keydown",function(event){
 
