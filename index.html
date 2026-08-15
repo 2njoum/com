@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>GHIMED FRAGRANCES — Authentic Decants</title>
+<title>2NJOUM FRAGRANCES — Authentic Decants</title>
 
-<meta name="description" content="GHIMED FRAGRANCES — Découvrez vos parfums préférés en 5ml et 10ml.">
+<meta name="description" content="2NJOUM FRAGRANCES — Découvrez vos parfums préférés en 5ml et 10ml.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -481,7 +481,7 @@ width:100%;display:flex;flex-direction:column;align-items:stretch;gap:6px
 <div class="nav">
 
 <a href="#" class="logo">
-GHIMED
+2NJOUM
 <span>FRAGRANCES</span>
 </a>
 
@@ -543,7 +543,7 @@ Exemple : La Belle, Dior, Chanel, JPG, Stronger With You...
 <div class="hero-content">
 
 <div class="hero-image">
-<img src="178665024643257899510772.png" alt="GHIMED FRAGRANCES Logo">
+<img src="178665024643257899510772.png" alt="2NJOUM FRAGRANCES Logo">
 </div>
 
 <div class="hero-small">Authentic Fragrance · Decants</div>
@@ -700,7 +700,7 @@ Explorer les parfums
 
 <section class="about" id="about">
 
-<div class="section-label">GHIMED FRAGRANCES</div>
+<div class="section-label">2NJOUM FRAGRANCES</div>
 
 <h2 class="section-title">
 The fragrance,<br>
@@ -708,7 +708,7 @@ your way.
 </h2>
 
 <p>
-Chez GHIMED FRAGRANCES, nous croyons qu'un parfum doit être découvert avant d'être adopté.
+Chez 2NJOUM FRAGRANCES, nous croyons qu'un parfum doit être découvert avant d'être adopté.
 Nos decants vous permettent de découvrir différentes fragrances en formats 5ml et 10ml,
 simplement et à votre rythme.
 </p>
@@ -720,7 +720,7 @@ simplement et à votre rythme.
 <div class="footer-inner">
 
 <div>
-<div class="footer-logo">GHIMED</div>
+<div class="footer-logo">2NJOUM</div>
 <p class="footer-desc">
 Authentic fragrance decants.
 Découvrez votre prochaine signature olfactive.
@@ -773,7 +773,7 @@ WhatsApp
 </div>
 
 <div class="footer-bottom">
-<span>© 2026 GHIMED FRAGRANCES</span>
+<span>© 2026 2NJOUM FRAGRANCES</span>
 <span>Authentic fragrance decants</span>
 </div>
 
@@ -854,10 +854,6 @@ Veuillez remplir vos informations pour recevoir votre commande.
 </a>
 
 <script>
-
-/* =========================
-   PRODUCTS
-========================= */
 
 const products=[
 
@@ -1229,18 +1225,10 @@ outOfStock:false
 
 ];
 
-/* =========================
-   CART
-========================= */
-
-let cart=JSON.parse(localStorage.getItem("ghimedCart"))||[];
+let cart=JSON.parse(localStorage.getItem("2njoumCart"))||[];
 let selectedSizes={};
 let currentGender="all";
 let currentSort="popular";
-
-/* =========================
-   POPULARITY
-========================= */
 
 function getPopularity(product){
 
@@ -1261,13 +1249,10 @@ if(badge.includes("premium")) return 50;
 return 40;
 }
 
-/* =========================
-   PRICE FOR SORTING
-   مهم:
-   إذا كان عند العطر 10ml نستعمل 10ml
-   وليس 5ml.
-   وإذا كان عنده فقط 5ml نستعمل 5ml.
-========================= */
+/* PRICE SORTING
+   10ml products are compared by their 10ml price.
+   Products with only 5ml are compared by their 5ml price.
+*/
 
 function getSortPrice(product){
 
@@ -1281,10 +1266,6 @@ return product.prices["5ml"];
 
 return Infinity;
 }
-
-/* =========================
-   SORT PRODUCTS
-========================= */
 
 function sortProducts(type){
 
@@ -1300,10 +1281,6 @@ list=sortList(list,type);
 
 displayProducts(list);
 }
-
-/* =========================
-   SORT LIST
-========================= */
 
 function sortList(list,type){
 
@@ -1355,10 +1332,6 @@ break;
 
 return sorted;
 }
-
-/* =========================
-   DISPLAY PRODUCTS
-========================= */
 
 function displayProducts(list=products){
 
@@ -1495,10 +1468,6 @@ Ajouter
 });
 }
 
-/* =========================
-   SEARCH
-========================= */
-
 function openSearch(){
 
 const overlay=document.getElementById("searchOverlay");
@@ -1625,10 +1594,6 @@ ${product.prices[firstSize]} DH
 }).join("");
 }
 
-/* =========================
-   GO TO PRODUCT
-========================= */
-
 function goToProduct(id){
 
 const product=products.find(p=>p.id===id);
@@ -1675,16 +1640,12 @@ element.classList.remove("highlight");
 },100);
 }
 
-/* =========================
-   OUT OF STOCK
-========================= */
-
 function requestPerfume(id){
 
 const product=products.find(p=>p.id===id);
 
 const message=
-"👋 Bonjour GHIMED FRAGRANCES\n\n"+
+"👋 Bonjour 2NJOUM FRAGRANCES\n\n"+
 "Je suis intéressé(e) par ce parfum :\n"+
 "• "+product.brand+" "+product.name+"\n\n"+
 "Il est actuellement OUT OF STOCK.\n"+
@@ -1696,10 +1657,6 @@ encodeURIComponent(message);
 
 window.open(whatsappURL,"_blank");
 }
-
-/* =========================
-   FILTER GENDER
-========================= */
 
 function filterGender(gender){
 
@@ -1743,10 +1700,6 @@ behavior:"smooth"
 });
 }
 
-/* =========================
-   SELECT SIZE
-========================= */
-
 function selectSize(id,size){
 
 selectedSizes[id]=size;
@@ -1763,10 +1716,6 @@ product=>product.gender===currentGender
 
 displayProducts(list);
 }
-
-/* =========================
-   ADD TO CART
-========================= */
 
 function addToCart(id){
 
@@ -1811,14 +1760,10 @@ updateCart();
 openCart();
 }
 
-/* =========================
-   UPDATE CART
-========================= */
-
 function updateCart(){
 
 localStorage.setItem(
-"ghimedCart",
+"2njoumCart",
 JSON.stringify(cart)
 );
 
@@ -1914,10 +1859,6 @@ Supprimer
 document.getElementById("cartTotal").textContent=total+" DH";
 }
 
-/* =========================
-   QUANTITY
-========================= */
-
 function increaseQuantity(index){
 
 cart[index].quantity++;
@@ -1949,10 +1890,6 @@ cart.splice(index,1);
 updateCart();
 }
 
-/* =========================
-   CART OPEN / CLOSE
-========================= */
-
 function openCart(){
 
 document.getElementById("cartOverlay").classList.add("open");
@@ -1976,10 +1913,6 @@ closeCart();
 }
 }
 
-/* =========================
-   SHOW ALL
-========================= */
-
 function showAll(){
 
 currentGender="all";
@@ -1989,10 +1922,6 @@ document.getElementById("shopTitle").textContent="Best Sellers";
 displayProducts(products);
 }
 
-/* =========================
-   SEARCH HELPERS
-========================= */
-
 function searchProducts(){
 openSearch();
 }
@@ -2000,10 +1929,6 @@ openSearch();
 function focusSearch(){
 openSearch();
 }
-
-/* =========================
-   ORDER FORM
-========================= */
 
 function openOrderForm(){
 
@@ -2021,10 +1946,6 @@ function closeOrderForm(){
 
 document.getElementById("orderForm").classList.remove("open");
 }
-
-/* =========================
-   SEND ORDER
-========================= */
 
 function sendOrder(event){
 
@@ -2116,19 +2037,11 @@ whatsappURL,
 );
 }
 
-/* =========================
-   INITIALISATION
-========================= */
-
 document.getElementById("sortSelect").value="popular";
 
 displayProducts();
 
 updateCart();
-
-/* =========================
-   ESC KEY
-========================= */
 
 document.addEventListener("keydown",function(event){
 
