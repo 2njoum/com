@@ -1,23 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>GHIMED FRAGRANCES — Authentic Decants</title>
 
-<meta name="description"
-content="GHIMED FRAGRANCES — Découvrez vos parfums préférés en 5ml et 10ml.">
+<meta name="description" content="GHIMED FRAGRANCES — Découvrez vos parfums préférés en 5ml et 10ml.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
 --black:#111;
 --gray:#6b6b6b;
@@ -26,2455 +21,837 @@ content="GHIMED FRAGRANCES — Découvrez vos parfums préférés en 5ml et 10ml
 --white:#fff
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box
-}
-
-html{
-scroll-behavior:smooth
-}
-
-body{
-font-family:"DM Sans",sans-serif;
-background:#fff;
-color:var(--black)
-}
-
-button,
-input,
-textarea,
-select{
-font-family:inherit
-}
-
-button{
-cursor:pointer
-}
-
-a{
-text-decoration:none;
-color:inherit
-}
-
-
-/* =========================
-   TOP BAR
-========================= */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;background:#fff;color:var(--black)}
+button,input,textarea,select{font-family:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
 
 .topbar{
-background:#111;
-color:#fff;
-text-align:center;
-padding:9px 15px;
-font-size:11px;
-letter-spacing:.6px
+background:#111;color:#fff;text-align:center;padding:9px 15px;
+font-size:11px;letter-spacing:.6px
 }
-
-
-/* =========================
-   HEADER
-========================= */
 
 header{
-position:sticky;
-top:0;
-z-index:1000;
-background:rgba(255,255,255,.96);
-backdrop-filter:blur(15px);
-border-bottom:1px solid var(--border)
+position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);
+backdrop-filter:blur(15px);border-bottom:1px solid var(--border)
 }
 
 .nav{
-max-width:1250px;
-height:78px;
-margin:auto;
-padding:0 25px;
-display:flex;
-align-items:center;
-justify-content:space-between
+max-width:1250px;height:78px;margin:auto;padding:0 25px;
+display:flex;align-items:center;justify-content:space-between
 }
 
 .logo{
-font-family:"Playfair Display",serif;
-font-size:24px;
-letter-spacing:2px;
-font-weight:600
+font-family:"Playfair Display",serif;font-size:24px;letter-spacing:2px;font-weight:600
 }
-
 .logo span{
-display:block;
-text-align:center;
-font-family:"DM Sans",sans-serif;
-font-size:9px;
-letter-spacing:4px;
-color:#777;
-margin-top:-3px
+display:block;text-align:center;font-family:"DM Sans",sans-serif;font-size:9px;
+letter-spacing:4px;color:#777;margin-top:-3px
 }
 
-.nav-links{
-display:flex;
-gap:30px;
-font-size:13px
-}
-
-.nav-links a{
-position:relative
-}
-
+.nav-links{display:flex;gap:30px;font-size:13px}
+.nav-links a{position:relative}
 .nav-links a::after{
-content:"";
-position:absolute;
-left:0;
-bottom:-6px;
-width:0;
-height:1px;
-background:#111;
-transition:.3s
+content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;
+background:#111;transition:.3s
 }
+.nav-links a:hover::after{width:100%}
 
-.nav-links a:hover::after{
-width:100%
-}
-
-.nav-icons{
-display:flex;
-align-items:center;
-gap:18px
-}
-
+.nav-icons{display:flex;align-items:center;gap:18px}
 .icon-btn{
-position:relative;
-border:0;
-background:none;
-font-size:20px;
-display:flex;
-align-items:center;
-justify-content:center
+position:relative;border:0;background:none;font-size:20px;
+display:flex;align-items:center;justify-content:center
 }
-
 .cart-count{
-position:absolute;
-right:-8px;
-top:-8px;
-width:17px;
-height:17px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-background:#111;
-color:#fff;
-font-size:9px
+position:absolute;right:-8px;top:-8px;width:17px;height:17px;
+display:flex;align-items:center;justify-content:center;border-radius:50%;
+background:#111;color:#fff;font-size:9px
 }
 
-
-/* =========================
-   SEARCH
-========================= */
-
+/* SEARCH */
 .search-overlay{
-position:fixed;
-inset:0;
-z-index:5000;
-background:rgba(0,0,0,.45);
-opacity:0;
-visibility:hidden;
-transition:.25s
+position:fixed;inset:0;z-index:5000;background:rgba(0,0,0,.45);
+opacity:0;visibility:hidden;transition:.25s
 }
-
-.search-overlay.open{
-opacity:1;
-visibility:visible
-}
-
+.search-overlay.open{opacity:1;visibility:visible}
 .search-panel{
-position:absolute;
-top:0;
-left:0;
-right:0;
-background:#fff;
-padding:25px 25px 35px;
-transform:translateY(-100%);
-transition:.35s;
-box-shadow:0 15px 40px rgba(0,0,0,.12)
+position:absolute;top:0;left:0;right:0;background:#fff;padding:25px 25px 35px;
+transform:translateY(-100%);transition:.35s;box-shadow:0 15px 40px rgba(0,0,0,.12)
 }
-
-.search-overlay.open .search-panel{
-transform:translateY(0)
-}
-
-.search-panel-inner{
-max-width:1000px;
-margin:auto
-}
-
+.search-overlay.open .search-panel{transform:translateY(0)}
+.search-panel-inner{max-width:1000px;margin:auto}
 .search-top{
-display:flex;
-align-items:center;
-justify-content:space-between;
-margin-bottom:20px
+display:flex;align-items:center;justify-content:space-between;margin-bottom:20px
 }
-
-.search-title{
-font-family:"Playfair Display",serif;
-font-size:25px
-}
-
-.close-search{
-border:0;
-background:none;
-font-size:27px;
-line-height:1
-}
-
-.search-main{
-position:relative
-}
-
+.search-title{font-family:"Playfair Display",serif;font-size:25px}
+.close-search{border:0;background:none;font-size:27px;line-height:1}
+.search-main{position:relative}
 .search-main-icon{
-position:absolute;
-left:17px;
-top:50%;
-transform:translateY(-50%);
-font-size:19px;
-color:#777
+position:absolute;left:17px;top:50%;transform:translateY(-50%);
+font-size:19px;color:#777
 }
-
 .main-search-input{
-width:100%;
-height:58px;
-padding:0 50px;
-border:1px solid #ddd;
-outline:none;
-font-size:14px;
-background:#fff;
-transition:.25s
+width:100%;height:58px;padding:0 50px;border:1px solid #ddd;outline:none;
+font-size:14px;background:#fff;transition:.25s
 }
-
-.main-search-input:focus{
-border-color:#111;
-box-shadow:0 0 0 1px #111
-}
-
-.search-results{
-margin-top:15px;
-max-height:420px;
-overflow:auto
-}
-
+.main-search-input:focus{border-color:#111;box-shadow:0 0 0 1px #111}
+.search-results{margin-top:15px;max-height:420px;overflow:auto}
 .search-result{
-display:flex;
-align-items:center;
-gap:15px;
-padding:12px;
-border:1px solid #eee;
-margin-bottom:8px;
-background:#fff;
-cursor:pointer;
-transition:.2s
+display:flex;align-items:center;gap:15px;padding:12px;border:1px solid #eee;
+margin-bottom:8px;background:#fff;cursor:pointer;transition:.2s
 }
-
-.search-result:hover{
-background:#f7f7f5;
-transform:translateX(3px)
-}
-
+.search-result:hover{background:#f7f7f5;transform:translateX(3px)}
 .search-result img{
-width:58px;
-height:65px;
-object-fit:cover;
-background:#f5f5f3
+width:58px;height:65px;object-fit:cover;background:#f5f5f3
 }
-
-.search-result-info{
-flex:1
-}
-
+.search-result-info{flex:1}
 .search-result-brand{
-color:#999;
-font-size:9px;
-letter-spacing:1px;
-text-transform:uppercase;
-margin-bottom:3px
+color:#999;font-size:9px;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px
 }
+.search-result-name{font-family:"Playfair Display",serif;font-size:18px}
+.search-result-price{font-size:11px;font-weight:700;margin-top:4px}
+.search-empty{text-align:center;padding:30px 10px;color:#888;font-size:13px}
+.search-hint{margin-top:12px;color:#999;font-size:10px}
 
-.search-result-name{
-font-family:"Playfair Display",serif;
-font-size:18px
-}
-
-.search-result-price{
-font-size:11px;
-font-weight:700;
-margin-top:4px
-}
-
-.search-empty{
-text-align:center;
-padding:30px 10px;
-color:#888;
-font-size:13px
-}
-
-.search-hint{
-margin-top:12px;
-color:#999;
-font-size:10px
-}
-
-
-/* =========================
-   HERO
-========================= */
-
+/* HERO */
 .hero{
-position:relative;
-min-height:700px;
-
-background-image:url("hero1.jpg");
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-
-overflow:hidden;
-display:flex;
-align-items:center;
-justify-content:center;
+position:relative;min-height:700px;background-image:url("hero1.jpg");
+background-size:cover;background-position:center;background-repeat:no-repeat;
+overflow:hidden;display:flex;align-items:center;justify-content:center
 }
-
 .hero::before{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.15);
-z-index:1
+content:"";position:absolute;inset:0;background:rgba(0,0,0,.15);z-index:1
 }
-
 .hero-inner{
-position:relative;
-z-index:2;
-
-width:100%;
-max-width:1400px;
-min-height:700px;
-margin:auto;
-padding:60px 25px;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
+position:relative;z-index:2;width:100%;max-width:1400px;min-height:700px;
+margin:auto;padding:60px 25px;display:flex;align-items:center;
+justify-content:center;text-align:center
 }
-
 .hero-content{
-width:100%;
-max-width:850px;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-z-index:2
+width:100%;max-width:850px;display:flex;flex-direction:column;
+align-items:center;justify-content:center;z-index:2
 }
-
-
-/* =========================
-   HERO LOGO
-========================= */
-
 .hero-image{
-position:relative;
-width:100%;
-height:auto;
-display:flex;
-align-items:center;
-justify-content:center;
-margin-bottom:35px
+position:relative;width:100%;height:auto;display:flex;align-items:center;
+justify-content:center;margin-bottom:35px
 }
-
-.hero-image::after{
-display:none !important
-}
-
+.hero-image::after{display:none!important}
 .hero-image img{
-display:block;
-width:auto;
-max-width:90%;
-height:auto;
-max-height:260px;
-object-fit:contain
+display:block;width:auto;max-width:90%;height:auto;max-height:260px;object-fit:contain
 }
-
-
-/* =========================
-   HERO TEXT
-========================= */
-
 .hero-small{
-margin-bottom:18px;
-color:#fff !important;
-font-size:10px;
-letter-spacing:3px;
-text-transform:uppercase
+margin-bottom:18px;color:#fff!important;font-size:10px;
+letter-spacing:3px;text-transform:uppercase
 }
-
 .hero h1{
-margin-bottom:25px;
-font-family:"Playfair Display",serif;
-font-size:clamp(48px,6vw,78px);
-line-height:1;
-font-weight:500;
-color:#fff !important
+margin-bottom:25px;font-family:"Playfair Display",serif;
+font-size:clamp(48px,6vw,78px);line-height:1;font-weight:500;color:#fff!important
 }
-
-.hero h1 em{
-font-style:italic
-}
-
+.hero h1 em{font-style:italic}
 .hero-text{
-max-width:600px;
-margin:auto;
-color:#fff !important;
-font-size:15px;
-line-height:1.8
+max-width:600px;margin:auto;color:#fff!important;font-size:15px;line-height:1.8
 }
+.hero-buttons{display:flex;justify-content:center;gap:12px;margin-top:32px}
+.btn{display:inline-block;padding:15px 26px;font-size:12px;transition:.25s}
+.hero .btn-dark{background:#fff;color:#111;border:1px solid #fff}
+.hero .btn-dark:hover{background:#eee}
+.hero .btn-light{background:transparent;color:#fff;border:1px solid #fff}
+.hero .btn-light:hover{background:#fff;color:#111}
 
-
-/* =========================
-   HERO BUTTONS
-========================= */
-
-.hero-buttons{
-display:flex;
-justify-content:center;
-gap:12px;
-margin-top:32px
-}
-
-.btn{
-display:inline-block;
-padding:15px 26px;
-font-size:12px;
-transition:.25s
-}
-
-.hero .btn-dark{
-background:#fff;
-color:#111;
-border:1px solid #fff
-}
-
-.hero .btn-dark:hover{
-background:#eee
-}
-
-.hero .btn-light{
-background:transparent;
-color:#fff;
-border:1px solid #fff
-}
-
-.hero .btn-light:hover{
-background:#fff;
-color:#111
-}
-
-
-/* =========================
-   TRUST
-========================= */
-
-.trust{
-border-top:1px solid var(--border);
-border-bottom:1px solid var(--border)
-}
-
+/* TRUST */
+.trust{border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .trust-inner{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(4,1fr)
+max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr)
 }
-
 .trust-item{
-padding:25px 15px;
-text-align:center;
-border-right:1px solid var(--border)
+padding:25px 15px;text-align:center;border-right:1px solid var(--border)
 }
+.trust-item:last-child{border-right:0}
+.trust-icon{margin-bottom:7px;font-size:20px}
+.trust-title{font-size:12px;font-weight:700}
+.trust-text{margin-top:4px;color:#888;font-size:10px}
 
-.trust-item:last-child{
-border-right:0
-}
-
-.trust-icon{
-margin-bottom:7px;
-font-size:20px
-}
-
-.trust-title{
-font-size:12px;
-font-weight:700
-}
-
-.trust-text{
-margin-top:4px;
-color:#888;
-font-size:10px
-}
-
-
-/* =========================
-   SECTIONS
-========================= */
-
-.section{
-max-width:1250px;
-margin:auto;
-padding:90px 25px
-}
-
+/* SECTIONS */
+.section{max-width:1250px;margin:auto;padding:90px 25px}
 .section-head{
-display:flex;
-align-items:end;
-justify-content:space-between;
-margin-bottom:35px
+display:flex;align-items:end;justify-content:space-between;margin-bottom:35px
 }
-
 .section-label{
-margin-bottom:8px;
-color:#888;
-font-size:10px;
-letter-spacing:3px;
-text-transform:uppercase
+margin-bottom:8px;color:#888;font-size:10px;letter-spacing:3px;text-transform:uppercase
 }
+.section-title{font-family:"Playfair Display",serif;font-size:40px;font-weight:500}
+.view-all{padding-bottom:4px;border-bottom:1px solid #111;font-size:12px}
 
-.section-title{
-font-family:"Playfair Display",serif;
-font-size:40px;
-font-weight:500
-}
-
-.view-all{
-padding-bottom:4px;
-border-bottom:1px solid #111;
-font-size:12px
-}
-
-
-/* =========================
-   CATEGORIES
-========================= */
-
-.categories{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:14px
-}
-
+/* CATEGORIES */
+.categories{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .category{
-height:380px;
-position:relative;
-overflow:hidden;
-background:#eee;
-display:block
+height:380px;position:relative;overflow:hidden;background:#eee;display:block
 }
-
-.category img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition:.6s
-}
-
-.category:hover img{
-transform:scale(1.05)
-}
-
+.category img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.category:hover img{transform:scale(1.05)}
 .category-overlay{
-position:absolute;
-inset:0;
-display:flex;
-align-items:flex-end;
-justify-content:center;
-padding:35px 20px;
-color:#fff;
-background:linear-gradient(
-transparent 35%,
-rgba(0,0,0,.75)
-)
+position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;
+padding:35px 20px;color:#fff;
+background:linear-gradient(transparent 35%,rgba(0,0,0,.75))
 }
-
 .category-name{
-font-family:"Playfair Display",serif;
-font-size:32px;
-text-align:center;
+font-family:"Playfair Display",serif;font-size:32px;text-align:center;
 text-shadow:0 2px 10px rgba(0,0,0,.25)
 }
-
 .category-subtitle{
-margin-top:7px;
-font-size:10px;
-letter-spacing:2px;
-text-transform:uppercase;
-text-align:center;
-opacity:.9
+margin-top:7px;font-size:10px;letter-spacing:2px;text-transform:uppercase;
+text-align:center;opacity:.9
 }
 
-
-/* =========================
-   SHOP TOOLS / TRIER PAR
-========================= */
-
+/* SHOP TOOLS */
 .shop-tools{
-display:flex;
-align-items:center;
-justify-content:flex-end;
-gap:12px;
-margin-bottom:30px;
-flex-wrap:wrap
+display:flex;align-items:center;justify-content:flex-end;gap:12px;
+margin-bottom:30px;flex-wrap:wrap
 }
-
 .filter-btn{
-height:50px;
-padding:0 20px;
-border:1px solid #ddd;
-background:#fff;
-font-size:12px;
-transition:.25s
+height:50px;padding:0 20px;border:1px solid #ddd;background:#fff;
+font-size:12px;transition:.25s
 }
-
-.filter-btn:hover{
-background:#111;
-color:#fff;
-border-color:#111
-}
-
-
-/* =========================
-   SORT BOX
-========================= */
-
-.sort-wrapper{
-display:flex;
-align-items:center;
-gap:10px
-}
-
-.sort-label{
-font-size:11px;
-color:#777;
-white-space:nowrap;
-letter-spacing:.5px
-}
-
+.filter-btn:hover{background:#111;color:#fff;border-color:#111}
+.sort-wrapper{display:flex;align-items:center;gap:10px}
+.sort-label{font-size:11px;color:#777;white-space:nowrap;letter-spacing:.5px}
 .sort-select{
-height:50px;
-min-width:205px;
-padding:0 38px 0 15px;
-border:1px solid #ddd;
-background:#fff;
-color:#111;
-font-size:12px;
-outline:none;
-cursor:pointer;
-transition:.25s
+height:50px;min-width:205px;padding:0 38px 0 15px;border:1px solid #ddd;
+background:#fff;color:#111;font-size:12px;outline:none;cursor:pointer;transition:.25s
 }
+.sort-select:hover,.sort-select:focus{border-color:#111}
+.sort-select option{background:#fff;color:#111}
 
-.sort-select:hover,
-.sort-select:focus{
-border-color:#111
-}
-
-.sort-select option{
-background:#fff;
-color:#111
-}
-
-
-/* =========================
-   PRODUCTS
-========================= */
-
-.products{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px
-}
-
+/* PRODUCTS */
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
 .product{
-position:relative;
-overflow:hidden;
-border:1px solid var(--border);
-background:#fff;
-transition:.3s;
-scroll-margin-top:100px
+position:relative;overflow:hidden;border:1px solid var(--border);background:#fff;
+transition:.3s;scroll-margin-top:100px
 }
-
-.product:hover{
-transform:translateY(-4px);
-box-shadow:0 15px 35px rgba(0,0,0,.07)
-}
-
-.product.highlight{
-animation:productHighlight 1.2s ease
-}
-
+.product:hover{transform:translateY(-4px);box-shadow:0 15px 35px rgba(0,0,0,.07)}
+.product.highlight{animation:productHighlight 1.2s ease}
 @keyframes productHighlight{
-
-0%{
-box-shadow:0 0 0 0 rgba(0,0,0,.35)
+0%{box-shadow:0 0 0 0 rgba(0,0,0,.35)}
+50%{box-shadow:0 0 0 5px rgba(0,0,0,.12)}
+100%{box-shadow:0 0 0 0 rgba(0,0,0,0)}
 }
-
-50%{
-box-shadow:0 0 0 5px rgba(0,0,0,.12)
-}
-
-100%{
-box-shadow:0 0 0 0 rgba(0,0,0,0)
-}
-
-}
-
 .product-image{
-height:290px;
-position:relative;
-overflow:hidden;
-background:#f5f5f3
+height:290px;position:relative;overflow:hidden;background:#f5f5f3
 }
-
 .product-image img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition:.5s
+width:100%;height:100%;object-fit:cover;transition:.5s
 }
-
-.product:hover .product-image img{
-transform:scale(1.04)
-}
-
+.product:hover .product-image img{transform:scale(1.04)}
 .badge{
-position:absolute;
-left:12px;
-top:12px;
-z-index:3;
-padding:6px 9px;
-background:#111;
-color:#fff;
-font-size:8px;
-letter-spacing:1px;
-text-transform:uppercase
+position:absolute;left:12px;top:12px;z-index:3;padding:6px 9px;
+background:#111;color:#fff;font-size:8px;letter-spacing:1px;text-transform:uppercase
 }
-
 .out-of-stock{
-position:absolute;
-inset:0;
-z-index:5;
-display:flex;
-align-items:center;
-justify-content:center;
-background:rgba(0,0,0,.58);
-color:#fff;
-font-size:13px;
-font-weight:700;
-letter-spacing:2px;
-text-transform:uppercase
+position:absolute;inset:0;z-index:5;display:flex;align-items:center;
+justify-content:center;background:rgba(0,0,0,.58);color:#fff;font-size:13px;
+font-weight:700;letter-spacing:2px;text-transform:uppercase
 }
-
-.product-info{
-padding:18px
-}
-
+.product-info{padding:18px}
 .brand{
-margin-bottom:5px;
-color:#999;
-font-size:9px;
-letter-spacing:1px;
-text-transform:uppercase
+margin-bottom:5px;color:#999;font-size:9px;letter-spacing:1px;text-transform:uppercase
 }
-
 .product-name{
-margin-bottom:7px;
-font-family:"Playfair Display",serif;
-font-size:20px
+margin-bottom:7px;font-family:"Playfair Display",serif;font-size:20px
 }
-
-.notes{
-min-height:30px;
-color:#777;
-font-size:10px
-}
-
-.sizes{
-display:flex;
-gap:6px;
-margin:14px 0;
-flex-wrap:wrap
-}
-
-.size{
-padding:7px 12px;
-border:1px solid #ddd;
-background:#fff;
-font-size:10px
-}
-
-.size.active{
-border-color:#111;
-background:#111;
-color:#fff
-}
-
+.notes{min-height:30px;color:#777;font-size:10px}
+.sizes{display:flex;gap:6px;margin:14px 0;flex-wrap:wrap}
+.size{padding:7px 12px;border:1px solid #ddd;background:#fff;font-size:10px}
+.size.active{border-color:#111;background:#111;color:#fff}
 .product-bottom{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:8px
+display:flex;align-items:center;justify-content:space-between;gap:8px
 }
-
-.price{
-font-size:14px;
-font-weight:700
-}
-
+.price{font-size:14px;font-weight:700}
 .add-btn{
-padding:10px 14px;
-border:1px solid #111;
-background:#111;
-color:#fff;
-font-size:10px
+padding:10px 14px;border:1px solid #111;background:#111;color:#fff;font-size:10px
 }
-
-.add-btn:hover{
-background:#333
-}
-
+.add-btn:hover{background:#333}
 .out-of-stock-btn{
-padding:10px 12px;
-border:1px solid #111;
-background:#fff;
-color:#111;
-font-size:9px;
-white-space:nowrap
+padding:10px 12px;border:1px solid #111;background:#fff;color:#111;
+font-size:9px;white-space:nowrap
 }
+.out-of-stock-btn:hover{background:#111;color:#fff}
 
-.out-of-stock-btn:hover{
-background:#111;
-color:#fff
-}
-
-
-/* =========================
-   DISCOVERY
-========================= */
-
-.discovery{
-background:#f5f4f0
-}
-
+/* DISCOVERY */
+.discovery{background:#f5f4f0}
 .discovery-inner{
-max-width:1250px;
-margin:auto;
-padding:90px 25px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center
+max-width:1250px;margin:auto;padding:90px 25px;display:grid;
+grid-template-columns:1fr 1fr;gap:60px;align-items:center
 }
-
-.discovery-img{
-height:430px
-}
-
-.discovery-img img{
-width:100%;
-height:100%;
-object-fit:cover
-}
-
-.discovery-content .section-title{
-font-size:50px
-}
-
+.discovery-img{height:430px}
+.discovery-img img{width:100%;height:100%;object-fit:cover}
+.discovery-content .section-title{font-size:50px}
 .discovery-content p{
-max-width:500px;
-margin:20px 0;
-color:#666;
-line-height:1.8
+max-width:500px;margin:20px 0;color:#666;line-height:1.8
 }
+.format-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:25px}
+.format{padding:10px 15px;border:1px solid #ddd;background:#fff;font-size:11px}
 
-.format-list{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-margin-bottom:25px
-}
+/* ABOUT */
+.about{max-width:850px;margin:auto;padding:100px 25px;text-align:center}
+.about .section-title{font-size:48px}
+.about p{margin-top:20px;color:#666;line-height:1.9}
 
-.format{
-padding:10px 15px;
-border:1px solid #ddd;
-background:#fff;
-font-size:11px
-}
-
-
-/* =========================
-   ABOUT
-========================= */
-
-.about{
-max-width:850px;
-margin:auto;
-padding:100px 25px;
-text-align:center
-}
-
-.about .section-title{
-font-size:48px
-}
-
-.about p{
-margin-top:20px;
-color:#666;
-line-height:1.9
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-padding:65px 25px 25px;
-background:#111;
-color:#fff
-}
-
+/* FOOTER */
+footer{padding:65px 25px 25px;background:#111;color:#fff}
 .footer-inner{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:2fr 1fr 1fr 1fr;
-gap:50px
+max-width:1200px;margin:auto;display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;gap:50px
 }
-
-.footer-logo{
-font-family:"Playfair Display",serif;
-font-size:28px;
-letter-spacing:2px
-}
-
+.footer-logo{font-family:"Playfair Display",serif;font-size:28px;letter-spacing:2px}
 .footer-desc{
-max-width:350px;
-margin-top:15px;
-color:#aaa;
-font-size:12px;
-line-height:1.7
+max-width:350px;margin-top:15px;color:#aaa;font-size:12px;line-height:1.7
 }
-
 .footer-title{
-margin-bottom:18px;
-font-size:11px;
-letter-spacing:2px;
-text-transform:uppercase
+margin-bottom:18px;font-size:11px;letter-spacing:2px;text-transform:uppercase
 }
-
-.footer-links{
-display:flex;
-flex-direction:column;
-gap:10px;
-color:#aaa;
-font-size:12px
-}
-
-.footer-links a:hover{
-color:#fff
-}
-
+.footer-links{display:flex;flex-direction:column;gap:10px;color:#aaa;font-size:12px}
+.footer-links a:hover{color:#fff}
 .footer-bottom{
-max-width:1200px;
-margin:50px auto 0;
-padding-top:20px;
-border-top:1px solid #333;
-display:flex;
-justify-content:space-between;
-color:#777;
-font-size:10px
+max-width:1200px;margin:50px auto 0;padding-top:20px;border-top:1px solid #333;
+display:flex;justify-content:space-between;color:#777;font-size:10px
 }
 
-
-/* =========================
-   CART
-========================= */
-
+/* CART */
 .cart-overlay{
-position:fixed;
-inset:0;
-z-index:2000;
-visibility:hidden;
-opacity:0;
-background:rgba(0,0,0,.4);
-transition:.3s
+position:fixed;inset:0;z-index:2000;visibility:hidden;opacity:0;
+background:rgba(0,0,0,.4);transition:.3s
 }
-
-.cart-overlay.open{
-visibility:visible;
-opacity:1
-}
-
+.cart-overlay.open{visibility:visible;opacity:1}
 .cart{
-width:min(430px,100%);
-height:100%;
-position:absolute;
-right:0;
-top:0;
-padding:25px;
-display:flex;
-flex-direction:column;
-background:#fff;
-transform:translateX(100%);
+width:min(430px,100%);height:100%;position:absolute;right:0;top:0;padding:25px;
+display:flex;flex-direction:column;background:#fff;transform:translateX(100%);
 transition:.35s
 }
-
-.cart-overlay.open .cart{
-transform:translateX(0)
-}
-
+.cart-overlay.open .cart{transform:translateX(0)}
 .cart-head{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding-bottom:20px;
-border-bottom:1px solid var(--border)
+display:flex;align-items:center;justify-content:space-between;
+padding-bottom:20px;border-bottom:1px solid var(--border)
 }
-
-.cart-head h2{
-font-family:"Playfair Display",serif;
-font-weight:500
-}
-
-.close-cart{
-border:0;
-background:none;
-font-size:25px
-}
-
-.cart-items{
-flex:1;
-overflow:auto;
-padding:20px 0
-}
-
-.empty{
-margin-top:80px;
-text-align:center;
-color:#888;
-font-size:13px
-}
-
+.cart-head h2{font-family:"Playfair Display",serif;font-weight:500}
+.close-cart{border:0;background:none;font-size:25px}
+.cart-items{flex:1;overflow:auto;padding:20px 0}
+.empty{margin-top:80px;text-align:center;color:#888;font-size:13px}
 .cart-item{
-display:flex;
-gap:12px;
-padding:14px 0;
-border-bottom:1px solid #eee
+display:flex;gap:12px;padding:14px 0;border-bottom:1px solid #eee
 }
-
 .cart-item img{
-width:65px;
-height:75px;
-object-fit:cover;
-background:#f4f4f4
+width:65px;height:75px;object-fit:cover;background:#f4f4f4
 }
-
-.cart-item-info{
-flex:1
-}
-
-.cart-item-name{
-font-family:"Playfair Display",serif
-}
-
-.cart-item-size{
-margin-top:4px;
-color:#888;
-font-size:10px
-}
-
-.cart-item-price{
-margin-top:7px;
-font-size:12px;
-font-weight:700
-}
-
-.remove{
-border:0;
-background:none;
-color:#999;
-font-size:10px
-}
-
-
-/* =========================
-   QUANTITY
-========================= */
-
-.quantity{
-display:flex;
-align-items:center;
-gap:8px;
-margin-top:9px
-}
-
+.cart-item-info{flex:1}
+.cart-item-name{font-family:"Playfair Display",serif}
+.cart-item-size{margin-top:4px;color:#888;font-size:10px}
+.cart-item-price{margin-top:7px;font-size:12px;font-weight:700}
+.remove{border:0;background:none;color:#999;font-size:10px}
+.quantity{display:flex;align-items:center;gap:8px;margin-top:9px}
 .quantity button{
-width:27px;
-height:27px;
-border:1px solid #ddd;
-background:#fff;
-font-size:16px;
-line-height:1
+width:27px;height:27px;border:1px solid #ddd;background:#fff;font-size:16px;line-height:1
 }
-
-.quantity span{
-min-width:20px;
-text-align:center;
-font-size:12px;
-font-weight:600
-}
-
-
-/* =========================
-   CART FOOTER
-========================= */
-
-.cart-footer{
-padding-top:20px;
-border-top:1px solid var(--border)
-}
-
-.total{
-display:flex;
-justify-content:space-between;
-margin-bottom:15px;
-font-weight:700
-}
-
+.quantity span{min-width:20px;text-align:center;font-size:12px;font-weight:600}
+.cart-footer{padding-top:20px;border-top:1px solid var(--border)}
+.total{display:flex;justify-content:space-between;margin-bottom:15px;font-weight:700}
 .checkout{
-width:100%;
-padding:17px;
-border:0;
-background:#111;
-color:#fff;
-font-size:12px
+width:100%;padding:17px;border:0;background:#111;color:#fff;font-size:12px
 }
+.checkout:hover{background:#333}
 
-.checkout:hover{
-background:#333
-}
-
-
-/* =========================
-   ORDER FORM
-========================= */
-
+/* ORDER FORM */
 .order-form{
-display:none;
-position:fixed;
-inset:0;
-z-index:3000;
-background:rgba(0,0,0,.55);
-padding:20px;
-align-items:center;
-justify-content:center
+display:none;position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.55);
+padding:20px;align-items:center;justify-content:center
 }
-
-.order-form.open{
-display:flex
-}
-
+.order-form.open{display:flex}
 .order-box{
-width:min(480px,100%);
-max-height:90vh;
-overflow:auto;
-background:#fff;
-padding:28px;
-position:relative
+width:min(480px,100%);max-height:90vh;overflow:auto;background:#fff;
+padding:28px;position:relative
 }
-
 .order-box h2{
-font-family:"Playfair Display",serif;
-font-size:28px;
-font-weight:500;
-margin-bottom:7px
+font-family:"Playfair Display",serif;font-size:28px;font-weight:500;margin-bottom:7px
 }
-
-.order-subtitle{
-color:#777;
-font-size:12px;
-margin-bottom:22px
-}
-
+.order-subtitle{color:#777;font-size:12px;margin-bottom:22px}
 .form-close{
-position:absolute;
-right:20px;
-top:15px;
-border:0;
-background:none;
-font-size:27px
+position:absolute;right:20px;top:15px;border:0;background:none;font-size:27px
 }
-
-.form-group{
-margin-bottom:15px
-}
-
+.form-group{margin-bottom:15px}
 .form-group label{
-display:block;
-margin-bottom:7px;
-font-size:11px;
-font-weight:600
+display:block;margin-bottom:7px;font-size:11px;font-weight:600
 }
-
-.form-group input,
-.form-group textarea{
-width:100%;
-padding:13px;
-border:1px solid #ddd;
-outline:none;
-font-size:13px;
+.form-group input,.form-group textarea{
+width:100%;padding:13px;border:1px solid #ddd;outline:none;font-size:13px;
 background:#fafafa
 }
-
-.form-group input:focus,
-.form-group textarea:focus{
-border-color:#111
-}
-
-.form-group textarea{
-height:80px;
-resize:none
-}
-
+.form-group input:focus,.form-group textarea:focus{border-color:#111}
+.form-group textarea{height:80px;resize:none}
 .send-order{
-width:100%;
-padding:16px;
-border:0;
-background:#111;
-color:#fff;
-font-size:12px;
-margin-top:5px
+width:100%;padding:16px;border:0;background:#111;color:#fff;font-size:12px;margin-top:5px
 }
+.send-order:hover{background:#333}
 
-.send-order:hover{
-background:#333
-}
-
-
-/* =========================
-   WHATSAPP
-========================= */
-
+/* WHATSAPP */
 .whatsapp{
-position:fixed;
-right:20px;
-bottom:20px;
-z-index:900;
-width:53px;
-height:53px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-background:#25D366;
-color:#fff;
-font-size:25px;
-box-shadow:0 5px 20px rgba(0,0,0,.2);
-transition:.25s
+position:fixed;right:20px;bottom:20px;z-index:900;width:53px;height:53px;
+display:flex;align-items:center;justify-content:center;border-radius:50%;
+background:#25D366;color:#fff;font-size:25px;
+box-shadow:0 5px 20px rgba(0,0,0,.2);transition:.25s
 }
+.whatsapp:hover{transform:scale(1.08)}
+.search-svg{width:21px;height:21px}
 
-.whatsapp:hover{
-transform:scale(1.08)
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
+/* MOBILE */
 @media(max-width:900px){
-
-.nav-links{
-display:none
+.nav-links{display:none}
+.hero-inner{min-height:650px;padding:50px 20px}
+.hero-image img{max-width:80%;max-height:220px}
+.trust-inner{grid-template-columns:repeat(2,1fr)}
+.trust-item:nth-child(2){border-right:0}
+.trust-item:nth-child(-n+2){border-bottom:1px solid var(--border)}
+.categories{grid-template-columns:1fr 1fr;gap:10px}
+.category{height:300px}
+.category-name{font-size:25px}
+.products{grid-template-columns:repeat(2,1fr)}
+.discovery-inner{grid-template-columns:1fr}
+.footer-inner{grid-template-columns:1fr 1fr}
 }
-
-.hero-inner{
-min-height:650px;
-padding:50px 20px
-}
-
-.hero-image img{
-max-width:80%;
-max-height:220px
-}
-
-.trust-inner{
-grid-template-columns:repeat(2,1fr)
-}
-
-.trust-item:nth-child(2){
-border-right:0
-}
-
-.trust-item:nth-child(-n+2){
-border-bottom:1px solid var(--border)
-}
-
-.categories{
-grid-template-columns:1fr 1fr;
-gap:10px
-}
-
-.category{
-height:300px
-}
-
-.category-name{
-font-size:25px
-}
-
-.products{
-grid-template-columns:repeat(2,1fr)
-}
-
-.discovery-inner{
-grid-template-columns:1fr
-}
-
-.footer-inner{
-grid-template-columns:1fr 1fr
-}
-
-}
-
 
 @media(max-width:600px){
-
-.topbar{
-font-size:9px
-}
-
-.nav{
-height:65px;
-padding:0 16px
-}
-
-.logo{
-font-size:19px
-}
-
-.nav-icons{
-gap:15px
-}
-
-.hero{
-min-height:620px
-}
-
-.hero-inner{
-min-height:620px;
-padding:45px 18px
-}
-
-.hero-image{
-margin-bottom:25px
-}
-
-.hero-image img{
-max-width:82%;
-max-height:190px
-}
-
-.hero h1{
-font-size:48px
-}
-
-.hero-text{
-font-size:13px;
-line-height:1.7
-}
-
-.hero-buttons{
-flex-direction:column;
-width:100%;
-max-width:300px
-}
-
-.btn{
-text-align:center
-}
-
-.section{
-padding:65px 16px
-}
-
-.section-title{
-font-size:32px
-}
-
-.categories{
-grid-template-columns:1fr 1fr;
-gap:8px
-}
-
-.category{
-height:230px
-}
-
-.category-name{
-font-size:20px
-}
-
-.category-subtitle{
-font-size:8px;
-letter-spacing:1.3px
-}
-
-.products{
-grid-template-columns:1fr 1fr;
-gap:8px
-}
-
-.product-image{
-height:205px
-}
-
-.product-info{
-padding:12px
-}
-
-.product-name{
-font-size:17px
-}
-
-.notes{
-font-size:9px
-}
-
-.sizes{
-gap:4px
-}
-
-.size{
-padding:6px 8px
-}
-
-.add-btn,
-.out-of-stock-btn{
-padding:8px 7px;
-font-size:8px
-}
-
+.topbar{font-size:9px}
+.nav{height:65px;padding:0 16px}
+.logo{font-size:19px}
+.nav-icons{gap:15px}
+.hero{min-height:620px}
+.hero-inner{min-height:620px;padding:45px 18px}
+.hero-image{margin-bottom:25px}
+.hero-image img{max-width:82%;max-height:190px}
+.hero h1{font-size:48px}
+.hero-text{font-size:13px;line-height:1.7}
+.hero-buttons{flex-direction:column;width:100%;max-width:300px}
+.btn{text-align:center}
+.section{padding:65px 16px}
+.section-title{font-size:32px}
+.categories{grid-template-columns:1fr 1fr;gap:8px}
+.category{height:230px}
+.category-name{font-size:20px}
+.category-subtitle{font-size:8px;letter-spacing:1.3px}
+.products{grid-template-columns:1fr 1fr;gap:8px}
+.product-image{height:205px}
+.product-info{padding:12px}
+.product-name{font-size:17px}
+.notes{font-size:9px}
+.sizes{gap:4px}
+.size{padding:6px 8px}
+.add-btn,.out-of-stock-btn{padding:8px 7px;font-size:8px}
 .shop-tools{
-justify-content:flex-start;
-align-items:stretch;
-flex-direction:column
+justify-content:flex-start;align-items:stretch;flex-direction:column
 }
-
-.filter-btn{
-padding:13px 18px;
-width:100%
-}
-
+.filter-btn{padding:13px 18px;width:100%}
 .sort-wrapper{
-width:100%;
-display:flex;
-flex-direction:column;
-align-items:stretch;
-gap:6px
+width:100%;display:flex;flex-direction:column;align-items:stretch;gap:6px
 }
-
-.sort-label{
-font-size:10px
+.sort-label{font-size:10px}
+.sort-select{width:100%;min-width:0;height:48px}
+.discovery-inner{padding:65px 16px}
+.discovery-img{height:300px}
+.discovery-content .section-title{font-size:38px}
+.footer-inner{grid-template-columns:1fr;gap:35px}
+.footer-bottom{flex-direction:column;gap:8px}
+.order-box{padding:23px}
+.search-panel{padding:20px 15px 25px}
+.search-title{font-size:22px}
+.main-search-input{height:53px;font-size:13px}
+.search-result{padding:10px}
+.search-result img{width:52px;height:60px}
+.search-result-name{font-size:16px}
 }
-
-.sort-select{
-width:100%;
-min-width:0;
-height:48px
-}
-
-.discovery-inner{
-padding:65px 16px
-}
-
-.discovery-img{
-height:300px
-}
-
-.discovery-content .section-title{
-font-size:38px
-}
-
-.footer-inner{
-grid-template-columns:1fr;
-gap:35px
-}
-
-.footer-bottom{
-flex-direction:column;
-gap:8px
-}
-
-.order-box{
-padding:23px
-}
-
-.search-panel{
-padding:20px 15px 25px
-}
-
-.search-title{
-font-size:22px
-}
-
-.main-search-input{
-height:53px;
-font-size:13px
-}
-
-.search-result{
-padding:10px
-}
-
-.search-result img{
-width:52px;
-height:60px
-}
-
-.search-result-name{
-font-size:16px
-}
-
-}
-
-
-/* =========================
-   SEARCH ICON
-========================= */
-
-.search-svg{
-width:21px;
-height:21px
-}
-
 </style>
-
 </head>
 
-
 <body>
-
 
 <div class="topbar">
 ✦ Livraison partout au Maroc · Paiement à la livraison
 </div>
 
-
 <header>
-
 <div class="nav">
 
 <a href="#" class="logo">
-
 GHIMED
-
-<span>
-FRAGRANCES
-</span>
-
+<span>FRAGRANCES</span>
 </a>
-
 
 <nav class="nav-links">
-
-<a href="#shop">
-Shop
-</a>
-
-<a href="#collections">
-Collections
-</a>
-
-<a href="#discovery">
-Discovery
-</a>
-
-<a href="#about">
-À propos
-</a>
-
+<a href="#shop">Shop</a>
+<a href="#collections">Collections</a>
+<a href="#discovery">Discovery</a>
+<a href="#about">À propos</a>
 </nav>
-
 
 <div class="nav-icons">
 
-<button
-class="icon-btn"
-onclick="openSearch()"
-aria-label="Search">
-
-<svg
-class="search-svg"
-viewBox="0 0 24 24"
-fill="none"
-stroke="currentColor"
-stroke-width="1.7"
-stroke-linecap="round">
-
-<circle
-cx="11"
-cy="11"
-r="7">
-</circle>
-
-<path
-d="m20 20-4-4">
-</path>
-
+<button class="icon-btn" onclick="openSearch()" aria-label="Search">
+<svg class="search-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+<circle cx="11" cy="11" r="7"></circle>
+<path d="m20 20-4-4"></path>
 </svg>
-
 </button>
 
-
-<button
-class="icon-btn"
-onclick="openCart()"
-aria-label="Cart">
-
-<svg
-width="22"
-height="22"
-viewBox="0 0 24 24"
-fill="none"
-stroke="currentColor"
-stroke-width="1.5"
-stroke-linecap="round"
-stroke-linejoin="round">
-
-<path
-d="M5.5 8.5h13l1 12h-15l1-12Z"/>
-
-<path
-d="M9 8.5V7a3 3 0 0 1 6 0v1.5"/>
-
+<button class="icon-btn" onclick="openCart()" aria-label="Cart">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M5.5 8.5h13l1 12h-15l1-12Z"/>
+<path d="M9 8.5V7a3 3 0 0 1 6 0v1.5"/>
 </svg>
-
-<span
-class="cart-count"
-id="cartCount">
-0
-</span>
-
+<span class="cart-count" id="cartCount">0</span>
 </button>
 
 </div>
-
 </div>
-
 </header>
 
-
-<div
-class="search-overlay"
-id="searchOverlay"
-onclick="closeSearchOutside(event)">
-
+<div class="search-overlay" id="searchOverlay" onclick="closeSearchOutside(event)">
 <div class="search-panel">
-
 <div class="search-panel-inner">
 
 <div class="search-top">
-
-<div class="search-title">
-Rechercher un parfum
+<div class="search-title">Rechercher un parfum</div>
+<button class="close-search" onclick="closeSearch()">×</button>
 </div>
-
-<button
-class="close-search"
-onclick="closeSearch()">
-×
-</button>
-
-</div>
-
 
 <div class="search-main">
-
-<span class="search-main-icon">
-⌕
-</span>
-
-<input
-id="mainSearchInput"
-class="main-search-input"
-type="text"
-autocomplete="off"
-placeholder="Nom du parfum ou marque..."
-oninput="searchFromTop()">
-
+<span class="search-main-icon">⌕</span>
+<input id="mainSearchInput" class="main-search-input" type="text"
+autocomplete="off" placeholder="Nom du parfum ou marque..." oninput="searchFromTop()">
 </div>
-
 
 <div class="search-hint">
 Exemple : La Belle, Dior, Chanel, JPG, Stronger With You...
 </div>
 
-
-<div
-class="search-results"
-id="searchResults">
-</div>
+<div class="search-results" id="searchResults"></div>
 
 </div>
-
 </div>
-
 </div>
-
-
-<!-- =========================
-     HERO
-========================= -->
 
 <section class="hero">
-
 <div class="hero-inner">
-
 <div class="hero-content">
 
 <div class="hero-image">
-
-<img
-src="1786650246432578995102.png"
-alt="GHIMED FRAGRANCES Logo">
-
+<img src="1786650246432578995102.png" alt="GHIMED FRAGRANCES Logo">
 </div>
 
-
-<div class="hero-small">
-Authentic Fragrance · Decants
-</div>
-
+<div class="hero-small">Authentic Fragrance · Decants</div>
 
 <h1>
-
 Find your<br>
-
-<em>
-signature scent.
-</em>
-
+<em>signature scent.</em>
 </h1>
 
-
 <p class="hero-text">
-
 Découvrez vos parfums préférés en formats pratiques de 5ml et 10ml.
-
 </p>
 
-
 <div class="hero-buttons">
-
-<a
-href="#collections"
-class="btn btn-dark">
-
-Découvrir les parfums
-
-</a>
-
-
-<a
-href="#discovery"
-class="btn btn-light">
-
-Discovery Sets
-
-</a>
-
-</div>
-
-
+<a href="#collections" class="btn btn-dark">Découvrir les parfums</a>
+<a href="#discovery" class="btn btn-light">Discovery Sets</a>
 </div>
 
 </div>
-
+</div>
 </section>
 
-
 <section class="trust">
-
 <div class="trust-inner">
 
 <div class="trust-item">
-
-<div class="trust-icon">
-✦
+<div class="trust-icon">✦</div>
+<div class="trust-title">Parfums originaux</div>
+<div class="trust-text">Sélection soigneusement choisie</div>
 </div>
-
-<div class="trust-title">
-Parfums originaux
-</div>
-
-<div class="trust-text">
-Sélection soigneusement choisie
-</div>
-
-</div>
-
 
 <div class="trust-item">
-
-<div class="trust-icon">
-◌
+<div class="trust-icon">◌</div>
+<div class="trust-title">5ml / 10ml</div>
+<div class="trust-text">Choisissez votre format</div>
 </div>
-
-<div class="trust-title">
-5ml / 10ml
-</div>
-
-<div class="trust-text">
-Choisissez votre format
-</div>
-
-</div>
-
 
 <div class="trust-item">
-
-<div class="trust-icon">
-⌁
+<div class="trust-icon">⌁</div>
+<div class="trust-title">Livraison Maroc</div>
+<div class="trust-text">Toutes les villes</div>
 </div>
-
-<div class="trust-title">
-Livraison Maroc
-</div>
-
-<div class="trust-text">
-Toutes les villes
-</div>
-
-</div>
-
 
 <div class="trust-item">
-
-<div class="trust-icon">
-✓
-</div>
-
-<div class="trust-title">
-Paiement à la livraison
-</div>
-
-<div class="trust-text">
-Simple & sécurisé
+<div class="trust-icon">✓</div>
+<div class="trust-title">Paiement à la livraison</div>
+<div class="trust-text">Simple & sécurisé</div>
 </div>
 
 </div>
-
-</div>
-
 </section>
 
-
-<section
-class="section"
-id="collections">
+<section class="section" id="collections">
 
 <div class="section-head">
-
 <div>
-
-<div class="section-label">
-Explore
+<div class="section-label">Explore</div>
+<h2 class="section-title">Shop by category</h2>
 </div>
 
-<h2 class="section-title">
-Shop by category
-</h2>
-
-</div>
-
-
-<a
-href="#shop"
-class="view-all"
-onclick="filterGender('all');return false;">
-
+<a href="#shop" class="view-all" onclick="filterGender('all');return false;">
 Voir tout →
-
 </a>
-
 </div>
-
 
 <div class="categories">
 
-
-<a
-href="#shop"
-class="category"
-onclick="filterGender('him');return false;">
-
-<img
-src="IMG_20260814_230520.png"
-alt="Decants pour les hommes">
-
+<a href="#shop" class="category" onclick="filterGender('him');return false;">
+<img src="IMG_20260814_230520.png" alt="Decants pour les hommes">
 <div class="category-overlay">
-
 <div>
-
-<div class="category-name">
-Decants pour les hommes
+<div class="category-name">Decants pour les hommes</div>
+<div class="category-subtitle">Découvrez notre sélection masculine</div>
 </div>
-
-<div class="category-subtitle">
-Découvrez notre sélection masculine
 </div>
-
-</div>
-
-</div>
-
 </a>
 
-
-<a
-href="#shop"
-class="category"
-onclick="filterGender('her');return false;">
-
-<img
-src="IMG_20260815_040418.png"
-alt="Decants pour les femmes">
-
+<a href="#shop" class="category" onclick="filterGender('her');return false;">
+<img src="IMG_20260815_040418.png" alt="Decants pour les femmes">
 <div class="category-overlay">
-
 <div>
-
-<div class="category-name">
-Decants pour les femmes
+<div class="category-name">Decants pour les femmes</div>
+<div class="category-subtitle">Découvrez notre sélection féminine</div>
 </div>
-
-<div class="category-subtitle">
-Découvrez notre sélection féminine
 </div>
-
-</div>
-
-</div>
-
 </a>
 
-
 </div>
-
 </section>
 
-
-<section
-class="section"
-id="shop">
+<section class="section" id="shop">
 
 <div class="section-head">
-
 <div>
-
-<div class="section-label">
-Our collection
+<div class="section-label">Our collection</div>
+<h2 class="section-title" id="shopTitle">Best Sellers</h2>
 </div>
-
-<h2
-class="section-title"
-id="shopTitle">
-
-Best Sellers
-
-</h2>
-
 </div>
-
-</div>
-
-
-<!-- =========================
-     SHOP TOOLS
-========================= -->
 
 <div class="shop-tools">
 
-
-<button
-class="filter-btn"
-onclick="showAll()">
-
+<button class="filter-btn" onclick="showAll()">
 Tous les parfums
-
 </button>
 
-
 <div class="sort-wrapper">
+<label class="sort-label" for="sortSelect">Trier par</label>
 
-<label
-class="sort-label"
-for="sortSelect">
-
-Trier par
-
-</label>
-
-
-<select
-id="sortSelect"
-class="sort-select"
-onchange="sortProducts(this.value)">
-
-<option value="popular">
-Plus populaires
-</option>
-
-<option value="price-low">
-Prix : moins cher → plus cher
-</option>
-
-<option value="price-high">
-Prix : plus cher → moins cher
-</option>
-
-<option value="newest">
-Plus récents
-</option>
-
-<option value="oldest">
-Plus anciens
-</option>
-
+<select id="sortSelect" class="sort-select" onchange="sortProducts(this.value)">
+<option value="popular">Plus populaires</option>
+<option value="price-low">Prix : moins cher → plus cher</option>
+<option value="price-high">Prix : plus cher → moins cher</option>
+<option value="newest">Plus récents</option>
+<option value="oldest">Plus anciens</option>
 </select>
 
 </div>
-
-
 </div>
 
-
-<div
-class="products"
-id="products">
-</div>
-
+<div class="products" id="products"></div>
 </section>
 
-
-<section
-class="discovery"
-id="discovery">
-
+<section class="discovery" id="discovery">
 <div class="discovery-inner">
 
 <div class="discovery-img">
-
-<img
-src="https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=1000&q=85"
-alt="Discovery">
-
+<img src="https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=1000&q=85" alt="Discovery">
 </div>
-
 
 <div class="discovery-content">
-
-<div class="section-label">
-Find your fragrance
-</div>
+<div class="section-label">Find your fragrance</div>
 
 <h2 class="section-title">
-
 Discover more.<br>
 Spend less.
-
 </h2>
 
 <p>
-
 Découvrez plusieurs fragrances en formats 5ml et 10ml avant de choisir votre prochain parfum.
-
 </p>
 
-
 <div class="format-list">
-
-<div class="format">
-5ml
+<div class="format">5ml</div>
+<div class="format">10ml</div>
 </div>
 
-<div class="format">
-10ml
-</div>
-
-</div>
-
-
-<a
-href="#shop"
-class="btn btn-dark"
-onclick="filterGender('all');return false;">
-
+<a href="#shop" class="btn btn-dark" onclick="filterGender('all');return false;">
 Explorer les parfums
-
 </a>
-
 </div>
 
 </div>
-
 </section>
 
+<section class="about" id="about">
 
-<section
-class="about"
-id="about">
-
-<div class="section-label">
-GHIMED FRAGRANCES
-</div>
+<div class="section-label">GHIMED FRAGRANCES</div>
 
 <h2 class="section-title">
-
 The fragrance,<br>
 your way.
-
 </h2>
 
 <p>
-
 Chez GHIMED FRAGRANCES, nous croyons qu'un parfum doit être découvert avant d'être adopté.
 Nos decants vous permettent de découvrir différentes fragrances en formats 5ml et 10ml,
 simplement et à votre rythme.
-
 </p>
 
 </section>
-
 
 <footer>
 
 <div class="footer-inner">
 
 <div>
-
-<div class="footer-logo">
-GHIMED
-</div>
-
+<div class="footer-logo">GHIMED</div>
 <p class="footer-desc">
-
 Authentic fragrance decants.
 Découvrez votre prochaine signature olfactive.
-
 </p>
-
 </div>
-
 
 <div>
-
-<div class="footer-title">
-Shop
-</div>
-
+<div class="footer-title">Shop</div>
 <div class="footer-links">
 
-<a
-href="#shop"
-onclick="filterGender('all');return false;">
-
+<a href="#shop" onclick="filterGender('all');return false;">
 Best Sellers
-
 </a>
 
-<a
-href="#shop"
-onclick="filterGender('him');return false;">
-
+<a href="#shop" onclick="filterGender('him');return false;">
 Decants pour les hommes
-
 </a>
 
-<a
-href="#shop"
-onclick="filterGender('her');return false;">
-
+<a href="#shop" onclick="filterGender('her');return false;">
 Decants pour les femmes
-
 </a>
 
 </div>
-
 </div>
-
 
 <div>
-
-<div class="footer-title">
-Information
-</div>
-
+<div class="footer-title">Information</div>
 <div class="footer-links">
-
-<a href="#">
-Livraison
-</a>
-
-<a href="#">
-Paiement
-</a>
-
-<a href="#">
-FAQ
-</a>
-
-<a href="#about">
-À propos
-</a>
-
+<a href="#">Livraison</a>
+<a href="#">Paiement</a>
+<a href="#">FAQ</a>
+<a href="#about">À propos</a>
 </div>
-
 </div>
-
 
 <div>
-
-<div class="footer-title">
-Contact
-</div>
-
+<div class="footer-title">Contact</div>
 <div class="footer-links">
 
-<a
-href="https://wa.me/212708773218"
-target="_blank">
-
+<a href="https://wa.me/212708773218" target="_blank">
 WhatsApp
-
 </a>
 
-<a href="#">
-Instagram
-</a>
+<a href="#">Instagram</a>
+<a href="#">TikTok</a>
 
-<a href="#">
-TikTok
-</a>
-
+</div>
 </div>
 
 </div>
-
-</div>
-
 
 <div class="footer-bottom">
-
-<span>
-© 2026 GHIMED FRAGRANCES
-</span>
-
-<span>
-Authentic fragrance decants
-</span>
-
+<span>© 2026 GHIMED FRAGRANCES</span>
+<span>Authentic fragrance decants</span>
 </div>
 
 </footer>
 
-
-<div
-class="cart-overlay"
-id="cartOverlay"
-onclick="closeCartOutside(event)">
+<div class="cart-overlay" id="cartOverlay" onclick="closeCartOutside(event)">
 
 <div class="cart">
 
 <div class="cart-head">
-
-<h2>
-Your Bag
-</h2>
-
-<button
-class="close-cart"
-onclick="closeCart()">
-
-×
-
-</button>
-
+<h2>Your Bag</h2>
+<button class="close-cart" onclick="closeCart()">×</button>
 </div>
 
-
-<div
-class="cart-items"
-id="cartItems">
-
-<div class="empty">
-Votre panier est vide.
+<div class="cart-items" id="cartItems">
+<div class="empty">Votre panier est vide.</div>
 </div>
-
-</div>
-
 
 <div class="cart-footer">
 
 <div class="total">
-
-<span>
-Total
-</span>
-
-<span id="cartTotal">
-0 DH
-</span>
-
+<span>Total</span>
+<span id="cartTotal">0 DH</span>
 </div>
 
-
-<button
-class="checkout"
-onclick="openOrderForm()">
-
+<button class="checkout" onclick="openOrderForm()">
 Commander via WhatsApp
-
 </button>
 
 </div>
-
+</div>
 </div>
 
-</div>
-
-
-<div
-class="order-form"
-id="orderForm">
+<div class="order-form" id="orderForm">
 
 <div class="order-box">
 
-<button
-class="form-close"
-onclick="closeOrderForm()">
+<button class="form-close" onclick="closeOrderForm()">×</button>
 
-×
-
-</button>
-
-
-<h2>
-Finaliser votre commande
-</h2>
-
+<h2>Finaliser votre commande</h2>
 
 <p class="order-subtitle">
-
 Veuillez remplir vos informations pour recevoir votre commande.
-
 </p>
-
 
 <form onsubmit="sendOrder(event)">
 
 <div class="form-group">
-
-<label>
-Nom complet *
-</label>
-
-<input
-id="customerName"
-type="text"
-placeholder="Votre nom complet"
-required>
-
+<label>Nom complet *</label>
+<input id="customerName" type="text" placeholder="Votre nom complet" required>
 </div>
-
 
 <div class="form-group">
-
-<label>
-Téléphone *
-</label>
-
-<input
-id="customerPhone"
-type="tel"
-placeholder="Votre numéro de téléphone"
-required>
-
+<label>Téléphone *</label>
+<input id="customerPhone" type="tel" placeholder="Votre numéro de téléphone" required>
 </div>
-
 
 <div class="form-group">
-
-<label>
-VOTRE ADRESSE COMPLETE *
-</label>
-
-<textarea
-id="customerAddress"
-placeholder="Votre adresse complète"
-required></textarea>
-
+<label>VOTRE ADRESSE COMPLETE *</label>
+<textarea id="customerAddress" placeholder="Votre adresse complète" required></textarea>
 </div>
-
 
 <div class="form-group">
-
-<label>
-Ville *
-</label>
-
-<input
-id="customerCity"
-type="text"
-placeholder="Votre ville"
-required>
-
+<label>Ville *</label>
+<input id="customerCity" type="text" placeholder="Votre ville" required>
 </div>
 
-
-<button
-type="submit"
-class="send-order">
-
+<button type="submit" class="send-order">
 📲 Confirmer la commande sur WhatsApp
-
 </button>
 
 </form>
-
+</div>
 </div>
 
-</div>
-
-
-<a
-class="whatsapp"
-href="https://wa.me/212708773218"
-target="_blank"
-aria-label="WhatsApp">
-
+<a class="whatsapp" href="https://wa.me/212708773218" target="_blank" aria-label="WhatsApp">
 ☎
-
 </a>
-
 
 <script>
 
@@ -2852,20 +1229,14 @@ outOfStock:false
 
 ];
 
-
 /* =========================
    CART
 ========================= */
 
-let cart=
-JSON.parse(localStorage.getItem("ghimedCart"))||[];
-
+let cart=JSON.parse(localStorage.getItem("ghimedCart"))||[];
 let selectedSizes={};
-
 let currentGender="all";
-
 let currentSort="popular";
-
 
 /* =========================
    POPULARITY
@@ -2873,8 +1244,7 @@ let currentSort="popular";
 
 function getPopularity(product){
 
-const badge=
-(product.badge||"").toLowerCase();
+const badge=(product.badge||"").toLowerCase();
 
 if(badge.includes("best seller")) return 100;
 if(badge.includes("bestseller")) return 100;
@@ -2889,28 +1259,28 @@ if(badge.includes("summer")) return 55;
 if(badge.includes("premium")) return 50;
 
 return 40;
-
 }
-
 
 /* =========================
-   LOWEST PRICE
-   يخدم مع 5ml و 10ml
+   PRICE FOR SORTING
+   مهم:
+   إذا كان عند العطر 10ml نستعمل 10ml
+   وليس 5ml.
+   وإذا كان عنده فقط 5ml نستعمل 5ml.
 ========================= */
 
-function getLowestPrice(product){
+function getSortPrice(product){
 
-const prices=
-Object.values(product.prices);
+if(product.prices["10ml"] !== undefined){
+return product.prices["10ml"];
+}
 
-if(!prices.length){
+if(product.prices["5ml"] !== undefined){
+return product.prices["5ml"];
+}
+
 return Infinity;
 }
-
-return Math.min(...prices);
-
-}
-
 
 /* =========================
    SORT PRODUCTS
@@ -2923,20 +1293,13 @@ currentSort=type;
 let list=products;
 
 if(currentGender!=="all"){
-
-list=
-products.filter(
-product=>product.gender===currentGender
-);
-
+list=products.filter(product=>product.gender===currentGender);
 }
 
 list=sortList(list,type);
 
 displayProducts(list);
-
 }
-
 
 /* =========================
    SORT LIST
@@ -2951,60 +1314,47 @@ switch(type){
 case "price-low":
 
 sorted.sort(
-(a,b)=>
-getLowestPrice(a)-getLowestPrice(b)
+(a,b)=>getSortPrice(a)-getSortPrice(b)
 );
 
 break;
-
 
 case "price-high":
 
 sorted.sort(
-(a,b)=>
-getLowestPrice(b)-getLowestPrice(a)
+(a,b)=>getSortPrice(b)-getSortPrice(a)
 );
 
 break;
-
 
 case "newest":
 
 sorted.sort(
-(a,b)=>
-b.id-a.id
+(a,b)=>b.id-a.id
 );
 
 break;
-
 
 case "oldest":
 
 sorted.sort(
-(a,b)=>
-a.id-b.id
+(a,b)=>a.id-b.id
 );
 
 break;
 
-
 case "popular":
-
 default:
 
 sorted.sort(
-(a,b)=>
-getPopularity(b)-getPopularity(a)
+(a,b)=>getPopularity(b)-getPopularity(a)
 );
 
 break;
-
 }
 
 return sorted;
-
 }
-
 
 /* =========================
    DISPLAY PRODUCTS
@@ -3012,35 +1362,25 @@ return sorted;
 
 function displayProducts(list=products){
 
-const container=
-document.getElementById("products");
+const container=document.getElementById("products");
 
 container.innerHTML="";
 
 if(list.length===0){
 
 container.innerHTML=`
-
 <p style="
 grid-column:1/-1;
 text-align:center;
 color:#888;
 padding:50px;">
-
 Aucun parfum trouvé.
-
 </p>`;
 
 return;
-
 }
 
-
-/* تطبيق الترتيب الحالي */
-
-const sortedList=
-sortList(list,currentSort);
-
+const sortedList=sortList(list,currentSort);
 
 sortedList.forEach(product=>{
 
@@ -3048,12 +1388,9 @@ const selected=
 selectedSizes[product.id]||
 Object.keys(product.prices)[0];
 
-
 container.innerHTML+=`
 
-<div
-class="product"
-id="product-${product.id}">
+<div class="product" id="product-${product.id}">
 
 <div class="product-image">
 
@@ -3083,7 +1420,6 @@ alt="${product.brand} ${product.name}">
 
 </div>
 
-
 <div class="product-info">
 
 <div class="brand">
@@ -3097,7 +1433,6 @@ ${product.name}
 <div class="notes">
 ${product.notes}
 </div>
-
 
 <div class="sizes">
 
@@ -3117,15 +1452,11 @@ ${size}
 
 </div>
 
-
 <div class="product-bottom">
 
 <div class="price">
-
 ${product.prices[selected]} DH
-
 </div>
-
 
 ${
 product.outOfStock
@@ -3158,15 +1489,11 @@ Ajouter
 </div>
 
 </div>
-
 </div>
-
 `;
 
 });
-
 }
-
 
 /* =========================
    SEARCH
@@ -3174,8 +1501,7 @@ Ajouter
 
 function openSearch(){
 
-const overlay=
-document.getElementById("searchOverlay");
+const overlay=document.getElementById("searchOverlay");
 
 overlay.classList.add("open");
 
@@ -3183,82 +1509,54 @@ document.body.style.overflow="hidden";
 
 setTimeout(()=>{
 
-const input=
-document.getElementById("mainSearchInput");
+const input=document.getElementById("mainSearchInput");
 
 input.focus();
 
 showSearchSuggestions("");
 
 },300);
-
 }
-
 
 function closeSearch(){
 
-document
-.getElementById("searchOverlay")
-.classList.remove("open");
+document.getElementById("searchOverlay").classList.remove("open");
 
 document.body.style.overflow="";
 
-document
-.getElementById("mainSearchInput")
-.value="";
+document.getElementById("mainSearchInput").value="";
 
-document
-.getElementById("searchResults")
-.innerHTML="";
-
+document.getElementById("searchResults").innerHTML="";
 }
-
 
 function closeSearchOutside(event){
 
 if(event.target.id==="searchOverlay"){
-
 closeSearch();
-
 }
-
 }
-
 
 function searchFromTop(){
 
 const query=
-document
-.getElementById("mainSearchInput")
-.value
-.toLowerCase()
-.trim();
+document.getElementById("mainSearchInput").value.toLowerCase().trim();
 
 showSearchSuggestions(query);
-
 }
-
 
 function showSearchSuggestions(query){
 
-const container=
-document.getElementById("searchResults");
+const container=document.getElementById("searchResults");
 
 let results=products;
 
 if(query){
 
-results=
-products.filter(product=>{
+results=products.filter(product=>{
 
-const name=
-product.name.toLowerCase();
-
-const brand=
-product.brand.toLowerCase();
-
-const notes=
-product.notes.toLowerCase();
+const name=product.name.toLowerCase();
+const brand=product.brand.toLowerCase();
+const notes=product.notes.toLowerCase();
 
 return(
 name.includes(query)||
@@ -3267,9 +1565,7 @@ notes.includes(query)
 );
 
 });
-
 }
-
 
 if(results.length===0){
 
@@ -3285,15 +1581,11 @@ Aucun parfum trouvé pour
 `;
 
 return;
-
 }
 
+container.innerHTML=results.map(product=>{
 
-container.innerHTML=
-results.map(product=>{
-
-const firstSize=
-Object.keys(product.prices)[0];
+const firstSize=Object.keys(product.prices)[0];
 
 return`
 
@@ -3324,18 +1616,14 @@ ${product.prices[firstSize]} DH
 
 </div>
 
-<div>
-→
-</div>
+<div>→</div>
 
 </div>
 
 `;
 
 }).join("");
-
 }
-
 
 /* =========================
    GO TO PRODUCT
@@ -3343,8 +1631,7 @@ ${product.prices[firstSize]} DH
 
 function goToProduct(id){
 
-const product=
-products.find(p=>p.id===id);
+const product=products.find(p=>p.id===id);
 
 if(!product){
 return;
@@ -3353,21 +1640,16 @@ return;
 closeSearch();
 
 currentGender="all";
-
 currentSort="popular";
 
-document.getElementById("shopTitle").textContent=
-"Best Sellers";
-
-document.getElementById("sortSelect").value=
-"popular";
+document.getElementById("shopTitle").textContent="Best Sellers";
+document.getElementById("sortSelect").value="popular";
 
 displayProducts(products);
 
 setTimeout(()=>{
 
-const element=
-document.getElementById("product-"+id);
+const element=document.getElementById("product-"+id);
 
 if(element){
 
@@ -3391,9 +1673,7 @@ element.classList.remove("highlight");
 }
 
 },100);
-
 }
-
 
 /* =========================
    OUT OF STOCK
@@ -3401,8 +1681,7 @@ element.classList.remove("highlight");
 
 function requestPerfume(id){
 
-const product=
-products.find(p=>p.id===id);
+const product=products.find(p=>p.id===id);
 
 const message=
 "👋 Bonjour GHIMED FRAGRANCES\n\n"+
@@ -3411,18 +1690,12 @@ const message=
 "Il est actuellement OUT OF STOCK.\n"+
 "Est-il possible de le commander / le ramener ?";
 
-
 const whatsappURL=
 "https://wa.me/212708773218?text="+
 encodeURIComponent(message);
 
-window.open(
-whatsappURL,
-"_blank"
-);
-
+window.open(whatsappURL,"_blank");
 }
-
 
 /* =========================
    FILTER GENDER
@@ -3434,16 +1707,13 @@ currentGender=gender;
 
 let filtered=products;
 
-
 if(gender!=="all"){
 
-filtered=
-products.filter(
+filtered=products.filter(
 product=>product.gender===gender
 );
 
 }
-
 
 if(gender==="him"){
 
@@ -3466,22 +1736,15 @@ document.getElementById("shopTitle").textContent=
 
 }
 
-
-/* نحافظ على Trier par الحالي */
-
 displayProducts(filtered);
-
 
 document.getElementById("shop").scrollIntoView({
 behavior:"smooth"
 });
-
 }
-
 
 /* =========================
    SELECT SIZE
-   5ml / 10ml فقط
 ========================= */
 
 function selectSize(id,size){
@@ -3490,21 +1753,16 @@ selectedSizes[id]=size;
 
 let list=products;
 
-
 if(currentGender!=="all"){
 
-list=
-products.filter(
+list=products.filter(
 product=>product.gender===currentGender
 );
 
 }
 
-
 displayProducts(list);
-
 }
-
 
 /* =========================
    ADD TO CART
@@ -3512,22 +1770,18 @@ displayProducts(list);
 
 function addToCart(id){
 
-const product=
-products.find(p=>p.id===id);
+const product=products.find(p=>p.id===id);
 
 if(product.outOfStock){
 
 requestPerfume(id);
 
 return;
-
 }
-
 
 const size=
 selectedSizes[id]||
 Object.keys(product.prices)[0];
-
 
 const existing=
 cart.find(
@@ -3535,7 +1789,6 @@ item=>
 item.id===id &&
 item.size===size
 );
-
 
 if(existing){
 
@@ -3546,22 +1799,17 @@ existing.quantity++;
 else{
 
 cart.push({
-
 id:id,
 size:size,
 quantity:1
-
 });
 
 }
 
-
 updateCart();
 
 openCart();
-
 }
-
 
 /* =========================
    UPDATE CART
@@ -3574,58 +1822,40 @@ localStorage.setItem(
 JSON.stringify(cart)
 );
 
-
 const count=
 cart.reduce(
 (sum,item)=>sum+item.quantity,
 0
 );
 
+document.getElementById("cartCount").textContent=count;
 
-document.getElementById("cartCount").textContent=
-count;
-
-
-const container=
-document.getElementById("cartItems");
-
+const container=document.getElementById("cartItems");
 
 if(cart.length===0){
 
-container.innerHTML=
-`
+container.innerHTML=`
 <div class="empty">
 Votre panier est vide.
 </div>
 `;
 
-document.getElementById("cartTotal").textContent=
-"0 DH";
+document.getElementById("cartTotal").textContent="0 DH";
 
 return;
-
 }
-
 
 let total=0;
 
+container.innerHTML=cart.map((item,index)=>{
 
-container.innerHTML=
-cart.map((item,index)=>{
-
-const product=
-products.find(
+const product=products.find(
 p=>p.id===item.id
 );
 
+const price=product.prices[item.size];
 
-const price=
-product.prices[item.size];
-
-
-total+=
-price*item.quantity;
-
+total+=price*item.quantity;
 
 return`
 
@@ -3634,7 +1864,6 @@ return`
 <img
 src="${product.image}"
 alt="${product.name}">
-
 
 <div class="cart-item-info">
 
@@ -3650,33 +1879,23 @@ ${item.size}
 ${price*item.quantity} DH
 </div>
 
-
 <div class="quantity">
 
-<button
-onclick="decreaseQuantity(${index})">
-
+<button onclick="decreaseQuantity(${index})">
 −
-
 </button>
-
 
 <span>
 ${item.quantity}
 </span>
 
-
-<button
-onclick="increaseQuantity(${index})">
-
+<button onclick="increaseQuantity(${index})">
 +
-
 </button>
 
 </div>
 
 </div>
-
 
 <button
 class="remove"
@@ -3692,12 +1911,8 @@ Supprimer
 
 }).join("");
 
-
-document.getElementById("cartTotal").textContent=
-total+" DH";
-
+document.getElementById("cartTotal").textContent=total+" DH";
 }
-
 
 /* =========================
    QUANTITY
@@ -3708,9 +1923,7 @@ function increaseQuantity(index){
 cart[index].quantity++;
 
 updateCart();
-
 }
-
 
 function decreaseQuantity(index){
 
@@ -3727,18 +1940,14 @@ cart.splice(index,1);
 }
 
 updateCart();
-
 }
-
 
 function removeItem(index){
 
 cart.splice(index,1);
 
 updateCart();
-
 }
-
 
 /* =========================
    CART OPEN / CLOSE
@@ -3746,25 +1955,17 @@ updateCart();
 
 function openCart(){
 
-document
-.getElementById("cartOverlay")
-.classList.add("open");
+document.getElementById("cartOverlay").classList.add("open");
 
 document.body.style.overflow="hidden";
-
 }
-
 
 function closeCart(){
 
-document
-.getElementById("cartOverlay")
-.classList.remove("open");
+document.getElementById("cartOverlay").classList.remove("open");
 
 document.body.style.overflow="";
-
 }
-
 
 function closeCartOutside(event){
 
@@ -3773,9 +1974,7 @@ if(event.target.id==="cartOverlay"){
 closeCart();
 
 }
-
 }
-
 
 /* =========================
    SHOW ALL
@@ -3785,31 +1984,22 @@ function showAll(){
 
 currentGender="all";
 
-document.getElementById("shopTitle").textContent=
-"Best Sellers";
+document.getElementById("shopTitle").textContent="Best Sellers";
 
 displayProducts(products);
-
 }
-
 
 /* =========================
    SEARCH HELPERS
 ========================= */
 
 function searchProducts(){
-
 openSearch();
-
 }
-
 
 function focusSearch(){
-
 openSearch();
-
 }
-
 
 /* =========================
    ORDER FORM
@@ -3822,25 +2012,15 @@ if(cart.length===0){
 alert("Votre panier est vide.");
 
 return;
-
 }
 
-
-document
-.getElementById("orderForm")
-.classList.add("open");
-
+document.getElementById("orderForm").classList.add("open");
 }
-
 
 function closeOrderForm(){
 
-document
-.getElementById("orderForm")
-.classList.remove("open");
-
+document.getElementById("orderForm").classList.remove("open");
 }
-
 
 /* =========================
    SEND ORDER
@@ -3850,43 +2030,24 @@ function sendOrder(event){
 
 event.preventDefault();
 
-
 if(cart.length===0){
 
 alert("Votre panier est vide.");
 
 return;
-
 }
 
-
 const name=
-document
-.getElementById("customerName")
-.value
-.trim();
-
+document.getElementById("customerName").value.trim();
 
 const phone=
-document
-.getElementById("customerPhone")
-.value
-.trim();
-
+document.getElementById("customerPhone").value.trim();
 
 const address=
-document
-.getElementById("customerAddress")
-.value
-.trim();
-
+document.getElementById("customerAddress").value.trim();
 
 const city=
-document
-.getElementById("customerCity")
-.value
-.trim();
-
+document.getElementById("customerCity").value.trim();
 
 if(!name || !phone || !address || !city){
 
@@ -3895,17 +2056,13 @@ alert(
 );
 
 return;
-
 }
-
 
 let message=
 "👋 NOUVELLE COMMANDE\n\n";
 
-
 message+=
 "📦 PRODUITS :\n";
-
 
 cart.forEach(item=>{
 
@@ -3913,7 +2070,6 @@ const product=
 products.find(
 p=>p.id===item.id
 );
-
 
 message+=
 "• "+
@@ -3928,58 +2084,47 @@ item.quantity+
 
 });
 
-
 message+=
 "\n👤 INFORMATIONS CLIENT :\n";
-
 
 message+=
 "Nom complet : "+
 name+
 "\n";
 
-
 message+=
 "Téléphone : "+
 phone+
 "\n";
-
 
 message+=
 "Adresse : "+
 address+
 "\n";
 
-
 message+=
 "Ville : "+
 city;
-
 
 const whatsappURL=
 "https://wa.me/212708773218?text="+
 encodeURIComponent(message);
 
-
 window.open(
 whatsappURL,
 "_blank"
 );
-
 }
-
 
 /* =========================
    INITIALISATION
 ========================= */
 
-document.getElementById("sortSelect").value=
-"popular";
+document.getElementById("sortSelect").value="popular";
 
 displayProducts();
 
 updateCart();
-
 
 /* =========================
    ESC KEY
@@ -3990,9 +2135,7 @@ document.addEventListener("keydown",function(event){
 if(event.key==="Escape"){
 
 closeSearch();
-
 closeCart();
-
 closeOrderForm();
 
 }
