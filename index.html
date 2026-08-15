@@ -9,7 +9,7 @@
 <title>GHIMED FRAGRANCES — Authentic Decants</title>
 
 <meta name="description"
-content="GHIMED FRAGRANCES — Découvrez vos parfums préférés en 5ml et 10ml.">
+content="GHIMED FRAGRANCES — Découvrez vos parfums préférés en 5ml, 10ml et 20ml.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +44,8 @@ color:var(--black)
 
 button,
 input,
-textarea{
+textarea,
+select{
 font-family:inherit
 }
 
@@ -326,7 +327,6 @@ font-size:10px
 
 /* =========================
    HERO
-   الخلفية أصبحت صورة
 ========================= */
 
 .hero{
@@ -344,17 +344,13 @@ align-items:center;
 justify-content:center;
 }
 
-
-/* طبقة خفيفة جداً فوق الصورة */
-
 .hero::before{
 content:"";
 position:absolute;
 inset:0;
 background:rgba(0,0,0,.15);
-z-index:1;
+z-index:1
 }
-
 
 .hero-inner{
 position:relative;
@@ -378,12 +374,12 @@ display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
-z-index:2;
+z-index:2
 }
 
 
 /* =========================
-   HERO LOGO IMAGE
+   HERO LOGO
 ========================= */
 
 .hero-image{
@@ -393,11 +389,11 @@ height:auto;
 display:flex;
 align-items:center;
 justify-content:center;
-margin-bottom:35px;
+margin-bottom:35px
 }
 
 .hero-image::after{
-display:none !important;
+display:none !important
 }
 
 .hero-image img{
@@ -428,7 +424,7 @@ font-family:"Playfair Display",serif;
 font-size:clamp(48px,6vw,78px);
 line-height:1;
 font-weight:500;
-color:#fff !important;
+color:#fff !important
 }
 
 .hero h1 em{
@@ -465,22 +461,22 @@ transition:.25s
 .hero .btn-dark{
 background:#fff;
 color:#111;
-border:1px solid #fff;
+border:1px solid #fff
 }
 
 .hero .btn-dark:hover{
-background:#eee;
+background:#eee
 }
 
 .hero .btn-light{
 background:transparent;
 color:#fff;
-border:1px solid #fff;
+border:1px solid #fff
 }
 
 .hero .btn-light:hover{
 background:#fff;
-color:#111;
+color:#111
 }
 
 
@@ -626,7 +622,7 @@ opacity:.9
 
 
 /* =========================
-   SHOP
+   SHOP TOOLS / TRIER PAR
 ========================= */
 
 .shop-tools{
@@ -651,6 +647,47 @@ transition:.25s
 background:#111;
 color:#fff;
 border-color:#111
+}
+
+
+/* =========================
+   SORT BOX
+========================= */
+
+.sort-wrapper{
+display:flex;
+align-items:center;
+gap:10px
+}
+
+.sort-label{
+font-size:11px;
+color:#777;
+white-space:nowrap;
+letter-spacing:.5px
+}
+
+.sort-select{
+height:50px;
+min-width:205px;
+padding:0 38px 0 15px;
+border:1px solid #ddd;
+background:#fff;
+color:#111;
+font-size:12px;
+outline:none;
+cursor:pointer;
+transition:.25s
+}
+
+.sort-select:hover,
+.sort-select:focus{
+border-color:#111
+}
+
+.sort-select option{
+background:#fff;
+color:#111
 }
 
 
@@ -771,7 +808,8 @@ font-size:10px
 .sizes{
 display:flex;
 gap:6px;
-margin:14px 0
+margin:14px 0;
+flex-wrap:wrap
 }
 
 .size{
@@ -1337,7 +1375,7 @@ gap:15px
 }
 
 .hero{
-min-height:620px;
+min-height:620px
 }
 
 .hero-inner{
@@ -1435,11 +1473,32 @@ font-size:8px
 }
 
 .shop-tools{
-justify-content:flex-start
+justify-content:flex-start;
+align-items:stretch;
+flex-direction:column
 }
 
 .filter-btn{
-padding:13px 18px
+padding:13px 18px;
+width:100%
+}
+
+.sort-wrapper{
+width:100%;
+display:flex;
+flex-direction:column;
+align-items:stretch;
+gap:6px
+}
+
+.sort-label{
+font-size:10px
+}
+
+.sort-select{
+width:100%;
+min-width:0;
+height:48px
 }
 
 .discovery-inner{
@@ -1691,7 +1750,6 @@ id="searchResults">
 
 <div class="hero-content">
 
-
 <div class="hero-image">
 
 <img
@@ -1719,7 +1777,7 @@ signature scent.
 
 <p class="hero-text">
 
-Découvrez vos parfums préférés en formats pratiques de 5ml et 10ml.
+Découvrez vos parfums préférés en formats pratiques de 5ml, 10ml et 20ml.
 
 </p>
 
@@ -1781,7 +1839,7 @@ Sélection soigneusement choisie
 </div>
 
 <div class="trust-title">
-5ml / 10ml
+5ml / 10ml / 20ml
 </div>
 
 <div class="trust-text">
@@ -1949,7 +2007,12 @@ Best Sellers
 </div>
 
 
+<!-- =========================
+     SHOP TOOLS
+========================= -->
+
 <div class="shop-tools">
+
 
 <button
 class="filter-btn"
@@ -1958,6 +2021,48 @@ onclick="showAll()">
 Tous les parfums
 
 </button>
+
+
+<div class="sort-wrapper">
+
+<label
+class="sort-label"
+for="sortSelect">
+
+Trier par
+
+</label>
+
+
+<select
+id="sortSelect"
+class="sort-select"
+onchange="sortProducts(this.value)">
+
+<option value="popular">
+Plus populaires
+</option>
+
+<option value="price-low">
+Prix : moins cher → plus cher
+</option>
+
+<option value="price-high">
+Prix : plus cher → moins cher
+</option>
+
+<option value="newest">
+Plus récents
+</option>
+
+<option value="oldest">
+Plus anciens
+</option>
+
+</select>
+
+</div>
+
 
 </div>
 
@@ -2000,7 +2105,7 @@ Spend less.
 
 <p>
 
-Découvrez plusieurs fragrances en formats 5ml et 10ml avant de choisir votre prochain parfum.
+Découvrez plusieurs fragrances en formats 5ml, 10ml et 20ml avant de choisir votre prochain parfum.
 
 </p>
 
@@ -2013,6 +2118,10 @@ Découvrez plusieurs fragrances en formats 5ml et 10ml avant de choisir votre pr
 
 <div class="format">
 10ml
+</div>
+
+<div class="format">
+20ml
 </div>
 
 </div>
@@ -2052,7 +2161,7 @@ your way.
 <p>
 
 Chez GHIMED FRAGRANCES, nous croyons qu'un parfum doit être découvert avant d'être adopté.
-Nos decants vous permettent de découvrir différentes fragrances en formats 5ml et 10ml,
+Nos decants vous permettent de découvrir différentes fragrances en formats 5ml, 10ml et 20ml,
 simplement et à votre rythme.
 
 </p>
@@ -2748,28 +2857,184 @@ outOfStock:false
 ];
 
 
-let cart=JSON.parse(localStorage.getItem("ghimedCart"))||[];
+/* =========================
+   CART
+========================= */
+
+let cart=
+JSON.parse(localStorage.getItem("ghimedCart"))||[];
 
 let selectedSizes={};
 
 let currentGender="all";
 
+let currentSort="popular";
+
+
+/* =========================
+   POPULARITY
+   كلما كان الرقم أكبر
+   كلما كان العطر أكثر شهرة
+========================= */
+
+function getPopularity(product){
+
+const badge=
+(product.badge||"").toLowerCase();
+
+if(badge.includes("best seller")) return 100;
+if(badge.includes("bestseller")) return 100;
+if(badge.includes("popular")) return 90;
+if(badge.includes("iconic")) return 85;
+if(badge.includes("trending")) return 80;
+if(badge.includes("hot")) return 75;
+if(badge.includes("classic")) return 70;
+if(badge.includes("luxury")) return 65;
+if(badge.includes("new")) return 60;
+if(badge.includes("summer")) return 55;
+if(badge.includes("premium")) return 50;
+
+return 40;
+
+}
+
+
+/* =========================
+   LOWEST PRICE
+   يخدم مع 5ml / 10ml / 20ml
+========================= */
+
+function getLowestPrice(product){
+
+const prices=
+Object.values(product.prices);
+
+if(!prices.length){
+return Infinity;
+}
+
+return Math.min(...prices);
+
+}
+
+
+/* =========================
+   SORT PRODUCTS
+========================= */
+
+function sortProducts(type){
+
+currentSort=type;
+
+let list=products;
+
+if(currentGender!=="all"){
+
+list=
+products.filter(
+product=>product.gender===currentGender
+);
+
+}
+
+list=sortList(list,type);
+
+displayProducts(list);
+
+}
+
+
+/* =========================
+   SORT LIST
+========================= */
+
+function sortList(list,type){
+
+const sorted=[...list];
+
+switch(type){
+
+case "price-low":
+
+sorted.sort(
+(a,b)=>
+getLowestPrice(a)-getLowestPrice(b)
+);
+
+break;
+
+
+case "price-high":
+
+sorted.sort(
+(a,b)=>
+getLowestPrice(b)-getLowestPrice(a)
+);
+
+break;
+
+
+case "newest":
+
+sorted.sort(
+(a,b)=>
+b.id-a.id
+);
+
+break;
+
+
+case "oldest":
+
+sorted.sort(
+(a,b)=>
+a.id-b.id
+);
+
+break;
+
+
+case "popular":
+
+default:
+
+sorted.sort(
+(a,b)=>
+getPopularity(b)-getPopularity(a)
+);
+
+break;
+
+}
+
+return sorted;
+
+}
+
+
+/* =========================
+   DISPLAY PRODUCTS
+========================= */
 
 function displayProducts(list=products){
 
-const container=document.getElementById("products");
+const container=
+document.getElementById("products");
 
 container.innerHTML="";
 
 if(list.length===0){
 
 container.innerHTML=`
+
 <p style="
 grid-column:1/-1;
 text-align:center;
 color:#888;
 padding:50px;">
+
 Aucun parfum trouvé.
+
 </p>`;
 
 return;
@@ -2777,7 +3042,13 @@ return;
 }
 
 
-list.forEach(product=>{
+/* نطبق الترتيب الحالي */
+
+const sortedList=
+sortList(list,currentSort);
+
+
+sortedList.forEach(product=>{
 
 const selected=
 selectedSizes[product.id]||
@@ -2856,7 +3127,9 @@ ${size}
 <div class="product-bottom">
 
 <div class="price">
+
 ${product.prices[selected]} DH
+
 </div>
 
 
@@ -2901,9 +3174,14 @@ Ajouter
 }
 
 
+/* =========================
+   SEARCH
+========================= */
+
 function openSearch(){
 
-const overlay=document.getElementById("searchOverlay");
+const overlay=
+document.getElementById("searchOverlay");
 
 overlay.classList.add("open");
 
@@ -2911,7 +3189,8 @@ document.body.style.overflow="hidden";
 
 setTimeout(()=>{
 
-const input=document.getElementById("mainSearchInput");
+const input=
+document.getElementById("mainSearchInput");
 
 input.focus();
 
@@ -2930,9 +3209,13 @@ document
 
 document.body.style.overflow="";
 
-document.getElementById("mainSearchInput").value="";
+document
+.getElementById("mainSearchInput")
+.value="";
 
-document.getElementById("searchResults").innerHTML="";
+document
+.getElementById("searchResults")
+.innerHTML="";
 
 }
 
@@ -2967,13 +3250,12 @@ function showSearchSuggestions(query){
 const container=
 document.getElementById("searchResults");
 
-
 let results=products;
-
 
 if(query){
 
-results=products.filter(product=>{
+results=
+products.filter(product=>{
 
 const name=
 product.name.toLowerCase();
@@ -3013,7 +3295,8 @@ return;
 }
 
 
-container.innerHTML=results.map(product=>{
+container.innerHTML=
+results.map(product=>{
 
 const firstSize=
 Object.keys(product.prices)[0];
@@ -3060,9 +3343,14 @@ ${product.prices[firstSize]} DH
 }
 
 
+/* =========================
+   GO TO PRODUCT
+========================= */
+
 function goToProduct(id){
 
-const product=products.find(p=>p.id===id);
+const product=
+products.find(p=>p.id===id);
 
 if(!product){
 return;
@@ -3072,7 +3360,13 @@ closeSearch();
 
 currentGender="all";
 
-document.getElementById("shopTitle").textContent="Best Sellers";
+currentSort="popular";
+
+document.getElementById("shopTitle").textContent=
+"Best Sellers";
+
+document.getElementById("sortSelect").value=
+"popular";
 
 displayProducts(products);
 
@@ -3107,6 +3401,10 @@ element.classList.remove("highlight");
 }
 
 
+/* =========================
+   OUT OF STOCK
+========================= */
+
 function requestPerfume(id){
 
 const product=
@@ -3131,6 +3429,10 @@ whatsappURL,
 
 }
 
+
+/* =========================
+   FILTER GENDER
+========================= */
 
 function filterGender(gender){
 
@@ -3171,6 +3473,8 @@ document.getElementById("shopTitle").textContent=
 }
 
 
+/* نحافظ على Trier par الحالي */
+
 displayProducts(filtered);
 
 
@@ -3180,6 +3484,12 @@ behavior:"smooth"
 
 }
 
+
+/* =========================
+   SELECT SIZE
+   يدعم أي حجم:
+   5ml / 10ml / 20ml
+========================= */
 
 function selectSize(id,size){
 
@@ -3203,11 +3513,14 @@ displayProducts(list);
 }
 
 
+/* =========================
+   ADD TO CART
+========================= */
+
 function addToCart(id){
 
 const product=
 products.find(p=>p.id===id);
-
 
 if(product.outOfStock){
 
@@ -3257,6 +3570,10 @@ openCart();
 }
 
 
+/* =========================
+   UPDATE CART
+========================= */
+
 function updateCart(){
 
 localStorage.setItem(
@@ -3272,7 +3589,8 @@ cart.reduce(
 );
 
 
-document.getElementById("cartCount").textContent=count;
+document.getElementById("cartCount").textContent=
+count;
 
 
 const container=
@@ -3388,6 +3706,10 @@ total+" DH";
 }
 
 
+/* =========================
+   QUANTITY
+========================= */
+
 function increaseQuantity(index){
 
 cart[index].quantity++;
@@ -3425,6 +3747,10 @@ updateCart();
 }
 
 
+/* =========================
+   CART OPEN / CLOSE
+========================= */
+
 function openCart(){
 
 document
@@ -3458,6 +3784,10 @@ closeCart();
 }
 
 
+/* =========================
+   SHOW ALL
+========================= */
+
 function showAll(){
 
 currentGender="all";
@@ -3469,6 +3799,10 @@ displayProducts(products);
 
 }
 
+
+/* =========================
+   SEARCH HELPERS
+========================= */
 
 function searchProducts(){
 
@@ -3483,6 +3817,10 @@ openSearch();
 
 }
 
+
+/* =========================
+   ORDER FORM
+========================= */
 
 function openOrderForm(){
 
@@ -3510,6 +3848,10 @@ document
 
 }
 
+
+/* =========================
+   SEND ORDER
+========================= */
 
 function sendOrder(event){
 
@@ -3634,10 +3976,21 @@ whatsappURL,
 }
 
 
+/* =========================
+   INITIALISATION
+========================= */
+
+document.getElementById("sortSelect").value=
+"popular";
+
 displayProducts();
 
 updateCart();
 
+
+/* =========================
+   ESC KEY
+========================= */
 
 document.addEventListener("keydown",function(event){
 
@@ -3646,6 +3999,8 @@ if(event.key==="Escape"){
 closeSearch();
 
 closeCart();
+
+closeOrderForm();
 
 }
 
