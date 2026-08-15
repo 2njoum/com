@@ -1473,7 +1473,146 @@ font-size:16px
 width:21px;
 height:21px
 }
+/* =========================
+   NEW HERO DESIGN
+========================= */
 
+.hero{
+    position:relative;
+    min-height:650px;
+    background:#111;
+    overflow:hidden;
+}
+
+.hero-inner{
+    max-width:1400px;
+    min-height:650px;
+    margin:auto;
+    padding:0 25px;
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+}
+
+/* الصورة تغطي الـHero كامل */
+.hero-image{
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    z-index:1;
+}
+
+.hero-image img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+}
+
+/* نحيدو الخلفية الكحلة القوية */
+.hero-image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.08) !important;
+}
+
+/* الكتابة فوق الصورة */
+.hero-inner > div:first-child{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:800px;
+    padding:80px 20px 65px;
+    text-align:center;
+    color:#fff;
+}
+
+/* Authentic Fragrance */
+.hero .hero-small{
+    color:#fff !important;
+    font-size:10px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+/* العنوان الرئيسي */
+.hero h1{
+    color:#fff !important;
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+/* النص */
+.hero .hero-text{
+    color:#fff !important;
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+
+/* الأزرار */
+.hero .btn{
+    border:2px solid #000 !important;
+    text-shadow:none;
+}
+
+.hero .btn-dark{
+    background:#fff !important;
+    color:#111 !important;
+    border-color:#000 !important;
+}
+
+.hero .btn-light{
+    background:rgba(255,255,255,.12) !important;
+    color:#fff !important;
+    border-color:#000 !important;
+}
+
+.hero .btn-light:hover{
+    background:#fff !important;
+    color:#111 !important;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+    .hero{
+        min-height:600px;
+    }
+
+    .hero-inner{
+        min-height:600px;
+        padding:0 15px;
+    }
+
+    .hero-image{
+        height:100% !important;
+    }
+
+    .hero-inner > div:first-child{
+        padding:60px 10px 45px;
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+
+    .hero .hero-text{
+        font-size:13px;
+    }
+   }
 </style>
 
 </head>
