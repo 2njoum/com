@@ -46,6 +46,7 @@ display:flex;align-items:center;justify-content:space-between
 .logo{
 font-family:"Playfair Display",serif;font-size:24px;letter-spacing:2px;font-weight:600
 }
+
 .logo span{
 display:block;text-align:center;font-family:"DM Sans",sans-serif;font-size:9px;
 letter-spacing:4px;color:#777;margin-top:-3px
@@ -53,17 +54,21 @@ letter-spacing:4px;color:#777;margin-top:-3px
 
 .nav-links{display:flex;gap:30px;font-size:13px}
 .nav-links a{position:relative}
+
 .nav-links a::after{
 content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;
 background:#111;transition:.3s
 }
+
 .nav-links a:hover::after{width:100%}
 
 .nav-icons{display:flex;align-items:center;gap:18px}
+
 .icon-btn{
 position:relative;border:0;background:none;font-size:20px;
 display:flex;align-items:center;justify-content:center
 }
+
 .cart-count{
 position:absolute;right:-8px;top:-8px;width:17px;height:17px;
 display:flex;align-items:center;justify-content:center;border-radius:50%;
@@ -71,51 +76,84 @@ background:#111;color:#fff;font-size:9px
 }
 
 /* SEARCH */
+
 .search-overlay{
 position:fixed;inset:0;z-index:5000;background:rgba(0,0,0,.45);
 opacity:0;visibility:hidden;transition:.25s
 }
+
 .search-overlay.open{opacity:1;visibility:visible}
+
 .search-panel{
 position:absolute;top:0;left:0;right:0;background:#fff;padding:25px 25px 35px;
 transform:translateY(-100%);transition:.35s;box-shadow:0 15px 40px rgba(0,0,0,.12)
 }
+
 .search-overlay.open .search-panel{transform:translateY(0)}
+
 .search-panel-inner{max-width:1000px;margin:auto}
+
 .search-top{
 display:flex;align-items:center;justify-content:space-between;margin-bottom:20px
 }
-.search-title{font-family:"Playfair Display",serif;font-size:25px}
+
+.search-title{
+font-family:"Playfair Display",serif;font-size:25px
+}
+
 .close-search{border:0;background:none;font-size:27px;line-height:1}
+
 .search-main{position:relative}
+
 .search-main-icon{
 position:absolute;left:17px;top:50%;transform:translateY(-50%);
 font-size:19px;color:#777
 }
+
 .main-search-input{
 width:100%;height:58px;padding:0 50px;border:1px solid #ddd;outline:none;
 font-size:14px;background:#fff;transition:.25s
 }
-.main-search-input:focus{border-color:#111;box-shadow:0 0 0 1px #111}
+
+.main-search-input:focus{
+border-color:#111;box-shadow:0 0 0 1px #111
+}
+
 .search-results{margin-top:15px;max-height:420px;overflow:auto}
+
 .search-result{
 display:flex;align-items:center;gap:15px;padding:12px;border:1px solid #eee;
 margin-bottom:8px;background:#fff;cursor:pointer;transition:.2s
 }
-.search-result:hover{background:#f7f7f5;transform:translateX(3px)}
+
+.search-result:hover{
+background:#f7f7f5;transform:translateX(3px)
+}
+
 .search-result img{
 width:58px;height:65px;object-fit:cover;background:#f5f5f3
 }
+
 .search-result-info{flex:1}
+
 .search-result-brand{
 color:#999;font-size:9px;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px
 }
-.search-result-name{font-family:"Playfair Display",serif;font-size:18px}
-.search-result-price{font-size:11px;font-weight:700;margin-top:4px}
+
+.search-result-name{
+font-family:"Playfair Display",serif;font-size:18px
+}
+
+.search-result-price{
+font-size:11px;font-weight:700;margin-top:4px
+}
+
 .search-empty{text-align:center;padding:30px 10px;color:#888;font-size:13px}
+
 .search-hint{margin-top:12px;color:#999;font-size:10px}
 
 /* HERO */
+
 .hero{
 position:relative;min-height:700px;background-image:url("hero1.jpg");
 background-size:cover;background-position:center;background-repeat:no-repeat;
@@ -137,7 +175,6 @@ width:100%;max-width:850px;display:flex;flex-direction:column;
 align-items:center;justify-content:center;z-index:2
 }
 
-/* LOGO HERO - AGRANDI */
 .hero-image{
 position:relative;width:100%;height:auto;display:flex;align-items:center;
 justify-content:center;margin-bottom:35px
@@ -149,7 +186,7 @@ width:520px;
 max-width:100%;
 height:auto;
 max-height:none;
-object-fit:contain;
+object-fit:contain
 }
 
 .hero-small{
@@ -191,6 +228,7 @@ background:#fff;color:#111
 }
 
 /* TRUST */
+
 .trust{
 border-top:1px solid var(--border);
 border-bottom:1px solid var(--border)
@@ -220,6 +258,7 @@ margin-top:4px;color:#888;font-size:10px
 }
 
 /* SECTIONS */
+
 .section{
 max-width:1250px;margin:auto;padding:90px 25px
 }
@@ -245,6 +284,7 @@ font-size:12px
 }
 
 /* CATEGORIES */
+
 .categories{
 display:grid;grid-template-columns:1fr 1fr;gap:14px
 }
@@ -281,6 +321,7 @@ text-transform:uppercase;text-align:center;opacity:.9
 }
 
 /* SHOP TOOLS */
+
 .shop-tools{
 display:flex;align-items:center;justify-content:flex-end;
 gap:12px;margin-bottom:30px;flex-wrap:wrap
@@ -319,6 +360,7 @@ background:#fff;color:#111
 }
 
 /* PRODUCTS */
+
 .products{
 display:grid;
 grid-template-columns:repeat(4,1fr);
@@ -435,6 +477,7 @@ background:#111;color:#fff
 }
 
 /* DISCOVERY */
+
 .discovery{
 background:#f5f4f0
 }
@@ -473,6 +516,7 @@ background:#fff;font-size:11px
 }
 
 /* ABOUT */
+
 .about{
 max-width:850px;margin:auto;
 padding:100px 25px;text-align:center
@@ -487,6 +531,7 @@ margin-top:20px;color:#666;line-height:1.9
 }
 
 /* FOOTER */
+
 footer{
 padding:65px 25px 25px;
 background:#111;color:#fff
@@ -530,6 +575,7 @@ color:#777;font-size:10px
 }
 
 /* CART */
+
 .cart-overlay{
 position:fixed;inset:0;z-index:2000;
 visibility:hidden;opacity:0;
@@ -628,9 +674,36 @@ padding-top:20px;
 border-top:1px solid var(--border)
 }
 
-.total{
-display:flex;justify-content:space-between;
-margin-bottom:15px;font-weight:700
+/* NEW TOTAL / DELIVERY */
+
+.cart-summary{
+display:flex;
+flex-direction:column;
+gap:9px;
+margin-bottom:18px
+}
+
+.summary-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:12px
+}
+
+.summary-row.subtotal{
+color:#555
+}
+
+.summary-row.delivery{
+color:#777
+}
+
+.summary-row.total{
+padding-top:12px;
+border-top:1px solid var(--border);
+font-size:14px;
+font-weight:700;
+margin-top:4px
 }
 
 .checkout{
@@ -644,6 +717,7 @@ background:#333
 }
 
 /* ORDER FORM */
+
 .order-form{
 display:none;position:fixed;inset:0;
 z-index:3000;background:rgba(0,0,0,.55);
@@ -714,6 +788,7 @@ background:#333
 }
 
 /* WHATSAPP */
+
 .whatsapp{
 position:fixed;right:20px;bottom:20px;
 z-index:900;width:53px;height:53px;
@@ -733,6 +808,7 @@ width:21px;height:21px
 }
 
 /* MOBILE */
+
 @media(max-width:900px){
 
 .nav-links{
@@ -744,7 +820,6 @@ min-height:650px;
 padding:50px 20px
 }
 
-/* LOGO MOBILE - AGRANDI */
 .hero-image img{
 width:380px;
 max-width:100%;
@@ -818,7 +893,6 @@ min-height:700px;
 padding:35px 18px
 }
 
-/* LOGO MOBILE SMALL SCREEN - AGRANDI */
 .hero-image{
 margin-bottom:25px
 }
@@ -997,10 +1071,11 @@ font-size:16px
 <body>
 
 <div class="topbar">
-✦ Livraison partout au Maroc · Paiement à la livraison
+✦ Livraison partout au Maroc · 35 DH · Paiement à la livraison
 </div>
 
 <header>
+
 <div class="nav">
 
 <a href="#" class="logo">
@@ -1077,7 +1152,7 @@ class="main-search-input"
 type="text"
 autocomplete="off"
 placeholder="Nom du parfum ou marque..."
-oninput="searchFromTop()">
+oninput="searchFromTop">
 
 </div>
 
@@ -1181,7 +1256,7 @@ Livraison Maroc
 </div>
 
 <div class="trust-text">
-Toutes les villes
+35 DH partout au Maroc
 </div>
 
 </div>
@@ -1574,15 +1649,43 @@ Votre panier est vide.
 
 <div class="cart-footer">
 
-<div class="total">
+<div class="cart-summary">
+
+<div class="summary-row subtotal">
+
+<span>
+Sous-total
+</span>
+
+<span id="cartSubtotal">
+0 DH
+</span>
+
+</div>
+
+<div class="summary-row delivery">
+
+<span>
+Livraison
+</span>
+
+<span id="deliveryPrice">
+35 DH
+</span>
+
+</div>
+
+<div class="summary-row total">
 
 <span>
 Total
 </span>
 
 <span id="cartTotal">
-0 DH
+35 DH
 </span>
+
+</div>
 
 </div>
 
@@ -1700,6 +1803,8 @@ aria-label="WhatsApp">
 </a>
 
 <script>
+
+const DELIVERY_FEE = 35;
 
 const products=[
 
@@ -2616,6 +2721,8 @@ updateCart();
 openCart();
 }
 
+/* CART UPDATE WITH DELIVERY */
+
 function updateCart(){
 
 localStorage.setItem(
@@ -2645,13 +2752,19 @@ Votre panier est vide.
 
 `;
 
+document.getElementById("cartSubtotal").textContent=
+"0 DH";
+
+document.getElementById("deliveryPrice").textContent=
+"0 DH";
+
 document.getElementById("cartTotal").textContent=
 "0 DH";
 
 return;
 }
 
-let total=0;
+let subtotal=0;
 
 container.innerHTML=
 cart.map((item,index)=>{
@@ -2662,7 +2775,7 @@ products.find(p=>p.id===item.id);
 const price=
 product.prices[item.size];
 
-total+=price*item.quantity;
+subtotal+=price*item.quantity;
 
 return`
 
@@ -2717,6 +2830,16 @@ Supprimer
 `;
 
 }).join("");
+
+const delivery=DELIVERY_FEE;
+
+const total=subtotal+delivery;
+
+document.getElementById("cartSubtotal").textContent=
+subtotal+" DH";
+
+document.getElementById("deliveryPrice").textContent=
+delivery+" DH";
 
 document.getElementById("cartTotal").textContent=
 total+" DH";
@@ -2815,6 +2938,8 @@ function closeOrderForm(){
 document.getElementById("orderForm").classList.remove("open");
 }
 
+/* SEND ORDER WITH DELIVERY PRICE */
+
 function sendOrder(event){
 
 event.preventDefault();
@@ -2847,8 +2972,10 @@ alert(
 return;
 }
 
+let subtotal=0;
+
 let message=
-"👋 NOUVELLE COMMANDE\n\n";
+"👋 NOUVELLE COMMANDE 2NJOUM FRAGRANCES\n\n";
 
 message+=
 "📦 PRODUITS :\n";
@@ -2860,6 +2987,11 @@ products.find(
 p=>p.id===item.id
 );
 
+const price=
+product.prices[item.size];
+
+subtotal+=price*item.quantity;
+
 message+=
 "• "+
 product.brand+
@@ -2869,9 +3001,33 @@ product.name+
 item.size+
 " x "+
 item.quantity+
-"\n";
+" — "+
+(price*item.quantity)+
+" DH\n";
 
 });
+
+const delivery=DELIVERY_FEE;
+
+const total=subtotal+delivery;
+
+message+=
+"\n💰 RÉCAPITULATIF :\n";
+
+message+=
+"Sous-total : "+
+subtotal+
+" DH\n";
+
+message+=
+"Livraison : "+
+delivery+
+" DH\n";
+
+message+=
+"TOTAL À PAYER : "+
+total+
+" DH\n";
 
 message+=
 "\n👤 INFORMATIONS CLIENT :\n";
